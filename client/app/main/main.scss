@@ -1,0 +1,61 @@
+//colors are imported from: @import '../colors.scss';
+
+.thing-form {
+  margin: 20px 0;
+}
+
+#banner {
+  border-bottom: none;
+  margin-top: -20px;
+}
+
+#banner h1 {
+  font-size: 60px;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.hero-unit {
+  position: relative;
+  padding: 30px 15px;
+  color: $hero-color;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+
+  @include main-box-shadow();
+}
+#main {
+  position: relative;
+  top: -10px;
+  color: $main-color;//#BAA68E;
+  background-color: $main-back-color;
+  min-height: 400px;
+
+  @include main-box-shadow();
+
+  ul {
+    border-bottom: none;
+  }
+  li a {
+    color: $main-color;
+    font-weight: bold;
+    font-size: larger;
+    display: inline-block;
+  }
+  li a:hover {
+    text-shadow: 0px 0px 10px $hero-color;
+    background-color: $main-back-color;
+    border: 1px solid transparent;
+    border-radius: 10px;
+  }
+}
+.page-header {
+  font-weight: bold;
+}
+
+.footer {
+  text-align: center;
+  padding: 30px 0;
+  margin-top: 70px;
+  border-top: 1px solid #E5E5E5;
+}

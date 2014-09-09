@@ -1,0 +1,64 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container main-panel">
+  <div class="row">
+    <div class="col-md-12">
+      <div id="sm-recipe-navbar">
+        <span class="pull-left"><strong>{{ searchCriteria }} recipes</strong> - {{ recipes.length }} found</span>
+        <span class="pull-right" ng-show="searchCriteria !=='All'">
+          <a href="/recipes">View all recipes</a></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" ng-repeat="rcp in recipes">
+    <div class="col-md-12" >
+      <div class="sm-recipe-wrapper">
+        <div class="sm-recipe-title">
+          <a href="/recipe/{{ rcp._id }}">{{ rcp.name }}</a>
+        </div>
+        <div class="row sm-recipe-body">
+          <div class="col-md-12" >
+            <div class="row">
+              <div class="col-md-2 col-sm-2 col-xs-2">
+                <!-- from  http://www.iconka.com -->
+                <img class="img-thumbnail" ng-src='assets/images/cat-food-hearts-icon-128x128.png'/>
+              </div>
+              <div class="col-md-7 col-sm-7 col-xs-7">
+                <div class="sm-recipe-description">
+                  <div class="row">
+                    <div class="col-md-12 col-xs-12">
+                      {{ rcp.description }}
+                    </div>
+                  </div>
+
+                  <div class="row" style="margin-top: 3px">
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      Category: <a href="/recipes/{{ rcp.category.name }}">{{ rcp.category.name }}</a> &nbsp;
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      Cousine: <a href="/recipes/{{ rcp.cousine }}">{{ rcp.cousine }}</a>
+                    </div>
+                  </div>
+                  <p><span class="glyphicon glyphicon-time"></span> {{ rcp.duration }} min</p>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-3">
+                <div id="sm-recipe-rating">
+                  <gradient-rating overall="rcp.rating" ratings="rcp.ratings"
+                          viewed="rcp.viewed" ></gradient-rating>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p>♥ from <a class="btn-link" href="http://www.theklub.info:3000" target="_blank">TheKlub</a> team ♥</p>
+  </div>
+</footer>

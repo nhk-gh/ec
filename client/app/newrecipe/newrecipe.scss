@@ -1,0 +1,84 @@
+#add-recipe-form {
+  legend {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: $main-color;
+  }
+
+  textarea {
+    resize: none;
+    overflow-y: auto;
+  }
+
+  #new-recipe-ingredients-tbl,
+  #new-recipe-notes-tbl,
+  #new-recipe-instructions-tbl {
+    width: 100%;
+    thead {
+      background-color: $main-back-color;
+    }
+    th, tr, td {
+      border: 1px solid $main-color;
+    }
+    th {
+      text-align: center;
+    }
+    .table-input {
+      width: 100%;
+      border:none;
+      @include border-radius(0);
+    }
+    .table-input:focus {
+      border: 1px solid #add8e6;
+    }
+  }
+
+  #new-recipe-ingredients-tbl {
+    #ingredient-column-1 {
+      width: 40%;
+    }
+    #ingredient-column-2 {
+      width: 15%;
+    }
+    #ingredient-column-3 {
+      width: 40%;
+    }
+    #ingredient-column-4 {
+      width: 5%;
+    }
+  }
+
+  #new-recipe-notes-tbl {
+    #note-column-1 {
+      width: 95%;
+    }
+    #note-column-2 {
+      width: 5%;
+    }
+  }
+}
+
+.remove-table-row {
+  text-align: center;
+  color:rgba(255, 0, 0, 0.3);
+}
+.add-table-row {
+  margin-top: 5px;
+  padding-right: 1.5%;
+  color:rgba(0, 255, 0, 0.7);
+}
+.add-table-row span:hover {
+  cursor: pointer;
+  color:green;
+  text-shadow: 0px 0px 10px rgba(0, 255, 0, 0.5);
+}
+.remove-table-row span:hover {
+  cursor: pointer;
+  color:red;
+  text-shadow: 0px 0px 10px rgba(255, 0, 0, 0.5);
+}
+
+button[type='submit']{
+  background-color: $main-back-color;
+}
+

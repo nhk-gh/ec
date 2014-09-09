@@ -1,0 +1,76 @@
+<div class="navbar navbar-default navbar-static-top" id="navbar-wrapper" ng-controller="NavbarCtrl">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" ng-click="isCollapsed = !isCollapsed">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="row" >
+        <div class="col-md-12">
+          <a href="/" id="brand-name" class="navbar-brand">Easy Cooking</a>
+          <span id="brand-subtitle"> <em>quick recipes for lazy people</em> </span>
+        </div>
+      </div>
+    </div>
+    <!--div collapse="isCollapsed" class="navbar-collapse collapse" id="navbar-main">
+      <ul class="nav navbar-nav navbar-right">
+        <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/signup')}"><a href="/signup">Sign up</a></li>
+        <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/login')}" class="most-right"><a href="/login">Login</a></li>
+        <li ng-show="isLoggedIn()"><p class="navbar-text">Hello {{ getCurrentUser().name }}</p> </li>
+        <li ng-show="isLoggedIn()" ng-class="{active: isActive('/settings')}"><a href="/settings"><span class="glyphicon glyphicon-cog"></span></a></li>
+        <li ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}" class="most-right"><a href="" ng-click="logout()">Logout</a></li>
+        <li>
+          <div class="pull-right" id="search-box">
+            <input type="text"  placeholder="Search" id="review-search" ng-model="searchCriteria"/>
+            <button class="btn btn-link btn-sm" ng-click="search(searchCriteria)">
+              <span class="glyphicon glyphicon-search"></span>
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div-->
+    <div collapse="isCollapsed" class="navbar-collapse collapse" id="navbar-main">
+      <ul class="nav navbar-nav navbar-right">
+        <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/signup')}">
+          <a class="font-04" href="/signup">Sign up</a>
+        </li>
+        <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/login')}" class="most-right">
+          <a class="font-04" href="/login">Login</a>
+        </li>
+
+        <li class="most-right" ng-show="isLoggedIn()">
+          <div class="dropdown">
+            <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenu1"
+                    data-toggle="dropdown">
+              <span class="font-1">Hello {{ getCurrentUser().name }}</span>
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+              <li ng-class="{active: isActive('/settings')}">
+                <a class="font-1" href="/settings"><span class="glyphicon glyphicon-cog"></span></a>
+              </li>
+              <li ng-class="{active: isActive('/logout')}" >
+                <a class="font-1" href="" ng-click="logout()">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li>
+          <div class="pull-right" id="search-box">
+            <input type="text"  placeholder="Search" id="review-search" ng-model="searchCriteria"/>
+            <button class="btn btn-link btn-sm" ng-click="search(searchCriteria)">
+              <span class="glyphicon glyphicon-search"></span>
+            </button>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+

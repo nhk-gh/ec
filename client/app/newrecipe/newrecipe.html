@@ -1,0 +1,217 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container main-panel">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="recipe-wrapper">
+        <div class="recipe-title">
+          <span><strong>New Recipe</strong></span>
+        </div>
+        <div class="recipe-body">
+          <form class="form-horizontal" role="form" name="addrecipeform"
+                id="add-recipe-form" novalidate>
+            <fieldset>
+              <legend>Grantor</legend>
+              <div class="form-group">
+                <label for="grantor-name" class="col-sm-2 control-label" required-fld>Name</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="grantor-name" placeholder="Full name"
+                         ng-model="newRecipe.grant.name">
+                </div>
+              </div>
+              <!--div class="form-group">
+                <label for="grantor-img" class="col-sm-2 control-label">Avatar</label>
+                <div class="col-sm-10">
+                  <input type="file" class="form-control" id="grantor-img" >
+                </div>
+              </div-->
+            </fieldset>
+
+            <fieldset>
+              <legend>Recipe</legend>
+              <div class="form-group">
+                <label for="new-recipe-name" class="col-sm-2 control-label" required-fld>Recipe name</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="new-recipe-name"
+                         required ng-model="newRecipe.name">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="select-recipe-category" class="col-sm-2 control-label">Category</label>
+                <div class="col-sm-10">
+                  <select class="form-control" id="select-recipe-category" ng-model="newRecipe.category"
+                          ng-options="cat.name for cat in categories">
+                  </select>
+                  <!--div>or type in categories (comma separated)</div>
+                  <input type="text" class="form-control" id="new-recipe-category"
+                          placeholder="E.g.: lamb, main dish, fish & see food"
+                          ng-model="newRecipe.multiCategory"-->
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="new-recipe-cousine" class="col-sm-2 control-label">Cousine</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="new-recipe-cousine"
+                         ng-model="newRecipe.cousine">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="new-recipe-time" class="col-sm-2 control-label" required-fld>Cooking time</label>
+                <div class="col-sm-10">
+                  <div class="input-group">
+                    <input type="text" class="form-control" id="new-recipe-time" int-only
+                           required ng-model="newRecipe.duration" >
+                    <div class="input-group-addon">min.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="new-recipe-description" class="col-sm-2 control-label" required-fld>Description</label>
+                <div class="col-sm-10">
+                  <textarea class="form-control" rows="3" id="new-recipe-description" required
+                            ng-model="newRecipe.description" ng-change="descriptionLeftSymbols()">
+                  </textarea>
+                  <span class="left-symbols">Left <span >{{ leftSymbols.description }}</span> symbols</span>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Ingredients</legend>
+              <table id="new-recipe-ingredients-tbl">
+                <colgroup>
+                  <col id="ingredient-column-1">
+                  <col id="ingredient-column-2">
+                  <col id="ingredient-column-3">
+                  <col id="ingredient-column-4">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th required-fld>Name</th>
+                    <th required-fld>Quantity</th>
+                    <th>Note</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="ing in newRecipe.ingredients track by $index">
+                    <td>
+                      <input type="text" class="form-control table-input" required
+                             ng-model="newRecipe.ingredients[$index].name"/>
+                    </td>
+                    <td>
+                      <input type="text" class="form-control table-input" required
+                             ng-model="newRecipe.ingredients[$index].qtty"/>
+                    </td>
+                    <td>
+                      <input type="text" class="form-control table-input"
+                             ng-model="newRecipe.ingredients[$index].note"/>
+                    </td>
+                    <td class="remove-table-row">
+                      <span class="glyphicon glyphicon-remove" title="Remove ingredient"
+                              ng-click="removeIngredient($index)"></span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="add-table-row">
+                <span class="glyphicon glyphicon-plus pull-right" title="Add ingredient"
+                        ng-click="addIngredient()"></span>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Instructions</legend>
+              <table id="new-recipe-instructions-tbl">
+                <colgroup>
+                  <col id="instructions-column-1">
+                  <col id="instructions-column-2">
+                  <col id="instructions-column-3">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th required-fld>Instruction</th>
+                    <th>Image</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="inst in newRecipe.instructions track by $index">
+                    <td>
+                      <!--input type="text" class="form-control table-input"
+                             ng-model="newRecipe.instructions[$index].step"/-->
+                      <textarea class="form-control table-input" rows="3" ng-change="instructionLeftSymbols($index)"
+                                ng-model="newRecipe.instructions[$index].step">
+                      </textarea>
+                      <span class="left-symbols">&nbsp;Left <span >{{ leftSymbols.instruction[$index] }}</span> symbols</span>
+                    </td>
+                    <td>
+                      <input type="text" class="form-control table-input"
+                             ng-model="newRecipe.instructions[$index].image"/>
+                    </td>
+                    <td class="remove-table-row">
+                      <span class="glyphicon glyphicon-remove" title="Remove instruction"
+                              ng-click="removeInstruction($index)"></span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="add-table-row">
+                <span class="glyphicon glyphicon-plus pull-right" title="Add instruction"
+                        ng-click="addInstruction()"></span>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Notes</legend>
+              <table id="new-recipe-notes-tbl">
+                <colgroup>
+                  <col id="note-column-1">
+                  <col id="note-column-2">
+
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th>Note</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="note in newRecipe.notes track by $index">
+                    <td>
+                      <textarea class="form-control table-input" rows="3" ng-model="newRecipe.notes[$index]"
+                                ng-change="noteLeftSymbols($index)">
+                      </textarea>
+                      <span class="left-symbols">&nbsp;Left <span >{{ leftSymbols.notes[$index] }}</span> symbols</span>
+                    </td>
+                    <td class="remove-table-row">
+                      <span class="glyphicon glyphicon-remove" title="Remove note"
+                              ng-click="removeNote($index)"></span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="add-table-row">
+                <span class="glyphicon glyphicon-plus pull-right" title="Add note"
+                        ng-click="addNote()"></span>
+              </div>
+            </fieldset>
+
+            <br/>
+            <fieldset>
+              <legend></legend>
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <button type="submit" class="btn btn-default pull-right " ng-click="addRecipe()"
+                          ng-disabled="addrecipeform.$invalid || hasEmptyFields()">
+                    Add recipe
+                  </button>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

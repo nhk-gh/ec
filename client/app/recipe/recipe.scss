@@ -1,0 +1,73 @@
+$border-radius: 10px;
+
+.recipe-wrapper {
+  background-color: white;
+  border: 2px solid $main-color;//#DDC3A1;
+  padding: 10px;
+  min-height: 300px;
+  position: relative;
+
+  @include border-radius($border-radius);
+
+  .recipe-title {
+    position: relative;
+    top:-10px;
+    margin-left: -10px;
+    margin-right: -10px;
+    text-align: center;
+    font-size: larger;
+    background-color: floralwhite;
+    border-bottom: 1px solid $main-color;
+    border-top-right-radius: $border-radius;
+    -moz-border-radius-topright: $border-radius;
+    -webkit-border-top-right-radius: $border-radius;
+    border-top-left-radius: $border-radius;
+    -moz-border-radius-topleft: $border-radius;
+    -webkit-border-top-left-radius: $border-radius;
+  }
+  .recipe-body{
+    //font-size: 1em;
+  }
+
+  .recipe-body > .row{
+    margin-right: 0px;
+    margin-left: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .recipe-body > .row:nth-of-type(even){
+    background-color: #f8f8f8;
+  }
+}
+
+#recipe-ingredients-tbl {
+  width: 100%;
+
+  #ingredient-col-1 {
+    width: 3%;
+  }
+  #ingredient-col-2 {
+    width: 77%;
+  }
+  #ingredient-col-3 {
+    width: 20%;
+  }
+}
+
+@media (max-width: 768px){
+  .recipe-wrapper{
+    font-size: 90%;
+  }
+
+}
+@media (max-width: 468px){
+  .recipe-wrapper{
+    font-size: 80%;
+  }
+  .recipe-step-img {
+     display: none;
+   }
+  th, tr, td {
+    border: 1px solid $main-color;
+  }
+}

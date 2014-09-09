@@ -1,0 +1,55 @@
+/* variabeles */
+
+$main-color:      #928263;
+$hero-color:      #916D42;
+$main-back-color: #f5ede3;
+$main-box-shadow: rgba(186, 166, 142, 1);
+
+
+
+/* mixins */
+
+@mixin main-box-shadow() {
+  -webkit-box-shadow: 0px 0px 30px 10px $main-box-shadow;
+  -moz-box-shadow:    0px 0px 30px 10px $main-box-shadow;
+  box-shadow:         0px 0px 30px 10px $main-box-shadow;
+}
+
+@mixin box-shadow-insert($x, $y, $blur, $spread, $color) {
+  -webkit-box-shadow: inset $x $y $blur $spread $color;
+  -moz-box-shadow:    inset $x $y $blur $spread $color;
+  box-shadow:         inset $x $y $blur $spread $color;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+/* common styles */
+
+.main-panel {
+  position: relative;
+  top: -20px;
+  color: $main-color;
+  background-color: $main-back-color;
+  height: 100%;
+  min-height: 400px;
+  padding: 10px;
+  @include main-box-shadow();
+
+  a {
+    color: $main-color;
+    font-weight: bold;
+    display: inline-block;
+  }
+  a:hover {
+    text-shadow: 0px 0px 10px $hero-color;
+    text-decoration: none;
+    //background-color: $main-back-color;
+    //border: 1px solid transparent;
+    //border-radius: 10px;
+  }
+}
