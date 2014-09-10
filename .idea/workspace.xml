@@ -26,7 +26,7 @@
       <file leaf-file-name="navbar.scss" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/components/navbar/navbar.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="18" selection-start="1076" selection-end="1076" vertical-scroll-proportion="-13.75" vertical-offset="360" max-vertical-offset="1605">
+            <state line="46" column="18" selection-start="1076" selection-end="1076" vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="1605">
               <folding />
             </state>
           </provider>
@@ -35,7 +35,7 @@
       <file leaf-file-name="login.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/app/account/login/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="6" selection-start="1030" selection-end="1030" vertical-scroll-proportion="0.8695652" vertical-offset="0" max-vertical-offset="915">
+            <state line="32" column="6" selection-start="1030" selection-end="1030" vertical-scroll-proportion="0.8185841" vertical-offset="110" max-vertical-offset="915">
               <folding />
             </state>
           </provider>
@@ -44,7 +44,7 @@
       <file leaf-file-name="navbar.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/components/navbar/navbar.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="59" selection-start="2974" selection-end="2974" vertical-scroll-proportion="-15.916667" vertical-offset="413" max-vertical-offset="1230">
+            <state line="53" column="59" selection-start="2974" selection-end="2974" vertical-scroll-proportion="0.0" vertical-offset="413" max-vertical-offset="1230">
               <folding />
             </state>
           </provider>
@@ -53,7 +53,7 @@
       <file leaf-file-name="common.scss" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/app/common.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="63" selection-start="476" selection-end="476" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="915">
+            <state line="18" column="63" selection-start="476" selection-end="476" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="915">
               <folding />
             </state>
           </provider>
@@ -89,10 +89,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="66" />
-    <option name="y" value="52" />
-    <option name="width" value="1308" />
-    <option name="height" value="984" />
+    <option name="x" value="67" />
+    <option name="y" value="24" />
+    <option name="width" value="1220" />
+    <option name="height" value="1027" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -305,7 +305,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ecook" />
     <property name="FullScreen" value="false" />
   </component>
   <component name="RecentsManager">
@@ -366,14 +366,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="66" y="52" width="1308" height="984" extended-state="0" />
-    <editor active="true" />
+    <frame x="67" y="24" width="1220" height="1027" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29779837" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.42303306" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21122369" sideWeight="0.7022016" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2263202" sideWeight="0.57696694" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -469,21 +469,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/components/navbar/navbar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="59" selection-start="2974" selection-end="2974" vertical-scroll-proportion="-15.916667" vertical-offset="413" max-vertical-offset="1230">
+        <state line="53" column="59" selection-start="2974" selection-end="2974" vertical-scroll-proportion="0.0" vertical-offset="413" max-vertical-offset="1230">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/components/navbar/navbar.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="18" selection-start="1076" selection-end="1076" vertical-scroll-proportion="-13.75" vertical-offset="360" max-vertical-offset="1605">
+        <state line="46" column="18" selection-start="1076" selection-end="1076" vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="1605">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/app/account/login/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="6" selection-start="1030" selection-end="1030" vertical-scroll-proportion="0.8695652" vertical-offset="0" max-vertical-offset="915">
+        <state line="32" column="6" selection-start="1030" selection-end="1030" vertical-scroll-proportion="0.8185841" vertical-offset="110" max-vertical-offset="915">
           <folding />
         </state>
       </provider>
