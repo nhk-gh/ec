@@ -27,6 +27,7 @@ angular.module('ecApp')
         success(function(data) {
           $cookieStore.put('token', data.token);
           currentUser = User.get();
+          currentUser = User.get();
           deferred.resolve(data);
           return cb();
         }).

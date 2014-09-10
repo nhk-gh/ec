@@ -14,23 +14,7 @@
         </div>
       </div>
     </div>
-    <!--div collapse="isCollapsed" class="navbar-collapse collapse" id="navbar-main">
-      <ul class="nav navbar-nav navbar-right">
-        <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/signup')}"><a href="/signup">Sign up</a></li>
-        <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/login')}" class="most-right"><a href="/login">Login</a></li>
-        <li ng-show="isLoggedIn()"><p class="navbar-text">Hello {{ getCurrentUser().name }}</p> </li>
-        <li ng-show="isLoggedIn()" ng-class="{active: isActive('/settings')}"><a href="/settings"><span class="glyphicon glyphicon-cog"></span></a></li>
-        <li ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}" class="most-right"><a href="" ng-click="logout()">Logout</a></li>
-        <li>
-          <div class="pull-right" id="search-box">
-            <input type="text"  placeholder="Search" id="review-search" ng-model="searchCriteria"/>
-            <button class="btn btn-link btn-sm" ng-click="search(searchCriteria)">
-              <span class="glyphicon glyphicon-search"></span>
-            </button>
-          </div>
-        </li>
-      </ul>
-    </div-->
+
     <div collapse="isCollapsed" class="navbar-collapse collapse" id="navbar-main">
       <ul class="nav navbar-nav navbar-right">
         <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/signup')}">
@@ -57,19 +41,40 @@
             </ul>
           </div>
         </li>
-
-        <li>
-          <div class="pull-right" id="search-box">
-            <input type="text"  placeholder="Search" id="review-search" ng-model="searchCriteria"/>
+        <li class="hidden-sm hidden-md hidden-lg">
+          <a href="/userrecipe" class="send-recipe">
+            <span class="font-04">Send your recipe</span>
+          </a>
+        </li>
+        <li class="hidden-sm hidden-md hidden-lg">
+          <div class="search-box">
+            <input type="text"  placeholder="Search" class="review-search" ng-model="searchCriteria"/>
             <button class="btn btn-link btn-sm" ng-click="search(searchCriteria)">
               <span class="glyphicon glyphicon-search"></span>
             </button>
           </div>
         </li>
-
       </ul>
     </div>
 
+    <div class="row hidden-xs" id="navbar-sub">
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <a href="/userrecipe" class="send-recipe font-04" ng-show="!isAdmin()">
+          <img ng-src="../../assets/images/mail_send_32x32.png" title="Send your recipe"/>
+        </a>
+        <a href="/newrecipe" class="send-recipe font-04" ng-show="isAdmin()">
+          <span>New recipe</span>
+        </a>
+      </div>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="search-box">
+          <input type="text"  placeholder="Search" class="review-search" ng-model="searchCriteria"/>
+          <button class="btn btn-link btn-sm" ng-click="search(searchCriteria)">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 

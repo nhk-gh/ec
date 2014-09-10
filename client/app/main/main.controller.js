@@ -12,18 +12,4 @@ angular.module('ecApp')
       function(){
 
       });
-
-    var v = angular.element('.hero-unit img[alt="Welcome!"]');
-
-    v.on('click', function(e){
-      /*console.log(e.altKey);
-      console.log(e.shiftKey);
-      console.log(e.ctrlKey);  */
-
-      if (e.ctrlKey && e.altKey){
-        $scope.$apply(function(){
-          $location.path('/newrecipe');
-        });
-      }
-    });
   });
