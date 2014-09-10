@@ -23,10 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="navbar.scss" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/components/navbar/navbar.scss">
+      <file leaf-file-name="navbar.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/components/navbar/navbar.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="16" selection-start="624" selection-end="624" vertical-scroll-proportion="-7.9583335" vertical-offset="214" max-vertical-offset="1830">
+            <state line="27" column="79" selection-start="1243" selection-end="1243" vertical-scroll-proportion="0.68877554" vertical-offset="0" max-vertical-offset="1365">
               <folding />
             </state>
           </provider>
@@ -35,25 +35,69 @@
       <file leaf-file-name="login.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/app/account/login/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="31" selection-start="653" selection-end="653" vertical-scroll-proportion="-9.208333" vertical-offset="109" max-vertical-offset="930">
+            <state line="55" column="5" selection-start="1740" selection-end="1740" vertical-scroll-proportion="-20.75" vertical-offset="327" max-vertical-offset="975">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.css" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.tmp/app/app.css">
+      <file leaf-file-name="login-dialog.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/components/login-dialog/login-dialog.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2459" column="10" selection-start="49223" selection-end="49232" vertical-scroll-proportion="0.31886476" vertical-offset="36694" max-vertical-offset="108465">
+            <state line="69" column="8" selection-start="3135" selection-end="3135" vertical-scroll-proportion="-3.125" vertical-offset="270" max-vertical-offset="975">
+              <folding>
+                <element signature="e#0#1959#0" expanded="false" />
+                <marker date="1410368621074" expanded="true" signature="142:1937" placeholder="..." />
+                <marker date="1410368621074" expanded="true" signature="175:313" placeholder="..." />
+                <marker date="1410368621074" expanded="true" signature="345:1438" placeholder="..." />
+                <marker date="1410368621074" expanded="true" signature="388:609" placeholder="..." />
+                <marker date="1410368621074" expanded="true" signature="509:594" placeholder="..." />
+                <marker date="1410368621074" expanded="true" signature="652:877" placeholder="..." />
+                <marker date="1410368621074" expanded="true" signature="742:807" placeholder="..." />
+                <marker date="1410368621074" expanded="true" signature="920:1130" placeholder="..." />
+                <marker date="1410368621074" expanded="true" signature="1061:1115" placeholder="..." />
+                <marker date="1410368621074" expanded="true" signature="1173:1424" placeholder="..." />
+                <marker date="1410368621074" expanded="true" signature="1289:1354" placeholder="..." />
+                <marker date="1410368621074" expanded="true" signature="1472:1689" placeholder="..." />
+                <marker date="1410368621074" expanded="false" signature="1730:1750" placeholder="..." />
+                <marker date="1410368621074" expanded="true" signature="1751:1925" placeholder="..." />
+                <marker date="1410368621074" expanded="true" signature="1824:1912" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="common.scss" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/app/common.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="915">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="navbar.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/components/navbar/navbar.html">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="6" selection-start="1901" selection-end="1901" vertical-scroll-proportion="-0.5416667" vertical-offset="572" max-vertical-offset="1305">
+            <state line="54" column="12" selection-start="2285" selection-end="2285" vertical-scroll-proportion="-6.2083335" vertical-offset="661" max-vertical-offset="1500">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Gruntfile.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Gruntfile.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="214" column="16" selection-start="5726" selection-end="5726" vertical-scroll-proportion="-10.230769" vertical-offset="2944" max-vertical-offset="9600">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login-dialog.directive.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/components/login-dialog/login-dialog.directive.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="18" selection-start="241" selection-end="241" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
               <folding />
             </state>
           </provider>
@@ -62,27 +106,9 @@
       <file leaf-file-name="navbar.controller.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/components/navbar/navbar.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="79" selection-start="2181" selection-end="2181" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1605">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.controller.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/app/account/login/login.controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="20" selection-start="685" selection-end="685" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.controller.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/app/main/main.controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="12" selection-start="255" selection-end="255" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+            <state line="53" column="16" selection-start="1224" selection-end="1224" vertical-scroll-proportion="0.0" vertical-offset="720" max-vertical-offset="1425">
               <folding>
-                <marker date="1410355103838" expanded="true" signature="100:253" placeholder="{...}" />
+                <element signature="e#635#746#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -98,22 +124,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/client/components/gradient-rating/gradient-rating.directive.js" />
-        <option value="$PROJECT_DIR$/Gruntfile.js" />
-        <option value="$PROJECT_DIR$/server/routes.js" />
-        <option value="$PROJECT_DIR$/server/auth/local/index.js" />
         <option value="$PROJECT_DIR$/client/app/main/main.html" />
         <option value="$PROJECT_DIR$/client/app/app.scss" />
         <option value="$PROJECT_DIR$/server/api/user/user.model.js" />
         <option value="$PROJECT_DIR$/server/api/user/user.controller.js" />
         <option value="$PROJECT_DIR$/client/app/common.scss" />
-        <option value="$PROJECT_DIR$/client/app/account/login/login.html" />
-        <option value="$PROJECT_DIR$/client/components/auth/auth.service.js" />
         <option value="$PROJECT_DIR$/server/config/seed.js" />
         <option value="$PROJECT_DIR$/client/components/navbar/navbar.scss" />
-        <option value="$PROJECT_DIR$/client/components/navbar/navbar.html" />
         <option value="$PROJECT_DIR$/client/app/main/main.controller.js" />
+        <option value="$PROJECT_DIR$/client/components/auth/auth.service.js" />
         <option value="$PROJECT_DIR$/client/components/navbar/navbar.controller.js" />
+        <option value="$PROJECT_DIR$/client/components/loginDlg/loginDlg.directive.js" />
+        <option value="$PROJECT_DIR$/client/app/account/login/login.html" />
+        <option value="$PROJECT_DIR$/client/components/login-dialog/login-dialog.html" />
+        <option value="$PROJECT_DIR$/Gruntfile.js" />
+        <option value="$PROJECT_DIR$/client/index.html" />
+        <option value="$PROJECT_DIR$/client/components/navbar/navbar.html" />
       </list>
     </option>
   </component>
@@ -177,38 +203,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ec" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ec" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ec" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ec" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="client" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -224,156 +218,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ec" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ec" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="navbar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ec" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ec" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ec" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ec" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ec" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ec" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ec" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ec" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="account" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ec" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ec" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="account" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="login" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ec" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ec" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value=".tmp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -398,6 +242,9 @@
       <recent name="$PROJECT_DIR$/client/app/recipe" />
       <recent name="$PROJECT_DIR$/client/app" />
       <recent name="$PROJECT_DIR$/client/assets/images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/components" />
     </key>
   </component>
   <component name="RunManager">
@@ -483,112 +330,137 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/components/auth/user.service.js">
+    <entry file="file://$PROJECT_DIR$/client/components/gradient-rating/gradient-rating.directive.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="55" selection-start="270" selection-end="270" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/admin/admin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="24" selection-start="499" selection-end="499" vertical-scroll-proportion="-6.875" vertical-offset="0" max-vertical-offset="255">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/admin/admin.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="9" selection-start="420" selection-end="420" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/app.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="637">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/components/navbar/navbar.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="16" selection-start="624" selection-end="624" vertical-scroll-proportion="-7.9583335" vertical-offset="214" max-vertical-offset="1830">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/config/seed.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="22" selection-start="1282" selection-end="1282" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="2220">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/assets/images/Rating-icon-32x32.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/assets/images/hamburger-icon-128x128.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/components/auth/auth.service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="116" column="14" selection-start="2932" selection-end="2940" vertical-scroll-proportion="0.30612245" vertical-offset="1545" max-vertical-offset="2295">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/components/navbar/navbar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="6" selection-start="1901" selection-end="1901" vertical-scroll-proportion="-0.5416667" vertical-offset="572" max-vertical-offset="1305">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/main/main.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="12" selection-start="255" selection-end="255" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
-          <folding>
-            <marker date="1410355103838" expanded="true" signature="100:253" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1020">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/account/login/login.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="20" selection-start="685" selection-end="685" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/components/navbar/navbar.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="79" selection-start="2181" selection-end="2181" vertical-scroll-proportion="0.0" vertical-offset="953" max-vertical-offset="1605">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/account/login/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="31" selection-start="653" selection-end="653" vertical-scroll-proportion="-9.208333" vertical-offset="109" max-vertical-offset="930">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1335">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.tmp/app/app.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2459" column="10" selection-start="49223" selection-end="49232" vertical-scroll-proportion="0.31886476" vertical-offset="36694" max-vertical-offset="108465">
+        <state line="3458" column="28" selection-start="79668" selection-end="79678" vertical-scroll-proportion="0.45549738" vertical-offset="51609" max-vertical-offset="108465">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/components/login-dialog/login-dialog.directive.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="18" selection-start="241" selection-end="241" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/components/required-fld/required-fld.directive.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
+          <folding>
+            <marker date="1410184572511" expanded="false" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/account/login/login.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="112" selection-end="112" vertical-scroll-proportion="0.09803922" vertical-offset="0" max-vertical-offset="612">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/components/auth/auth.service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="99" column="6" selection-start="2538" selection-end="2538" vertical-scroll-proportion="0.3469388" vertical-offset="1264" max-vertical-offset="2280">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/components/navbar/navbar.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="16" selection-start="1224" selection-end="1224" vertical-scroll-proportion="0.0" vertical-offset="720" max-vertical-offset="1425">
+          <folding>
+            <element signature="e#635#746#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/account/login/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="5" selection-start="1740" selection-end="1740" vertical-scroll-proportion="-20.75" vertical-offset="327" max-vertical-offset="975">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/bower_components/bootstrap/bower.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/bower_components/bootstrap/dist/js/bootstrap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="11" selection-start="1194" selection-end="1194" vertical-scroll-proportion="0.52587646" vertical-offset="180" max-vertical-offset="29355">
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/components/login-dialog/login-dialog.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="8" selection-start="3135" selection-end="3135" vertical-scroll-proportion="-3.125" vertical-offset="270" max-vertical-offset="975">
+          <folding>
+            <element signature="e#0#1959#0" expanded="false" />
+            <marker date="1410368621074" expanded="true" signature="142:1937" placeholder="..." />
+            <marker date="1410368621074" expanded="true" signature="175:313" placeholder="..." />
+            <marker date="1410368621074" expanded="true" signature="345:1438" placeholder="..." />
+            <marker date="1410368621074" expanded="true" signature="388:609" placeholder="..." />
+            <marker date="1410368621074" expanded="true" signature="509:594" placeholder="..." />
+            <marker date="1410368621074" expanded="true" signature="652:877" placeholder="..." />
+            <marker date="1410368621074" expanded="true" signature="742:807" placeholder="..." />
+            <marker date="1410368621074" expanded="true" signature="920:1130" placeholder="..." />
+            <marker date="1410368621074" expanded="true" signature="1061:1115" placeholder="..." />
+            <marker date="1410368621074" expanded="true" signature="1173:1424" placeholder="..." />
+            <marker date="1410368621074" expanded="true" signature="1289:1354" placeholder="..." />
+            <marker date="1410368621074" expanded="true" signature="1472:1689" placeholder="..." />
+            <marker date="1410368621074" expanded="false" signature="1730:1750" placeholder="..." />
+            <marker date="1410368621074" expanded="true" signature="1751:1925" placeholder="..." />
+            <marker date="1410368621074" expanded="true" signature="1824:1912" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/app.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="214" column="16" selection-start="5726" selection-end="5726" vertical-scroll-proportion="-10.230769" vertical-offset="2944" max-vertical-offset="9600">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/common.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="915">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="12" selection-start="2285" selection-end="2285" vertical-scroll-proportion="-6.2083335" vertical-offset="661" max-vertical-offset="1500">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/components/navbar/navbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="79" selection-start="1243" selection-end="1243" vertical-scroll-proportion="0.68877554" vertical-offset="0" max-vertical-offset="1365">
           <folding />
         </state>
       </provider>
