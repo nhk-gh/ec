@@ -79,7 +79,7 @@ angular.module('ecApp').controller('NewrecipeCtrl',
     $scope.hasEmptyFields = function(){
       var r = $scope.newRecipe;
       var empty = r.grant.name + r.name;
-      angular.forEach(r.ingredients,function(itm){
+      angular.forEach(r.ingredients, function(itm){
         empty += (itm.name+itm.qtty);
       });
       angular.forEach(r.instructions,function(itm){

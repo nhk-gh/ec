@@ -24,14 +24,18 @@
         <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/signup')}">
           <a class="font-04" href="/signup">Sign up</a>
         </li>
-        <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/login')}" class="most-right">
-          <a class="font-04" href="#" data-toggle="modal" data-target="#ecLoginModal">Login</a>
+        <li ng-hide="isLoggedIn()"  class="most-right">
+          <a class="font-04" href="#" ng-click="openLoginDlg()">Login</a>
         </li>
 
         <li class="most-right" ng-show="isLoggedIn()">
           <div class="dropdown">
-            <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenu1"
-                    data-toggle="dropdown">
+            <!--button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+              !!! IMPORTANT: data-toggle="dropdown' removed (in the following code string) because of the conflict
+              between bootstarap and ui-bootstrap (dropdown open only on second click) without the removed attr
+                it works fine
+            -->
+            <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenu1">
               <span class="font-1">Hello {{ getCurrentUser().name }}</span>
               <span class="caret"></span>
             </button>
@@ -45,6 +49,25 @@
             </ul>
           </div>
         </li>
+        <li></li>
+        <li>
+          <a class="font-04" href="">
+            <img ng-src="../../assets/images/Israel-icon.png" title="Hebrew"/>
+            <span>Hebrew</span>
+          </a>
+        </li>
+        <li>
+          <a class="font-04" href="">
+            <img ng-src="../../assets/images/Russia-icon.png" title="Russian"/>
+          </a>
+        </li>
+        <li>
+          <a class="font-04" href="">
+            <img ng-src="../../assets/images/United-States-icon.png" title="English (USA)"/>
+          </a>
+        </li>
+
+
         <li class="hidden-sm hidden-md hidden-lg">
           <a href="/userrecipe" class="send-recipe">
             <span class="font-04">Send your recipe</span>

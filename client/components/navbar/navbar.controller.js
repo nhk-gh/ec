@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('ecApp')
-  .controller('NavbarCtrl', function ($scope, $location, Auth, $modal) {
+  .controller('NavbarCtrl', function ($scope, $location, Auth, translator) {
 
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;
@@ -16,6 +16,8 @@ angular.module('ecApp')
     $scope.isActive = function(route) {
       return route === $location.path();
     };
+
+    $scope.language = translator.currentLanguage;
 
     /////////////////////////////////////
     //
@@ -36,59 +38,6 @@ angular.module('ecApp')
     //
     /////////////////////////////////////
     $scope.openLoginDlg = function () {
-
-      var modalInstance = $modal.open({
-        templateUrl: 'ecLogin',
-        controller: ModalLoginCtrl/*,
-         resolve: {
-           items: function () {
-           return $scope.items;
-           }
-         } */
-      });
-
-      modalInstance.result.then(function (p) {
-
-      }, function () {
-
-      });
+      angular.element('#ecLoginModal').modal({backdrop:'static'});
     };
-
-    var ModalLoginCtrl = ['$scope', '$modalInstance', function ($scope, $modalInstance) {
-      $scope.user = {};
-      $scope.errors = {};
-
-      $scope.$on('password-sent', function(){
-        $scope.loginInfo = 'Password was send to your e-mail address';
-      });
-
-      $scope.login = function (form) {
-        $scope.submitted = true;
-
-        if(form.$valid) {
-          Auth.login({
-            email: $scope.user.email,
-            password: $scope.user.password
-          })
-            .then( function() {
-              // Logged in, redirect to home
-              //$location.path('/');
-              $modalInstance.close(user);
-            })
-            .catch( function(err) {
-              $scope.errors.other = err.message;
-            });
-        }
-      };
-
-      $scope.cancel = function () {
-        $modalInstance.dismiss('cancel');
-      };
-
-      $scope.passwordReminder = function(){
-        $rootScope.$broadcast('reminder');
-      };
-    }];
-
-
   });

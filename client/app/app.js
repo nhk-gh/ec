@@ -31,7 +31,7 @@ angular.module('ecApp', [
       // Intercept 401s and redirect you to login
       responseError: function(response) {
         if(response.status === 401) {
-          $location.path('/login');
+          //$location.path('/login');
           // remove any stale tokens
           $cookieStore.remove('token');
           return $q.reject(response);
@@ -56,7 +56,8 @@ angular.module('ecApp', [
     $rootScope.$on('$routeChangeStart', function (event, next) {
       Auth.isLoggedInAsync(function(loggedIn) {
         if (next.authenticate && !loggedIn) {
-          $location.path('/login');
+          //$location.path('/login');
+          //angular.element('#ecLoginModal').modal({backdrop:'static'});
         }
       });
     });

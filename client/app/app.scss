@@ -20,13 +20,13 @@ body {
 
 // Component styles are injected through grunt
 // injector
-@import 'account/login/login.scss';
 @import 'admin/admin.scss';
 @import 'common.scss';
 @import 'main/main.scss';
 @import 'newrecipe/newrecipe.scss';
 @import 'recipe/recipe.scss';
 @import 'recipes/recipes.scss';
+@import 'translator/translator.scss';
 @import '../components/gradient-rating/gradient-rating.scss';
 @import '../components/login-dialog/login-dialog.scss';
 @import '../components/navbar/navbar.scss';
