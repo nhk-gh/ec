@@ -26,7 +26,7 @@ angular.module('ecApp').controller('NewrecipeCtrl',
     $scope.newRecipe.date = {type:Date, date:null};
     $scope.newRecipe.notes = [''];
     $scope.newRecipe.rating = 0;
-    $scope.newRecipe.ratings = 0;
+    $scope.newRecipe.voted = [];
     $scope.newRecipe.viewed = 0;
 
     $scope.leftSymbols = {

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('ecApp')
-  .factory('recipe', function ($q, $http, $log) {
+  .factory('recipe', function ($q, $http, $log, Auth) {
     return {
       getRecipe: function(id){
         var deferred = $q.defer();
@@ -20,11 +20,33 @@ angular.module('ecApp')
 
       updateRecipe: function(recipe, newRating){
         var deferred = $q.defer();
+        var uName = Auth.getCurrentUser().name;
+        var newRate = parseFloat(newRating);
+        var rcp = {};
 
-        recipe.rating = (recipe.rating * recipe.ratings + parseInt(newRating)) / (recipe.ratings + 1);
-        recipe.ratings += 1;
+        rcp = angular.copy(recipe);
 
-        $http({method:'PUT', url:'api/recipe/'+recipe._id, data:{recipe:recipe}, params:{what:'rating'},cache: false})
+        // check if current user had voted
+        var hadVoted = -1;
+        for (var i=0; i< recipe.voted.length; i++){
+          if (recipe.voted[i].name === uName) {
+            hadVoted = i;
+            break;
+          }
+        }
+
+        console.log(hadVoted);
+
+        if (hadVoted === -1) {
+          rcp.rating = (rcp.rating * rcp.voted.length + newRate) / (rcp.voted.length + 1);
+          rcp.voted.push({name: uName, rating: newRate});
+        } else {
+          rcp.rating = ((rcp.rating * rcp.voted.length) - rcp.voted[hadVoted].rating + newRate) / (rcp.voted.length);
+          rcp.voted[hadVoted].rating = newRate;
+        }
+        console.log(rcp.voted);
+
+        $http({method:'PUT', url:'api/recipe/'+rcp._id, data:{recipe:rcp}, params:{what:'rating'},cache: false})
           .success(function(data){
             deferred.resolve(data);
           })

@@ -2,10 +2,7 @@
 
 angular.module('ecApp')
   .factory('translator', function () {
-    // Service logic
-    // ...
-
-    var meaningOfLife = 42;
+    var language = {};
 
     // Public API here
     return {

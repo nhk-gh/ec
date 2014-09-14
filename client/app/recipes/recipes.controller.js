@@ -10,10 +10,11 @@ angular.module('ecApp')
       .then(function(recipes) {
         $scope.searchCriteria = searchCriteria === '' ? 'All' : searchCriteria;
 
-        $scope.recipes = recipes;
-        $scope.recipes.forEach(function(itm){
+        recipes.forEach(function(itm){
           itm.rating = itm.rating.toFixed(1);
         });
+
+        $scope.recipes = recipes;
       },
       function(){
 

@@ -5,12 +5,14 @@ angular.module('ecApp')
     return {
       templateUrl: 'components/login-dialog/login-dialog.html',
       restrict: 'EA',
+      scope:{},
       link: function (scope, element) {
         scope.user = {};
         scope.errors = {};
 
         scope.login = function(form) {
           scope.submitted = true;
+
            if(form.$valid) {
             Auth.login({
               email: scope.user.email,

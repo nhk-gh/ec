@@ -48,7 +48,8 @@ angular.module('ecApp', [
     MIN_RATING:      1,
     DESCRIPTION_LEN: 300,
     NOTE_LEN:        500,
-    INSTRUCTION_LEN: 1000
+    INSTRUCTION_LEN: 1000,
+    MIN_PASSWORD_LEN: 6
   })
 
   .run(function ($rootScope, $location, Auth) {

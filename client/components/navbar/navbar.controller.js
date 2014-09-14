@@ -34,10 +34,19 @@ angular.module('ecApp')
 
     /////////////////////////////////////
     //
-    //   Log in dialog
+    //   Login dialog
     //
     /////////////////////////////////////
     $scope.openLoginDlg = function () {
       angular.element('#ecLoginModal').modal({backdrop:'static'});
+    };
+
+    /////////////////////////////////////
+    //
+    //   Sign up dialog
+    //
+    /////////////////////////////////////
+    $scope.openSignupDlg = function () {
+      angular.element('#ecSignupModal').modal({backdrop:'static'});
     };
   });

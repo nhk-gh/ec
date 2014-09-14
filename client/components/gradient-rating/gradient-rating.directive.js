@@ -1,13 +1,13 @@
 'use strict';
 
-angular.module('ecApp').directive('gradientRating', function (LIMITS, $timeout) {
+angular.module('ecApp').directive('gradientRating', function (LIMITS, $timeout, Auth) {
   return {
     templateUrl: 'components/gradient-rating/gradient-rating.html',
     restrict: 'E',
 
     scope: {
       overall:'=',
-      ratings: '=',
+      voted: '=',
       viewed: '='
     },
 
@@ -77,7 +77,11 @@ angular.module('ecApp').directive('gradientRating', function (LIMITS, $timeout) 
       }
 
       scope.rateRecipe = function(){
-        scope.$emit('rate-it', scope.userrating ) ;
+        if (Auth.isLoggedIn()) {
+          scope.$emit('rate-it', scope.userrating ) ;
+        } else {
+          angular.element('#ecLoginModal').modal({backdrop:'static'})
+        }
       };
     }
   };

@@ -28,7 +28,10 @@ var RecipeSchema = new Schema({
   },
   notes: [String],        // additional notes about recipe
   rating: Number,
-  ratings: Number,
+  voted:[{                // list of voted people
+    name: String,            // user.name
+    rating: Number           // his rating
+  }],
   viewed: Number
 });
 

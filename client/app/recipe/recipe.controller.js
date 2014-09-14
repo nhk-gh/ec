@@ -34,8 +34,9 @@ angular.module('ecApp')
     $scope.$on('rate-it', function(evt, args){
       recipe.updateRecipe($scope.recipe, args)
         .then(function(data) {
+          data.rating = data.rating.toFixed(1)
           $scope.recipe = data;
-          $scope.recipe.rating = $scope.recipe.rating.toFixed(1);
+
           arrangeIngredients();
         },
         function() {

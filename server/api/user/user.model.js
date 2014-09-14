@@ -75,6 +75,21 @@ UserSchema
     return hashedPassword.length;
   }, 'Password cannot be blank');
 
+// Validate username is not taken
+UserSchema
+  .path('name')
+  .validate(function(value, respond) {
+    var self = this;
+    this.constructor.findOne({name: value}, function(err, user) {
+      if(err) throw err;
+      if(user) {
+        if(self.id === user.id) return respond(true);
+        return respond(false);
+      }
+      respond(true);
+    });
+  }, 'The specified user name is already in use.');
+
 // Validate email is not taken
 UserSchema
   .path('email')
