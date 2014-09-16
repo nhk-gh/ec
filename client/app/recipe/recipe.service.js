@@ -18,7 +18,7 @@ angular.module('ecApp')
         return deferred.promise;
       },
 
-      updateRecipe: function(recipe, newRating){
+      updateRating: function(recipe, newRating){
         var deferred = $q.defer();
         var uName = Auth.getCurrentUser().name;
         var newRate = parseFloat(newRating);
@@ -35,8 +35,6 @@ angular.module('ecApp')
           }
         }
 
-        console.log(hadVoted);
-
         if (hadVoted === -1) {
           rcp.rating = (rcp.rating * rcp.voted.length + newRate) / (rcp.voted.length + 1);
           rcp.voted.push({name: uName, rating: newRate});
@@ -44,9 +42,38 @@ angular.module('ecApp')
           rcp.rating = ((rcp.rating * rcp.voted.length) - rcp.voted[hadVoted].rating + newRate) / (rcp.voted.length);
           rcp.voted[hadVoted].rating = newRate;
         }
-        console.log(rcp.voted);
 
         $http({method:'PUT', url:'api/recipe/'+rcp._id, data:{recipe:rcp}, params:{what:'rating'},cache: false})
+          .success(function(data){
+            deferred.resolve(data);
+          })
+          .error(function(data, status){
+            $log.error('Update Recipe: ' + status);
+            deferred.reject(status);
+          });
+
+        return deferred.promise;
+      },
+
+      updateRecipe: function(recipe){
+        var deferred = $q.defer();
+
+        $http({method:'PUT', url:'api/recipe/'+recipe._id, data:{recipe:recipe}, cache: false})
+          .success(function(data){
+            deferred.resolve(data);
+          })
+          .error(function(data, status){
+            $log.error('Update Recipe: ' + status);
+            deferred.reject(status);
+          });
+
+        return deferred.promise;
+      },
+
+      deleteRecipe: function(id){
+        var deferred = $q.defer();
+
+        $http({method:'DELETE', url:'api/recipe/'+ id, cache: false})
           .success(function(data){
             deferred.resolve(data);
           })

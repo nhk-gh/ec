@@ -1,10 +1,32 @@
 $border-radius: 5px;
+/*
+#recipe-navbar {
+  background-color: inherit;
+  border: none;
+  margin: 0px;
+
+  button[class="navbar-toggle"]{
+    border:none;
+  }
+  ul li span {
+    padding: 10px;
+  }
+  ul li span * {
+    margin: 0px;
+    padding: 0px;
+  }
+} */
+
 
 #sm-recipe-navbar {
- // background-color: floralwhite;
-  //padding: 12px;
+  div div  {
+    text-align: center;
+  }
+  span * {
+    margin: 0px;
+    padding: 0px;
 
-//  @include border-radius(10px);
+  }
 }
 
 .sm-recipe-wrapper {
@@ -67,7 +89,11 @@ $border-radius: 5px;
   .sm-recipe-wrapper{
     font-size: 90%;
   }
-
+  #sm-recipe-navbar {
+    div div  {
+      text-align: left;
+    }
+  }
 }
 @media (max-width: 468px){
   .sm-recipe-wrapper{

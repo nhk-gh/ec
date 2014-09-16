@@ -6,6 +6,7 @@
       <div class="recipe-wrapper">
         <div class="recipe-title">
           <span><strong>{{ recipe.name }}</strong></span>
+          <admin-tool class="pull-right" id="recipe._id" ng-show="isAdmin()"></admin-tool>
         </div>
         <div class="recipe-body">
           <!-- category, ... , rating -->

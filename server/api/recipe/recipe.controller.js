@@ -13,17 +13,24 @@ var _ = require('lodash');
 var Recipe = require('./recipe.model');
 var mongoose = require('mongoose');
 
-// Get list of features
+// Get list of recipes
 exports.index = function(req, res) {
-  console.log(req.query.search);
+  //console.log(req.query.search);
+  var options = {};
+  if ( req.query.newOnly === 'true') {
+    options = { 'approved': false };
+  } else {
+    options = { 'approved': true };
+  }
+
   if (req.query.search === ''){
-    Recipe.find({}, function (err, rcps) {
+    Recipe.find(options, function (err, rcps) {
       if(err) { return handleError(res, err); }
       return res.json(200, rcps);
     });
   } else {
     var regx = new RegExp(req.query.search,'i');
-    Recipe.find()
+    Recipe.find(options)
       .or([{'name': { $regex: regx }}, {'cousine': { $regex: regx }},
            {'category.name': { $regex: regx }}, {'ingredients.name': { $regex: regx }}])
       .exec(function (err, rcps) {
@@ -33,7 +40,7 @@ exports.index = function(req, res) {
   }
 };
 
-// Get a single feature
+// Get a single recipe
 exports.show = function(req, res) {
   var idd = mongoose.Types.ObjectId (req.params.id);
     Recipe.findById(idd, function (err, rcp) {
@@ -50,13 +57,17 @@ exports.show = function(req, res) {
 
 };
 
-// Creates a new feature in the DB.
+// Creates a new recipe in the DB.
 exports.create = function(req, res) {
   //console.log(req.body.recipe);
-  Recipe.create(req.body.recipe, function(err, thing) {
+  Recipe.create(req.body.recipe, function(err, rcp) {
     if(err) { return handleError(res, err); }
-    //console.log(thing);
-    return res.json(201, thing);
+
+    if (rcp.approved === false){
+      //send mail to admin/moderator
+    }
+
+    return res.json(201, rcp);
   });
 };
 
@@ -70,7 +81,7 @@ function extend(target) {
   });
   return target;
 };
-// Updates an existing feature in the DB.
+// Updates an existing recipe in the DB.
 exports.update = function(req, res) {
   if(req.body._id) { delete req.body._id; }
   Recipe.findById(req.params.id, function (err, thing) {
@@ -79,7 +90,7 @@ exports.update = function(req, res) {
 
     //var updated = _.merge(thing, req.body.recipe);
 
-    var updated = extend(thing, req.body.recipe )
+    var updated = extend(thing, req.body.recipe );
 
     updated.save(function (err) {
       if (err) { return handleError(res, err); }
@@ -88,7 +99,7 @@ exports.update = function(req, res) {
   });
 };
 
-// Deletes a feature from the DB.
+// Deletes a recipe from the DB.
 exports.destroy = function(req, res) {
   Recipe.findById(req.params.id, function (err, thing) {
     if(err) { return handleError(res, err); }

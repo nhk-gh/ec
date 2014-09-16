@@ -5,7 +5,7 @@
     <div class="col-md-12">
       <div class="recipe-wrapper">
         <div class="recipe-title">
-          <span><strong>New Recipe</strong></span>
+          <span><strong>{{ action }} recipe</strong></span>
         </div>
         <div class="recipe-body">
           <form class="form-horizontal" role="form" name="addrecipeform"
@@ -146,8 +146,32 @@
                       <span class="left-symbols">&nbsp;Left <span >{{ leftSymbols.instruction[$index] }}</span> symbols</span>
                     </td>
                     <td>
-                      <input type="text" class="form-control table-input"
-                             ng-model="newRecipe.instructions[$index].image"/>
+
+                      <!--input type="text" class="form-control table-input"
+                             ng-model="newRecipe.instructions[$index].image"/-->
+
+                      <div class="instruction-img-thumb" file-dropzone="[image/jpeg, image/png, image/gif]"
+                           data-max-file-size="30" file="book" file-name="bookFileName"
+                           book-upload>
+
+                        <img ng-src="newRecipe.instructions[$index].image"
+                             ng-show="action === 'Edit'"/>
+                        <img ng-src="assets/images/drop-here.png" title="Drag and drop or click here"
+                             ng-show="action !== 'Edit'"/>
+
+                        <div ng-show="progressVisible">
+                          <div class="percent">{{progress}}%</div>
+                          <div class="progress-bar">
+                            <div class="uploaded" ng-style="{'width': progress+'%'}"></div>
+                          </div>
+                        </div>
+
+                        <input type="file" name="book" id="file-browse" accept="image/jpeg, image/png, image/gif"
+                               style="display: none"/>
+                      </div>
+
+
+
                     </td>
                     <td class="remove-table-row">
                       <span class="glyphicon glyphicon-remove" title="Remove instruction"
@@ -197,15 +221,32 @@
               </div>
             </fieldset>
 
+            <fieldset>
+              <legend>Approve for public view</legend>
+              <div class="form-group">
+                <label for="approved" class="col-sm-2 control-label">Approve</label>
+                <div class="col-sm-10" style="margin-top: 5px;">
+                  <input type="checkbox" id="approved" ng-model="newRecipe.approved"/>
+                </div>
+              </div>
+            </fieldset>
+
             <br/>
             <fieldset>
               <legend></legend>
               <div class="form-group">
-                <div class="col-sm-12">
-                  <button type="submit" class="btn btn-default pull-right" id="addrecipe-btn" ng-click="addRecipe()"
-                          ng-disabled="addrecipeform.$invalid || hasEmptyFields()">
-                    Add recipe
-                  </button>
+                <div class-row>
+                  <div class="col-sm-10 col-xs-10" id="user-recipe-warning">
+                    <span ng-show="action === 'Send'" >
+                      Be patient! Your recipe should appear in a short time.
+                    </span>
+                  </div>
+                  <div class="col-sm-2 col-xs-2">
+                    <button type="submit" class="btn btn-default pull-right" id="addrecipe-btn" ng-click="addRecipe()"
+                            ng-disabled="addrecipeform.$invalid || hasEmptyFields()">
+                      {{ action }} recipe
+                    </button>
+                  </div>
                 </div>
               </div>
             </fieldset>

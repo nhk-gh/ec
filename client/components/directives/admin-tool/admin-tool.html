@@ -1,0 +1,23 @@
+<span class="admin-tool">
+  <!--a href='/newrecipe?type=edit&id={{ id }}' title="Edit recipe" ng-click="editRecipe()"><span class="glyphicon glyphicon-edit edit-recipe-icon"></span></a-->
+  <a href='' title="Edit recipe" ng-click="editRecipe()">
+    <span class="glyphicon glyphicon-edit edit-recipe-icon"></span>
+  </a>
+
+  <a href='' title="Delete recipe" ng-click="comfirmDelete = true">
+    <span class="glyphicon glyphicon-trash delete-recipe-icon"></span>
+  </a>
+
+  <div class="alert alert-warning confirm-delete" role="alert" ng-show="comfirmDelete == true">
+    <div>Recipe will be deleted, are you sure ?  </div>
+    <br/>
+    <a class="btn active btn-sm" ng-click="deleteRecipe()">
+      Delete recipe
+    </a>
+    <a class="btn active btn-sm" ng-click="comfirmDelete = false">
+      Cancel
+    </a>
+  </div>
+
+</span>
+

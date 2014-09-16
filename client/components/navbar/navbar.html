@@ -65,9 +65,8 @@
           </span>
         </li>
 
-
         <li class="hidden-sm hidden-md hidden-lg">
-          <a href="/userrecipe" class="send-recipe">
+          <a href="/newrecipe?type=user" class="send-recipe">
             <span class="font-04">Send your recipe</span>
           </a>
         </li>
@@ -84,7 +83,7 @@
 
     <div class="row hidden-xs" id="navbar-sub">
       <div class="col-md-6 col-sm-6 col-xs-12">
-        <a href="/userrecipe" class="send-recipe font-04" ng-show="!isAdmin()">
+        <a href="/newrecipe?type=user" class="send-recipe font-04" ng-show="!isAdmin()">
           <img ng-src="../../assets/images/mail_send_32x32.png" title="Send your recipe"/>
         </a>
         <a href="/newrecipe" class="send-recipe font-04" ng-show="isAdmin()">

@@ -1,14 +1,15 @@
 'use strict';
 
 angular.module('ecApp')
-  .controller('RecipeCtrl', function ($scope, $routeParams, recipe) {
+  .controller('RecipeCtrl', function ($scope, $routeParams, recipe, Auth) {
     $scope.recipe = {};
     $scope.ingredients = [];
+    $scope.isAdmin = Auth.isAdmin;
 
     recipe.getRecipe($routeParams.id)
       .then(function(recipe) {
-        $scope.recipe = recipe;
         recipe.rating = recipe.rating.toFixed(1);
+        $scope.recipe = recipe;
         arrangeIngredients();
         //console.log($scope.recipe)
       },
@@ -32,7 +33,7 @@ angular.module('ecApp')
     };
 
     $scope.$on('rate-it', function(evt, args){
-      recipe.updateRecipe($scope.recipe, args)
+      recipe.updateRating($scope.recipe, args)
         .then(function(data) {
           data.rating = data.rating.toFixed(1)
           $scope.recipe = data;

@@ -1,0 +1,39 @@
+$pos: 50%;
+div.show-recipe-rating {
+
+  div.rating-gradient {
+    min-height: 20px;
+    width: 100%;
+    position: relative;
+    //border: 1px solid $main-color;
+    @include border-radius(5px);
+
+    // background: #f24a30; /* Old browsers */
+    // background: -moz-linear-gradient(left,  #f28b7e 0%, #e6f207 55%, #07ef1e 100%); /* FF3.6+ */
+    // background: -webkit-gradient(linear, left top, right top, color-stop(0%,#f24a30), color-stop(33%,#e6f207), color-stop(100%,#07ef1e)); /* Chrome,Safari4+ */
+    // background: -webkit-linear-gradient(left,  #f24a30 0%,#e6f207 33%,#07ef1e 100%); /* Chrome10+,Safari5.1+ */
+    // background: -o-linear-gradient(left,  #f24a30 0%,#e6f207 33%,#07ef1e 100%); /* Opera 11.10+ */
+    // background: -ms-linear-gradient(left,  #f24a30 0%,#e6f207 33%,#07ef1e 100%); /* IE10+ */
+    // background: linear-gradient(to right,  #f24a30 0%,#f24a30 49%,black $pos,#07ef1e 49%,#07ef1e 100%); /* W3C */
+    // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f24a30', endColorstr='#07ef1e',GradientType=1 ); /* IE6-9 */
+  }
+
+  div.rating-text {
+    text-align: center;
+    font-size: smaller;
+    margin-top: 5px;
+    border: 1px solid transparent;
+    color: $main-color;
+    background-color: $main-back-color;
+    padding: 5px;
+    @include border-radius(5px);
+
+    p {
+      margin: 0px;
+    }
+    .rate-it {
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+  }
+}

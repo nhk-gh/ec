@@ -4,18 +4,71 @@
   <div class="row">
     <div class="col-md-12">
       <div id="sm-recipe-navbar">
-        <span class="pull-left"><strong>{{ searchCriteria }} recipes</strong> - {{ recipes.length }} found</span>
-        <span class="pull-right" ng-show="searchCriteria !=='All'">
-          <a href="/recipes">View all recipes</a></span>
+        <div class="row">
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <span>
+              <strong>
+                <span ng-show="searchCriteria ==='' ">All</span>
+                <span ng-show="searchCriteria !=='' "> {{ searchCriteria }}</span>
+                recipes
+              </strong>
+              - {{ allRecipes.length }} found
+            </span>
+          </div>
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <span ng-show="isAdmin()">
+              <input type="checkbox" ng-model="newOnly" ng-change="getRecipes(searchCriteria, newOnly)"/>  {{ chkboxTitle }}
+            </span>
+          </div>
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <span ng-show="searchCriteria !==''">
+              <a href="#" ng-click="getRecipes('', newOnly)">View all recipes</a>
+            </span>
+          </div>
+        </div>
       </div>
+
+      <!--div class="navbar navbar-default navbar-static-top" id="recipe-navbar" >
+        <div class="navbar-header">
+          <button class="navbar-toggle" type="button" ng-click="isCollapsed = !isCollapsed">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="row" >
+            <div class="col-md-12">
+              <strong>{{ searchCriteria }} recipes</strong> - {{ allRecipes.length }} found
+            </div>
+          </div>
+        </div>
+
+        <div collapse="isCollapsed" class="navbar-collapse collapse" id="navbar-recipe">
+          <ul class="nav navbar-nav navbar-left">
+
+            <li>
+              <span>
+                <input type="checkbox" />  New recipes only
+              </span>
+            </li>
+            <li ng-show="searchCriteria !=='All'">
+              <span>
+                <a href="/recipes">View all recipes</a>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div-->
+
     </div>
   </div>
 
-  <div class="row" ng-repeat="rcp in recipes">
+  <div class="row" ng-repeat="rcp in page.recipes">
     <div class="col-md-12" >
       <div class="sm-recipe-wrapper">
         <div class="sm-recipe-title">
           <a href="/recipe/{{ rcp._id }}">{{ rcp.name }}</a>
+          <admin-tool class="pull-right" id="rcp._id"ng-show="isAdmin()"></admin-tool>
         </div>
         <div class="row sm-recipe-body">
           <div class="col-md-12" >
@@ -34,10 +87,10 @@
 
                   <div class="row" style="margin-top: 3px">
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      Category: <a href="/recipes/{{ rcp.category.name }}">{{ rcp.category.name }}</a> &nbsp;
+                      Category: <a href="#" ng-click="getRecipes(rcp.category.name, newOnly)">{{ rcp.category.name }}</a> &nbsp;
                     </div>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      Cousine: <a href="/recipes/{{ rcp.cousine }}">{{ rcp.cousine }}</a>
+                      Cousine: <a href="#" ng-click="getRecipes(rcp.cousine, newOnly)">{{ rcp.cousine }}</a>
                     </div>
                   </div>
                   <p><span class="glyphicon glyphicon-time"></span> {{ rcp.duration }} min</p>
@@ -53,6 +106,16 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12" style="text-align: center">
+      <pagination total-items="allRecipes.length" ng-model="page.current" max-size="5" class="pagination-sm "
+                  boundary-links="true" rotate="false" previous-text="&lsaquo;" next-text="&rsaquo;"
+                  first-text="&laquo;"   last-text="&raquo;" items-per-page="page.itemsPerPage" num-pages="numPages"
+                  ng-change="pageChanged()" ng-show="allRecipes.length > page.itemsPerPage">
+      </pagination>
     </div>
   </div>
 </div>

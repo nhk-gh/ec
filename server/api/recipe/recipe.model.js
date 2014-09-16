@@ -22,17 +22,17 @@ var RecipeSchema = new Schema({
     name:String,
     image:String
   },
-  date:{                  // when recipe added to site
-    type: Date,
-    date: Date.now
-  },
+  date: Date,                 // when recipe added to site
+
+
   notes: [String],        // additional notes about recipe
   rating: Number,
   voted:[{                // list of voted people
     name: String,            // user.name
     rating: Number           // his rating
   }],
-  viewed: Number
+  viewed: Number,
+  approved: Boolean
 });
 
 module.exports = mongoose.model('Recipe', RecipeSchema);

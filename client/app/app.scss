@@ -27,10 +27,11 @@ body {
 @import 'recipe/recipe.scss';
 @import 'recipes/recipes.scss';
 @import 'translator/translator.scss';
-@import '../components/gradient-rating/gradient-rating.scss';
-@import '../components/login-dialog/login-dialog.scss';
+@import '../components/directives/admin-tool/admin-tool.scss';
+@import '../components/directives/gradient-rating/gradient-rating.scss';
+@import '../components/directives/login-dialog/login-dialog.scss';
+@import '../components/directives/signup-dialog/signup-dialog.scss';
 @import '../components/navbar/navbar.scss';
-@import '../components/signup-dialog/signup-dialog.scss';
 // endinjector
 
 

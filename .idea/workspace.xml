@@ -23,10 +23,40 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="navbar.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/components/navbar/navbar.html">
+      <file leaf-file-name="newrecipe.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/app/newrecipe/newrecipe.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="9" selection-start="1518" selection-end="1518" vertical-scroll-proportion="0.5555556" vertical-offset="180" max-vertical-offset="1680">
+            <state line="149" column="9" selection-start="6989" selection-end="6989" vertical-scroll-proportion="-7.4583335" vertical-offset="2056" max-vertical-offset="3960">
+              <folding>
+                <element signature="n#style#0;n#input#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#fieldset#3;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#fieldset#5;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="newrecipe.scss" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/app/newrecipe/newrecipe.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="56" column="39" selection-start="963" selection-end="963" vertical-scroll-proportion="-1.4166666" vertical-offset="806" max-vertical-offset="1860">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="newrecipe.controller.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/app/newrecipe/newrecipe.controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="165" column="6" selection-start="5338" selection-end="5338" vertical-scroll-proportion="-95.19231" vertical-offset="0" max-vertical-offset="2640">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="file-dropzone.directive.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/components/directives/file-dropzone/file-dropzone.directive.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="116" column="6" selection-start="3576" selection-end="3576" vertical-scroll-proportion="0.8161121" vertical-offset="1274" max-vertical-offset="1845">
               <folding />
             </state>
           </provider>
@@ -42,29 +72,29 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/client/components/login-dialog/login-dialog.directive.js" />
-        <option value="$PROJECT_DIR$/client/app/app.js" />
-        <option value="$PROJECT_DIR$/server/api/user/user.controller.js" />
-        <option value="$PROJECT_DIR$/client/components/signup-dialog/signup-dialog.html" />
-        <option value="$PROJECT_DIR$/client/components/signup-dialog/signup-dialog.directive.js" />
-        <option value="$PROJECT_DIR$/server/api/recipe/recipe.model.js" />
-        <option value="$PROJECT_DIR$/server/api/user/user.model.js" />
-        <option value="$PROJECT_DIR$/client/app/recipes/recipes.html" />
-        <option value="$PROJECT_DIR$/client/components/gradient-rating/gradient-rating.html" />
-        <option value="$PROJECT_DIR$/client/app/recipes/recipes.controller.js" />
-        <option value="$PROJECT_DIR$/client/app/recipe/recipe.controller.js" />
+        <option value="$PROJECT_DIR$/client/app/recipes/recipes.service.js" />
         <option value="$PROJECT_DIR$/client/app/recipe/recipe.service.js" />
-        <option value="$PROJECT_DIR$/client/app/newrecipe/newrecipe.controller.js" />
-        <option value="$PROJECT_DIR$/server/config/seed.js" />
-        <option value="$PROJECT_DIR$/client/components/gradient-rating/gradient-rating.directive.js" />
+        <option value="$PROJECT_DIR$/client/app/recipes/recipes.controller.js" />
         <option value="$PROJECT_DIR$/client/components/navbar/navbar.html" />
+        <option value="$PROJECT_DIR$/client/components/directives/admin-tool/admin-tool.directive.js" />
+        <option value="$PROJECT_DIR$/client/components/directives/admin-tool/admin-tool.html" />
+        <option value="$PROJECT_DIR$/client/components/directives/admin-tool/admin-tool.scss" />
+        <option value="$PROJECT_DIR$/server/api/statistics/statistics.model.js" />
+        <option value="$PROJECT_DIR$/server/api/request/request.model.js" />
+        <option value="$PROJECT_DIR$/client/app/recipe/recipe.html" />
+        <option value="$PROJECT_DIR$/client/app/recipes/recipes.html" />
+        <option value="$PROJECT_DIR$/client/app/recipe/recipe.controller.js" />
+        <option value="$PROJECT_DIR$/client/app/newrecipe/newrecipe.html" />
+        <option value="$PROJECT_DIR$/client/app/newrecipe/newrecipe.scss" />
+        <option value="$PROJECT_DIR$/client/app/newrecipe/newrecipe.controller.js" />
+        <option value="$PROJECT_DIR$/client/components/directives/file-dropzone/file-dropzone.directive.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="66" />
-    <option name="y" value="52" />
-    <option name="width" value="1356" />
+    <option name="x" value="67" />
+    <option name="y" value="58" />
+    <option name="width" value="1247" />
     <option name="height" value="997" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -93,6 +123,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -121,7 +152,65 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ec" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ec" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ec" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ec" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ec" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ec" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="recipe" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -136,10 +225,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -179,6 +264,72 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="directives" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ec" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ec" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="directives" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="file-dropzone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ec" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ec" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ec" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ec" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -201,18 +352,39 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
+              <option name="myItemId" value="recipe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ec" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ec" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="newrecipe" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ReadingRoom" />
     <property name="FullScreen" value="false" />
   </component>
   <component name="RecentsManager">
@@ -224,6 +396,7 @@
       <recent name="$PROJECT_DIR$/client/app" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/components/directives" />
       <recent name="$PROJECT_DIR$/client/components" />
     </key>
   </component>
@@ -276,14 +449,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="66" y="52" width="1356" height="997" extended-state="0" />
-    <editor active="true" />
+    <frame x="67" y="58" width="1247" height="997" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26027396" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31392694" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32990867" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21487603" sideWeight="0.739726" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2667758" sideWeight="0.68607306" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -292,7 +466,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -307,119 +480,122 @@
     </option>
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/api/recipe/index.js">
+    <entry file="file://$PROJECT_DIR$/client/app/app.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="593">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="645">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/api/recipe/recipe.model.js">
+    <entry file="file://$PROJECT_DIR$/client/app/common.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="17" selection-start="368" selection-end="368" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="645">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.41133454" vertical-offset="225" max-vertical-offset="915">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/newrecipe/newrecipe.service.js">
+    <entry file="file://$PROJECT_DIR$/client/app/recipes/recipes.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="45" selection-start="84" selection-end="84" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630">
+        <state line="33" column="31" selection-start="440" selection-end="451" vertical-scroll-proportion="-9.9" vertical-offset="0" max-vertical-offset="1620">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/config/seed.js">
+    <entry file="file://$PROJECT_DIR$/client/components/directives/admin-tool/admin-tool.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="101" column="6" selection-start="3847" selection-end="3847" vertical-scroll-proportion="0.0" vertical-offset="1270" max-vertical-offset="1875">
+        <state line="16" column="19" selection-start="245" selection-end="245" vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="465">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/api/recipe/recipe.controller.js">
+    <entry file="file://$PROJECT_DIR$/server/api/request/request.model.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.7281553" vertical-offset="450" max-vertical-offset="1650">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/newrecipe/newrecipe.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="1" selection-start="608" selection-end="608" vertical-scroll-proportion="0.4854369" vertical-offset="0" max-vertical-offset="1650">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/recipes/recipes.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="61" selection-start="2068" selection-end="2068" vertical-scroll-proportion="-18.125" vertical-offset="270" max-vertical-offset="1035">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/components/gradient-rating/gradient-rating.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="12" selection-start="408" selection-end="408" vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="270">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/components/auth/auth.service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="16" selection-start="2705" selection-end="2715" vertical-scroll-proportion="-16.423077" vertical-offset="1148" max-vertical-offset="2235">
-          <folding>
-            <element signature="e#1161#1234#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/recipe/recipe.service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="52" selection-start="87" selection-end="91" vertical-scroll-proportion="-1.7307693" vertical-offset="0" max-vertical-offset="1005">
+        <state line="10" column="18" selection-start="169" selection-end="169" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/components/navbar/navbar.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="65" selection-start="970" selection-end="1029" vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="855">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="855">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/morgan/README.md">
+    <entry file="file://$PROJECT_DIR$/server/api/recipe/recipe.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1350">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/requirejs/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="10" selection-start="204" selection-end="204" vertical-scroll-proportion="0.22765599" vertical-offset="0" max-vertical-offset="593">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/components/gradient-rating/gradient-rating.directive.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="91" selection-start="1802" selection-end="1802" vertical-scroll-proportion="0.47411004" vertical-offset="727" max-vertical-offset="1395">
+        <state line="23" column="13" selection-start="644" selection-end="644" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="1815">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/app/recipe/recipe.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="11" selection-start="897" selection-end="897" vertical-scroll-proportion="0.80097085" vertical-offset="0" max-vertical-offset="780">
+        <state line="6" column="37" selection-start="172" selection-end="202" vertical-scroll-proportion="0.15761821" vertical-offset="0" max-vertical-offset="795">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/components/navbar/navbar.html">
+    <entry file="file://$PROJECT_DIR$/client/app/recipes/recipes.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="9" selection-start="1518" selection-end="1518" vertical-scroll-proportion="0.5555556" vertical-offset="180" max-vertical-offset="1680">
+        <state line="62" column="22" selection-start="2209" selection-end="2209" vertical-scroll-proportion="0.39138576" vertical-offset="271" max-vertical-offset="1530">
+          <folding>
+            <element signature="e#1083#2197#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/api/recipe/recipe.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="21" selection-start="925" selection-end="925" vertical-scroll-proportion="0.8423818" vertical-offset="74" max-vertical-offset="645">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/recipe/recipe.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="75" selection-start="326" selection-end="344" vertical-scroll-proportion="-1.2921349" vertical-offset="810" max-vertical-offset="1680">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/assets/images/drop-here.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/newrecipe/newrecipe.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="149" column="9" selection-start="6989" selection-end="6989" vertical-scroll-proportion="-7.4583335" vertical-offset="2056" max-vertical-offset="3960">
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#fieldset#3;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#fieldset#5;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/newrecipe/newrecipe.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="39" selection-start="963" selection-end="963" vertical-scroll-proportion="-1.4166666" vertical-offset="806" max-vertical-offset="1860">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/newrecipe/newrecipe.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="165" column="6" selection-start="5338" selection-end="5338" vertical-scroll-proportion="-95.19231" vertical-offset="0" max-vertical-offset="2640">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/components/directives/file-dropzone/file-dropzone.directive.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="116" column="6" selection-start="3576" selection-end="3576" vertical-scroll-proportion="0.8161121" vertical-offset="1274" max-vertical-offset="1845">
           <folding />
         </state>
       </provider>

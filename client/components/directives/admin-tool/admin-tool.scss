@@ -1,0 +1,26 @@
+.admin-tool {
+  margin-right: 5px;
+  font-size: 0.8em;
+  padding-top: 5px;
+  position: relative;
+  a {
+    margin-right: 5px;
+  }
+
+  .edit-recipe-icon {
+    color: green;
+  }
+  .delete-recipe-icon {
+    color: firebrick;
+  }
+
+  .confirm-delete {
+    position: absolute;
+    z-index: 100;
+    width: 300px;
+    left: -260px;
+    border: 1px solid $main-color;
+
+    @include border-radius(5px);
+  }
+}

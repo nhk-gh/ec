@@ -3,10 +3,10 @@
 angular.module('ecApp')
   .factory('recipes', function ($q, $http, $log) {
     return {
-      getRecipes: function(searchCriteria){
+      getRecipes: function(searchCriteria, newOnly){
         var deferred = $q.defer();
 
-        $http({method:'GET', url:'api/recipe', params:{search:searchCriteria}, cache: false})
+        $http({method:'GET', url:'api/recipe', params:{search:searchCriteria, newOnly: newOnly}, cache: false})
           .success(function(data){
             deferred.resolve(data);
           })
