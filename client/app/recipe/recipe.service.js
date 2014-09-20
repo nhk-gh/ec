@@ -43,12 +43,38 @@ angular.module('ecApp')
           rcp.voted[hadVoted].rating = newRate;
         }
 
-        $http({method:'PUT', url:'api/recipe/'+rcp._id, data:{recipe:rcp}, params:{what:'rating'},cache: false})
+        $http({method:'PUT', url:'api/recipe/'+rcp._id, data:{recipe:rcp}, cache: false})
           .success(function(data){
             deferred.resolve(data);
           })
           .error(function(data, status){
             $log.error('Update Recipe: ' + status);
+            deferred.reject(status);
+          });
+
+        return deferred.promise;
+      },
+
+      addRecipe: function(recipe){
+        var deferred = $q.defer();
+
+        var files = [];
+
+        for (var i=0; i< recipe.instructions.length; i++) {
+          if (recipe.instructions[i].file){
+            files[i] = recipe.instructions[i].file
+            delete recipe.instructions[i].file;
+          }
+        }
+        //console.log(files);
+        //console.log(recipe);
+
+        $http({method:'POST', url:'api/recipe', data:{recipe:recipe}, cache: false})
+          .success(function(data){
+            deferred.resolve(data);
+          })
+          .error(function(data, status){
+            $log.error('Get Categories: ' + status);
             deferred.reject(status);
           });
 
@@ -84,5 +110,6 @@ angular.module('ecApp')
 
         return deferred.promise;
       }
-    };
+
+     };
   });

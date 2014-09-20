@@ -19,12 +19,14 @@ angular.module('ecApp').directive('gradientRating', function (LIMITS, $timeout, 
 
       var drawRatingBar = function(gradient) {
         var color;
+        var pos = 0;
 
-        var pos = 100*(gradient.pos/elW);
-
-        if (gradient.mono) {
+        if (gradient.mono === true) {
+          console.log(gradient.mono);
           color = '#e6f207';
         } else {
+          console.log(gradient.mono);
+          pos = 100*(gradient.pos/elW);
           color = 'linear-gradient(to right,  #f28b7e 0%, #f28b7e ' + (pos-0) +
             '%, black ' + pos + '% ,#07ef1e ' + (pos+0) +
             '% ,#07ef1e 100%)';
@@ -41,14 +43,14 @@ angular.module('ecApp').directive('gradientRating', function (LIMITS, $timeout, 
 
       $timeout(function(){
         elW = parseInt(el.css('width'));
-
-        if (scope.ratings === 0) {
+        console.log(scope.overall);
+        if (scope.overall === '0.0') {
           drawRatingBar({pos:0, mono:true});
         } else {
           var rating = elW - elW * (scope.overall / LIMITS.MAX_RATING);
           drawRatingBar({pos:rating, mono:false});
         }
-      }, 500);
+      }, 700);
 
       scope.ratable = attrs.ratable === 'true';
 

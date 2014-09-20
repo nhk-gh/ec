@@ -6,72 +6,76 @@
 'use strict';
 
 var User = require('../api/user/user.model');
-User.find({}).remove(function() {
-  User.create({
-    provider: 'local',
-    name: 'Test User',
-    email: 'test@test.com',
-    password: 'test'
-  }, {
-    provider: 'local',
-    role: 'admin',
-    name: 'Admin',
-    email: 'admin@admin.com',
-    password: 'Lazy'
-  }, function() {
-      console.log('finished populating users');
-    }
-  );
+//User.find({}).remove(function() {
+User.count(function(err, count){
+  if (count === 0) {
+    User.create({
+      provider: 'local',
+      name: 'Test User',
+      email: 'test@test.com',
+      password: 'test'
+    }, {
+      provider: 'local',
+      role: 'admin',
+      name: 'Admin',
+      email: 'admin@admin.com',
+      password: 'Lazy'
+    }, function() {
+        console.log('finished populating users');
+      }
+    );
+  }
 });
 
 var Feature = require('../api/feature/feature.model');
-
+//Feature.find({}).remove(function() {
 Feature.count(function(err, count){
   if (count === 0) {
     Feature.create({
-      name: 'Recipes',
-      info: 'A huge number of recipes - delicious, from affordable products, easy to cook.',
-      link: '/recipes'
+      name: 'Dinner Party',
+      info: 'Waiting for guests - not a problem. Easy Cooking offers menu options for dinner: guests will be amazed, you will be proud.',
+      link: '/dinnerparty'
     }, {
       name: 'In my Fridge',
       info: 'Stayed on the job, did not have time to drop into the store ... tell us what products you did you found in the kitchen and we will help you with cooking dinner.',
       link: '/fridge'
     }, {
-      name: 'Dinner Party',
-      info: 'Waiting for guests - not a problem. Easy Cooking offers menu options for dinner: guests will be amazed, you will be proud.',
-      link: '/dinnerparty'
+      name: 'Recipes',
+      info: 'A huge number of recipes - delicious, from affordable products, easy to cook.',
+      link: '/recipes'
     });
   }
 });
 
 var Category = require('../api/category/category.model');
-
-Category.find({}).remove(function() {
-  Category.create(
-    { name: 'Appetizer' },
-    { name: 'BBQ' },
-    { name: 'Dessert' },
-    { name: 'Salad' },
-    { name: 'Soup' },
-    { name: 'Sauce' },
-    { name: 'Main dish' },
-    { name: 'Cake' },
-    { name: 'Fish & See food' },
-    { name: 'Chicken' },
-    { name: 'Beef' },
-    { name: 'Lamb' },
-    { name: 'Rice' },
-    { name: 'Potato' },
-    { name: 'Breakfast' },
-    { name: 'Lunch' }
-  );
+//Category.find({}).remove(function() {
+Category.count(function(err, count){
+  if (count === 0) {
+    Category.create(
+      { name: 'Appetizer' },
+      { name: 'BBQ' },
+      { name: 'Dessert' },
+      { name: 'Salad' },
+      { name: 'Soup' },
+      { name: 'Sauce' },
+      { name: 'Main dish' },
+      { name: 'Cake' },
+      { name: 'Fish & See food' },
+      { name: 'Chicken' },
+      { name: 'Beef' },
+      { name: 'Lamb' },
+      { name: 'Rice' },
+      { name: 'Potato' },
+      { name: 'Breakfast' },
+      { name: 'Lunch' }
+    );
+  }
 });
 
 var Recipe = require('../api/recipe/recipe.model');
-
-Recipe.find({}).remove(function() {
-//Recipe.count(function(err, count){
-//  if (count === 0) {
+//Recipe.find({}).remove(function() {
+Recipe.count(function(err, count){
+  if (count === 0) {
     Recipe.create(
       {
         name: 'Salmon Tartare with Avocado, Olives & Tarragon',
@@ -151,5 +155,5 @@ Recipe.find({}).remove(function() {
         viewed: 1,
         approved: true
     });
-//  }
+  }
 });

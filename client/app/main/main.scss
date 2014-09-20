@@ -1,19 +1,4 @@
-//colors are imported from: @import '../colors.scss';
-
-.thing-form {
-  margin: 20px 0;
-}
-
-#banner {
-  border-bottom: none;
-  margin-top: -20px;
-}
-
-#banner h1 {
-  font-size: 60px;
-  line-height: 1;
-  letter-spacing: -1px;
-}
+//colors are imported from: @import '../common.scss';
 
 .hero-unit {
   position: relative;

@@ -9,6 +9,7 @@
 
 'use strict';
 
+var fs = require("fs");
 var _ = require('lodash');
 var Recipe = require('./recipe.model');
 var mongoose = require('mongoose');
@@ -59,9 +60,38 @@ exports.show = function(req, res) {
 
 // Creates a new recipe in the DB.
 exports.create = function(req, res) {
-  //console.log(req.body.recipe);
+ /* var recipe = _.cloneDeep(req.body.recipe);
+
+  console.log(req.body);
+  console.log(req.files);
+  console.log(req.query);
+  console.log(req.params);
+
+  for (var i=0; i< recipe.instructions.length; i++) {
+    if (recipe.instructions[i].file){
+      delete req.body.recipe.instructions[i].file;
+    }
+  }
+
+  var SaveImageFile = function(id){
+    for (var i=0; i< recipe.instructions.length; i++) {
+      if (recipe.instructions[i].file){
+
+      }
+    }
+
+  };
+
+  SaveImageFile(1);
+
+  return res.json(201);   */
+
   Recipe.create(req.body.recipe, function(err, rcp) {
+    console.log(req.body)
+    console.log(err)
     if(err) { return handleError(res, err); }
+
+    //SaveImageFile(rcp._id);
 
     if (rcp.approved === false){
       //send mail to admin/moderator
@@ -70,6 +100,13 @@ exports.create = function(req, res) {
     return res.json(201, rcp);
   });
 };
+
+exports.uploadImages = function(req, res){
+  /*console.log(req.body);
+  console.log(req.files);
+  console.log(req.query);
+  console.log(req.params);*/
+}
 
 function extend(target) {
   var sources = [].slice.call(arguments, 1);

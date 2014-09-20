@@ -29,7 +29,14 @@ angular.module('ecApp')
           }
         };
 
+        scope.signup = function(){
+          angular.element('#ecLoginModal').modal('hide');
+          angular.element('#ecSignupModal').modal({backdrop:'static'});
+        };
+
         scope.loginOauth = function(provider) {
+          alert('Not implementet yet!');
+          return;
           $window.location.href = '/auth/' + provider;
         };
 

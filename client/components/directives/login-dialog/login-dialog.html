@@ -31,6 +31,7 @@
             <p class="help-block">{{ errors.other }}</p>
           </div>
           <div class="modal-footer">
+            <span class="btn btn-md btn-link pull-left" ng-click="signup()">Sign up</span>
             <button type="submit" class="btn btn-primary btn-sm" ng-click="login(form)"
                     ng-disabled="form.$invalid || hasEmptyFields()">Log in</button>
             <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancel</button>

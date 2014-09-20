@@ -22,9 +22,7 @@ var RecipeSchema = new Schema({
     name:String,
     image:String
   },
-  date: Date,                 // when recipe added to site
-
-
+  date: Date,             // when recipe added to site
   notes: [String],        // additional notes about recipe
   rating: Number,
   voted:[{                // list of voted people

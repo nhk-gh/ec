@@ -5,6 +5,7 @@ angular.module('ecApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
+
   'ui.bootstrap'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {

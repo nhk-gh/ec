@@ -5,8 +5,8 @@ angular.module('ecApp')
     return {
       restrict: 'A',
       scope: {
-        file: '=',
-        fileName: '='
+        id: '=',
+        file: '='
       },
       link: function(scope, element, attrs) {
         // DnD
@@ -61,22 +61,20 @@ angular.module('ecApp')
           if (event !== null) {
             event.preventDefault();
           }
-
           prepareFile(getDataTransfer(event).files[0]);
 
           return false;
         });
 
         // Open dialog
-        var fb = element.find('#file-browse');
-
+        var fb = element.find('input[type=file]');
+        //console.log(fb[0])
         element.on('click', function(evt) {
           //console.log(evt);
           fb[0].click();
         });
 
         fb.on('change', function(evt){
-          //console.log(evt);
           prepareFile(evt.target.files[0]);
         });
 
@@ -86,23 +84,19 @@ angular.module('ecApp')
 
           reader = new FileReader();
           reader.onload = function(evt) {
+
             if (checkSize(size) && isTypeValid(type)) {
               scope.$apply(function() {
                 scope.file = evt.target.result;
-                if (angular.isString(scope.fileName)) {
-                  //return scope.fileName = name;
-                  scope.fileName = name;
-                  return scope.fileName;
-                }
+                element.find('img#'+scope.id).attr('src', scope.file);
               });
 
               return scope.$emit('file-dropzone-drop-event', {
-                // I've change the following string; reason:
-                // to get a dropped file from the req.files!!!
-                file: file, //scope.file,
+                file: file,//scope.file,
                 type: type,
                 name: name,
-                size: size
+                size: size,
+                ind: scope.id
               });
             }
           };

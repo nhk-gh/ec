@@ -1,10 +1,19 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
+<!--splash-panel text="Recipe added and will appear in a shot time. You may continue adding recipes."></splash-panel-->
+
+
 <div class="container main-panel">
+
   <div class="row">
     <div class="col-md-12">
       <div class="recipe-wrapper">
-        <div class="recipe-title">
+
+      <alert type="success" close="showSuccess=false" id="alert-success" ng-show="showSuccess" splash-panel>
+        Recipe added and will appear in a shot time. You may continue adding recipes.
+      </alert>
+
+      <div class="recipe-title">
           <span><strong>{{ action }} recipe</strong></span>
         </div>
         <div class="recipe-body">
@@ -60,7 +69,7 @@
                 <div class="col-sm-10">
                   <div class="input-group">
                     <input type="text" class="form-control" id="new-recipe-time" int-only
-                           required ng-model="newRecipe.duration" >
+                           required ng-model="newRecipe.duration">
                     <div class="input-group-addon">min.</div>
                   </div>
                 </div>
@@ -150,13 +159,15 @@
                       <!--input type="text" class="form-control table-input"
                              ng-model="newRecipe.instructions[$index].image"/-->
 
-                      <div class="instruction-img-thumb" file-dropzone="[image/jpeg, image/png, image/gif]"
-                           data-max-file-size="30" file="book" file-name="bookFileName"
-                           book-upload>
+                      <!--div class="instruction-img-thumb" file-dropzone="[image/jpeg, image/png, image/gif]"
+                           data-max-file-size="30" file="dss"
+                           book-upload id="$index">
 
                         <img ng-src="newRecipe.instructions[$index].image"
                              ng-show="action === 'Edit'"/>
-                        <img ng-src="assets/images/drop-here.png" title="Drag and drop or click here"
+                        <!--img ng-src="assets/images/drop-here.png" title="Drag and drop or click here"
+                             ng-show="action !== 'Edit'"/>
+                        <img id='{{ $index }}'ng-src='newRecipe.instructions[$index].image' title="Drag and drop or click here"
                              ng-show="action !== 'Edit'"/>
 
                         <div ng-show="progressVisible">
@@ -166,11 +177,9 @@
                           </div>
                         </div>
 
-                        <input type="file" name="book" id="file-browse" accept="image/jpeg, image/png, image/gif"
-                               style="display: none"/>
-                      </div>
-
-
+                        <input type="file" name="book" accept="image/jpeg, image/png, image/gif"
+                               style="display: block"/>
+                      </div-->
 
                     </td>
                     <td class="remove-table-row">
@@ -221,7 +230,7 @@
               </div>
             </fieldset>
 
-            <fieldset>
+            <fieldset ng-show="action === 'Edit'">
               <legend>Approve for public view</legend>
               <div class="form-group">
                 <label for="approved" class="col-sm-2 control-label">Approve</label>
