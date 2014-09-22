@@ -1,13 +1,13 @@
 'use strict';
 
 angular.module('ecApp')
-  .controller('RecipesCtrl', function ($scope, /*$routeParams,*/ recipes, Auth) {
+  .controller('RecipesCtrl', function ($scope, $routeParams, recipes, Auth) {
     $scope.recipes = [];
     //$scope.isCollapsed = true;
     $scope.isAdmin = Auth.isAdmin;
     $scope.newOnly = false;  // if true: get only new recipes that is not approved yet
     $scope.chkboxTitle = 'New recipes only';
-    //var searchCriteria = $routeParams.search ? $routeParams.search : '';
+    var searchCriteria = $routeParams.search ? $routeParams.search : '';
 
     $scope.page = {};
     /*
@@ -58,7 +58,7 @@ angular.module('ecApp')
         });
     };
 
-    $scope.getRecipes('', $scope.newOnly);
+    $scope.getRecipes(searchCriteria, $scope.newOnly);
 
     $scope.$on('recipe-deleted', function(){
       $scope.getRecipes($scope.searchCriteria, $scope.newOnly)

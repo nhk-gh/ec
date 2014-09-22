@@ -18,6 +18,7 @@ var passport = require('passport');
 var session = require('express-session');
 var mongoStore = require('connect-mongo')(session);
 var mongoose = require('mongoose');
+var multer  = require('multer');
 
 module.exports = function(app) {
   var env = app.get('env');
@@ -28,6 +29,9 @@ module.exports = function(app) {
   app.use(compression());
   app.use(bodyParser.urlencoded({ extended: false }));
   app.use(bodyParser.json());
+
+  app.use(multer({ dest: './uploads/'}));
+
   app.use(methodOverride());
   app.use(cookieParser());
   app.use(passport.initialize());
@@ -58,4 +62,7 @@ module.exports = function(app) {
     app.use(morgan('dev'));
     app.use(errorHandler()); // Error handler - has to be last
   }
+
+  app.use(express.static('/home/ubuntu/ec-imgs/', {maxAge: 31557600000}));
+
 };

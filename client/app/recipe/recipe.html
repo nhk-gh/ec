@@ -5,6 +5,9 @@
     <div class="col-md-12">
       <div class="recipe-wrapper">
         <div class="recipe-title">
+          <a class= "pull-left go2recipes" href="/recipes" title="Go to Recipes">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+          </a>
           <span><strong>{{ recipe.name }}</strong></span>
           <admin-tool class="pull-right" id="recipe._id" ng-show="isAdmin()"></admin-tool>
         </div>
@@ -68,14 +71,13 @@
                 <strong>Instructions:</strong>
                 <br/>
                 <div class="row" ng-repeat="inst in recipe.instructions">
-
                   <div class="col-md-9 col-sm-9 col-xs-9">
                     <span>{{ $index + 1 }}.</span>
                     <span>{{ inst.step }}</span>
                   </div>
                   <div class="col-md-3 col-sm-3 col-xs-3">
                     <!-- from  http://www.iconka.com -->
-                    <img class="img-thumbnail recipe-step-img" ng-src='assets/images/cat-food-hearts-icon-128x128.png'/>
+                    <img class="img-thumbnail recipe-step-img" ng-src="{{ inst.image }}" enlarge-image/>
                   </div>
                 </div>
               </div>

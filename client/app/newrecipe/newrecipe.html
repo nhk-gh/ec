@@ -159,27 +159,26 @@
                       <!--input type="text" class="form-control table-input"
                              ng-model="newRecipe.instructions[$index].image"/-->
 
-                      <!--div class="instruction-img-thumb" file-dropzone="[image/jpeg, image/png, image/gif]"
-                           data-max-file-size="30" file="dss"
-                           book-upload id="$index">
+                      <div class="instruction-img-thumb" file-dropzone="[image/jpeg, image/png, image/gif]"
+                           data-max-file-size="30" file="book"
+                           id='$index' action="action">
 
-                        <img ng-src="newRecipe.instructions[$index].image"
+
+                        <img id='e{{ $index }}' ng-src="assets/images/drop-here.png" title="Drag and drop or click here"
                              ng-show="action === 'Edit'"/>
-                        <!--img ng-src="assets/images/drop-here.png" title="Drag and drop or click here"
-                             ng-show="action !== 'Edit'"/>
-                        <img id='{{ $index }}'ng-src='newRecipe.instructions[$index].image' title="Drag and drop or click here"
+                        <img id='{{ $index }}' ng-src="assets/images/drop-here.png" title="Drag and drop or click here"
                              ng-show="action !== 'Edit'"/>
 
-                        <div ng-show="progressVisible">
+                        <!--div ng-show="progressVisible">
                           <div class="percent">{{progress}}%</div>
                           <div class="progress-bar">
                             <div class="uploaded" ng-style="{'width': progress+'%'}"></div>
                           </div>
-                        </div>
+                        </div-->
 
-                        <input type="file" name="book" accept="image/jpeg, image/png, image/gif"
-                               style="display: block"/>
-                      </div-->
+                        <input type="file" class="{{ $index }}" name="book" accept="image/jpeg, image/png, image/gif"
+                               style="display: none"/>
+                      </div>
 
                     </td>
                     <td class="remove-table-row">
@@ -251,8 +250,13 @@
                     </span>
                   </div>
                   <div class="col-sm-2 col-xs-2">
-                    <button type="submit" class="btn btn-default pull-right" id="addrecipe-btn" ng-click="addRecipe()"
+                    <!--button type="submit" class="btn btn-default pull-right" id="addrecipe-btn"
+                            ng-click="addRecipe()"
                             ng-disabled="addrecipeform.$invalid || hasEmptyFields()">
+                      {{ action }} recipe
+                    </button-->
+                    <button type="submit" class="btn btn-default pull-right" id="addrecipe-btn"
+                            ng-click="addRecipe()"   >
                       {{ action }} recipe
                     </button>
                   </div>

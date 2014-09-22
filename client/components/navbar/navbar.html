@@ -70,19 +70,15 @@
             <span class="font-04">Send your recipe</span>
           </a>
         </li>
+
         <li class="hidden-sm hidden-md hidden-lg">
-          <div class="search-box">
-            <input type="text"  placeholder="Search" class="review-search" ng-model="searchCriteria"/>
-            <button class="btn btn-link btn-sm" ng-click="search(searchCriteria)">
-              <span class="glyphicon glyphicon-search"></span>
-            </button>
-          </div>
+          <search-box></search-box>
         </li>
       </ul>
     </div>
 
     <div class="row hidden-xs" id="navbar-sub">
-      <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="col-md-6 col-sm-6 col-xs-12">
         <a href="/newrecipe?type=user" class="send-recipe font-04" ng-show="!isAdmin()">
           <img ng-src="../../assets/images/mail_send_32x32.png" title="Send your recipe"/>
         </a>
@@ -91,12 +87,7 @@
         </a>
       </div>
       <div class="col-md-6 col-sm-6 col-xs-12">
-        <div class="search-box">
-          <input type="text"  placeholder="Search" class="review-search" ng-model="searchCriteria"/>
-          <button class="btn btn-link btn-sm" ng-click="search(searchCriteria)">
-            <span class="glyphicon glyphicon-search"></span>
-          </button>
-        </div>
+        <search-box></search-box>
       </div>
     </div>
   </div>

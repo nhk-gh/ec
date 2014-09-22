@@ -19,13 +19,20 @@ $border-radius: 5px;
 
 
 #sm-recipe-navbar {
+  position: relative;
+
   div div  {
     text-align: center;
   }
   span * {
     margin: 0px;
     padding: 0px;
-
+  }
+  .search-result-info{
+    width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
   }
 }
 

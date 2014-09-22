@@ -22,10 +22,8 @@ angular.module('ecApp').directive('gradientRating', function (LIMITS, $timeout, 
         var pos = 0;
 
         if (gradient.mono === true) {
-          console.log(gradient.mono);
           color = '#e6f207';
         } else {
-          console.log(gradient.mono);
           pos = 100*(gradient.pos/elW);
           color = 'linear-gradient(to right,  #f28b7e 0%, #f28b7e ' + (pos-0) +
             '%, black ' + pos + '% ,#07ef1e ' + (pos+0) +
@@ -43,7 +41,6 @@ angular.module('ecApp').directive('gradientRating', function (LIMITS, $timeout, 
 
       $timeout(function(){
         elW = parseInt(el.css('width'));
-        console.log(scope.overall);
         if (scope.overall === '0.0') {
           drawRatingBar({pos:0, mono:true});
         } else {

@@ -6,7 +6,8 @@ angular.module('ecApp')
       restrict: 'A',
       scope: {
         id: '=',
-        file: '='
+        file: '@',
+        action: '@'
       },
       link: function(scope, element, attrs) {
         // DnD
@@ -83,12 +84,16 @@ angular.module('ecApp')
           var file, name, reader, size, type;
 
           reader = new FileReader();
-          reader.onload = function(evt) {
 
+          reader.onload = function(evt) {
             if (checkSize(size) && isTypeValid(type)) {
               scope.$apply(function() {
                 scope.file = evt.target.result;
-                element.find('img#'+scope.id).attr('src', scope.file);
+                if (scope.action === 'Edit'){
+                  element.find('img#e'+scope.id).attr('src', scope.file);
+                } else {
+                  element.find('img#'+scope.id).attr('src', scope.file);
+                }
               });
 
               return scope.$emit('file-dropzone-drop-event', {

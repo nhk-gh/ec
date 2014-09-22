@@ -26,12 +26,6 @@ angular.module('ecApp')
     /////////////////////////////////////
     $scope.searchCriteria = '';
 
-    $scope.search = function(){
-      //console.log($scope.searchCriteria);
-      $location.path('/recipes/' + $scope.searchCriteria);
-
-    };
-
     /////////////////////////////////////
     //
     //   Login dialog

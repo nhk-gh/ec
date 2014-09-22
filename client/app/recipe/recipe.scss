@@ -1,4 +1,5 @@
 $border-radius: 10px;
+$go-recipe-color: #1027A8;
 
 .recipe-wrapper {
   background-color: white;
@@ -12,6 +13,7 @@ $border-radius: 10px;
   .recipe-title {
     position: relative;
     top:-10px;
+    min-height: 27px;
     margin-left: -10px;
     margin-right: -10px;
     text-align: center;
@@ -24,6 +26,12 @@ $border-radius: 10px;
     border-top-left-radius: $border-radius;
     -moz-border-radius-topleft: $border-radius;
     -webkit-border-top-left-radius: $border-radius;
+  }
+  .go2recipes {
+    margin-left: 10px;
+    color: $go-recipe-color;//#db7600;
+    font-size: 0.9em;
+    margin-top: 4px;
   }
   .recipe-body{
     //font-size: 1em;
@@ -53,6 +61,32 @@ $border-radius: 10px;
     width: 20%;
   }
 }
+.recipe-step-img {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 96px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  //outline-color:transparent;
+  border: none;
+  top: -30px;
+ /*
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease; */
+}
+/*.recipe-step-img:hover {
+  position: fixed;
+  min-width: 256px;
+  width: 256px;
+  left: 128px;
+  top: 128px;
+} */
+
 
 @media (max-width: 768px){
   .recipe-wrapper{

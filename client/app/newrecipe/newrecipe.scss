@@ -85,10 +85,12 @@
         position: relative;
         display: block;
         width: 100%;
-        max-width: 96px;
+        max-width: 128px;
         height: auto;
         margin-left: auto;
         margin-right: auto;
+        border: none;
+        outline: none;
       }
     }
   }

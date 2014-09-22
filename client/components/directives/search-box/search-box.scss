@@ -1,0 +1,46 @@
+.search-box {
+  @include border-radius(10px);
+
+  border: 1px solid $main-color;
+  position: relative;
+  display: inline-block;
+  background-color: white;
+  height: 25px;
+  margin-top:15px;
+  margin-bottom:15px;
+  font-size: 0.4em;
+  float: left;
+
+  -webkit-transition: width .5s ease;
+  -moz-transition: width .5s ease;
+  -ms-transition: width .5s ease;
+  -o-transition: width .5s ease;
+  transition: width .5s ease;
+
+  .review-search {
+    position: relative;
+    left: 7px;
+    top: 0px;
+    outline: none;
+    border: none;
+    text-indent: 0px;
+    width: 70%;
+    @include border-radius(10px);
+  }
+
+  button {
+    position: relative;
+    top: -2px;
+  }
+
+  .search-help {
+    color: blue;
+    margin-right: 3px;
+  }
+}
+
+@media (min-width: 768px) {
+  .search-box {
+    float: right;
+  }
+}

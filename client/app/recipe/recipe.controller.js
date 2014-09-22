@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('ecApp')
-  .controller('RecipeCtrl', function ($scope, $routeParams, recipe, Auth) {
+  .controller('RecipeCtrl', function ($scope, $window, $routeParams, recipe, Auth) {
     $scope.recipe = {};
     $scope.ingredients = [];
     $scope.isAdmin = Auth.isAdmin;
@@ -44,4 +44,5 @@ angular.module('ecApp')
 
         });
     });
+
   });

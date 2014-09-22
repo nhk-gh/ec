@@ -6,7 +6,6 @@ $main-back-color: #f5ede3;
 $main-box-shadow: rgba(186, 166, 142, 1);
 
 
-
 /* mixins */
 
 @mixin main-box-shadow() {
@@ -52,4 +51,11 @@ $main-box-shadow: rgba(186, 166, 142, 1);
     //border: 1px solid transparent;
     //border-radius: 10px;
   }
+
+  .form-control:focus {
+    border: 1px solid orange;
+    box-shadow: inset 0 1px 1px $main-back-color,
+     0 0 8px $hero-color;
+  }
 }
+

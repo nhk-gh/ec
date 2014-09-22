@@ -1,0 +1,16 @@
+.larger-image {
+  position: absolute;
+
+  height: auto;
+  display: none;
+  z-index: 2001;
+
+  img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+
+    height: auto;
+  }
+}
+

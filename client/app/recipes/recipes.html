@@ -6,10 +6,10 @@
       <div id="sm-recipe-navbar">
         <div class="row">
           <div class="col-md-4 col-sm-4 col-xs-12">
-            <span>
+            <span class="search-result-info">
               <strong>
                 <span ng-show="searchCriteria ==='' ">All</span>
-                <span ng-show="searchCriteria !=='' "> {{ searchCriteria }}</span>
+                <span ng-show="searchCriteria !=='' " class="search-result-info"> {{ searchCriteria }}</span>
                 recipes
               </strong>
               - {{ allRecipes.length }} found
