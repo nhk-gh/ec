@@ -3,6 +3,7 @@
 angular.module('ecApp').controller('NewrecipeCtrl',
   function ($scope, $routeParams, $window, $timeout, newrecipe, recipe, LIMITS, Auth) {
 
+    var imageFiles = [];
     $scope.showSuccess = false;
 
     $scope.isAdmin = Auth.isAdmin;
@@ -68,9 +69,9 @@ angular.module('ecApp').controller('NewrecipeCtrl',
 
       recipe.getRecipe($routeParams.id)
         .then(function(recipe) {
+//          console.log(recipe);
           recipe.rating = recipe.rating.toFixed(1);
           initRecipeObj(recipe);
-          //console.log(recipe);
 
         },
         function(){
@@ -81,6 +82,14 @@ angular.module('ecApp').controller('NewrecipeCtrl',
       approved = true;
       initRecipeObj();
     }
+
+    $scope.instrEditImage = function(ind){
+      if($scope.newRecipe.instructions[ind].image === '') {
+        return 'assets/images/drop-here-1.png';
+      }
+
+      return $scope.newRecipe.instructions[ind].image;
+    };
 
     $scope.leftSymbols = {
       description:LIMITS.DESCRIPTION_LEN,
@@ -148,6 +157,7 @@ angular.module('ecApp').controller('NewrecipeCtrl',
       if ($scope.action === 'Edit') {
         recipe.updateRecipe($scope.newRecipe)
           .then(function(data) {
+            uploadImageFile(data._id);
             $window.history.back();
           },
           function() {
@@ -173,7 +183,6 @@ angular.module('ecApp').controller('NewrecipeCtrl',
       }
     };
 
-    var imageFiles = {};
     $scope.$on('file-dropzone-drop-event', function(evt, data){
       imageFiles[data.ind] = data.file;
 
@@ -182,21 +191,23 @@ angular.module('ecApp').controller('NewrecipeCtrl',
     });
 
     var uploadImageFile = function(id) {
-      var fd = new FormData();
+      console.log(imageFiles.length);
+      if (imageFiles.length > 0){
+        var fd = new FormData();
 
-      for (var i in imageFiles) {
-        fd.append('files', imageFiles[i]);
+        for (var i in imageFiles) {
+          fd.append('files', imageFiles[i]);
+        }
+
+        var xhr = new XMLHttpRequest();
+        xhr.upload.addEventListener("progress", uploadProgress, false);
+        xhr.addEventListener("load", uploadComplete, false);
+        xhr.addEventListener("error", uploadFailed, false);
+        xhr.addEventListener("abort", uploadCanceled, false);
+        xhr.open("POST", "/api/recipe/" + id);
+       // $scope.progressVisible = true;
+        xhr.send(fd);
       }
-
-      var xhr = new XMLHttpRequest();
-      xhr.upload.addEventListener("progress", uploadProgress, false);
-      xhr.addEventListener("load", uploadComplete, false);
-      xhr.addEventListener("error", uploadFailed, false);
-      xhr.addEventListener("abort", uploadCanceled, false);
-      xhr.open("POST", "/api/recipe/" + id);
-     // $scope.progressVisible = true;
-      xhr.send(fd);
-
 
       function uploadProgress(evt) {
         $scope.$apply(function(){
@@ -213,12 +224,8 @@ angular.module('ecApp').controller('NewrecipeCtrl',
         $scope.$apply(function(){
           $scope.progressVisible = false;
           $scope.info = JSON.parse(evt.target.responseText).info;
-         /*
-          if (addPhotoService.currentMode == "edit"){
-            if ($scope.info == ""){
-              history.back();
-            }
-          }*/
+
+          imageFiles = [];
         })
       }
 
@@ -226,6 +233,7 @@ angular.module('ecApp').controller('NewrecipeCtrl',
         $scope.$apply(function(){
           $scope.progressVisible = false;
           $scope.info = "There was an error attempting to upload the file.";
+          imageFiles = [];
         });
       }
 
@@ -233,6 +241,7 @@ angular.module('ecApp').controller('NewrecipeCtrl',
         $scope.$apply(function(){
           $scope.progressVisible = false;
           $scope.info = "The upload has been canceled by the user or the browser dropped the connection.";
+          imageFiles = [];
         })
       }
     }

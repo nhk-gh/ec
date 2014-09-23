@@ -30,12 +30,24 @@ angular.module('ecApp')
       });
     */
 
+    var setRecipeImage = function(ind){
+      var imgStr = $scope.page.recipes[ind].instructions[$scope.page.recipes[ind].instructions.length-1].image;
+
+      if (imgStr && imgStr !== ''){
+        return imgStr;
+      }
+      return 'assets/images/cat-food-hearts-icon-128x128.png';
+    };
 
     $scope.pageChanged = function(){
       //console.log($scope.recipes);
       var begin = $scope.page.current - 1;
       var end = begin + $scope.page.itemsPerPage;
       $scope.page.recipes = $scope.allRecipes.slice(begin, end);
+
+      for (var i=0; i<$scope.page.recipes.length; i++){
+        $scope.page.recipes[i].recipeImage = setRecipeImage(i);
+      }
     };
 
     $scope.getRecipes = function(searchCriteria, newOnly){

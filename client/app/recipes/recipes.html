@@ -27,39 +27,6 @@
           </div>
         </div>
       </div>
-
-      <!--div class="navbar navbar-default navbar-static-top" id="recipe-navbar" >
-        <div class="navbar-header">
-          <button class="navbar-toggle" type="button" ng-click="isCollapsed = !isCollapsed">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <div class="row" >
-            <div class="col-md-12">
-              <strong>{{ searchCriteria }} recipes</strong> - {{ allRecipes.length }} found
-            </div>
-          </div>
-        </div>
-
-        <div collapse="isCollapsed" class="navbar-collapse collapse" id="navbar-recipe">
-          <ul class="nav navbar-nav navbar-left">
-
-            <li>
-              <span>
-                <input type="checkbox" />  New recipes only
-              </span>
-            </li>
-            <li ng-show="searchCriteria !=='All'">
-              <span>
-                <a href="/recipes">View all recipes</a>
-              </span>
-            </li>
-          </ul>
-        </div>
-      </div-->
-
     </div>
   </div>
 
@@ -75,7 +42,7 @@
             <div class="row">
               <div class="col-md-2 col-sm-2 col-xs-2">
                 <!-- from  http://www.iconka.com -->
-                <img class="img-thumbnail" ng-src='assets/images/cat-food-hearts-icon-128x128.png'/>
+                <img class="img-thumbnail" ng-src='{{ rcp.recipeImage }}'/>
               </div>
               <div class="col-md-7 col-sm-7 col-xs-7">
                 <div class="sm-recipe-description">

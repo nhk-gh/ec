@@ -73,9 +73,9 @@ Category.count(function(err, count){
 });
 
 var Recipe = require('../api/recipe/recipe.model');
-Recipe.find({}).remove(function() {
-//Recipe.count(function(err, count){
-//  if (count === 0) {
+//Recipe.find({}).remove(function() {
+Recipe.count(function(err, count){
+  if (count === 0) {
     Recipe.create(
       {
         name: 'Salmon Tartare with Avocado, Olives & Tarragon',
@@ -155,5 +155,5 @@ Recipe.find({}).remove(function() {
         viewed: 1,
         approved: true
     });
- // }
+  }
 });

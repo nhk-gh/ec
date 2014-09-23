@@ -14,7 +14,7 @@ angular.module('ecApp')
     },
     {
       name: 'Dinner Party',
-      info: 'Waiting for guests? Not a problem. Easy Cooking offers menu options for party: guests will be amazed and you will be proud..',
+      info: 'Waiting for guests? Not a problem. Easy Cooking offers menu options for party: guests will be amazed and you will be proud.',
       link: '/dinnerparty'
     }];
     /*

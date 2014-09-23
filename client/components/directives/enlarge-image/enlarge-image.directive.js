@@ -10,7 +10,7 @@ angular.module('ecApp')
       link: function (scope, element, attrs) {
         var tmrShow, tmrHide;
 
-        element.on("mouseenter", function(evt){
+        element.on("mouseover", function(evt){
             var imgWidth = 256;
             var src = attrs.src;
             var lft = (evt.clientX - imgWidth) + 'px';
