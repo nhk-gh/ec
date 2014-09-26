@@ -91,10 +91,8 @@ angular.module('ecApp')
                 scope.file = evt.target.result;
                 if (scope.action === 'Edit'){
                   element.find('img#'+scope.id+'e').attr('src', scope.file);
-                  console.log( element.find('img#'+scope.id+'e').attr('src'));
                 } else {
                   element.find('img#'+scope.id).attr('src', scope.file);
-                  console.log( scope.action);
                 }
               });
 

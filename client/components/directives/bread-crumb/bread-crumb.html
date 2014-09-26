@@ -1,0 +1,8 @@
+<ol class="breadcrumb" id="breadcrumb-base">
+  <li ng-repeat="item in bc | limitTo: bc.length-1">
+    <a href="{{ item.link }}" >{{ item.title }}</a>
+  </li>
+  <li>
+    <span class="last-crumb">{{ bc[bc.length-1].title }}</span>
+  </li>
+</ol>

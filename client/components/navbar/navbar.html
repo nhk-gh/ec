@@ -78,11 +78,11 @@
     </div>
 
     <div class="row hidden-xs" id="navbar-sub">
-        <div class="col-md-6 col-sm-6 col-xs-12">
-        <a href="/newrecipe?type=user" class="send-recipe font-04" ng-show="!isAdmin()">
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <a href="/newrecipe?type=user" class="send-recipe font-04" ng-show="!isAdmin() && isNotEditRecipe">
           <img ng-src="../../assets/images/mail_send_32x32.png" title="Send your recipe"/>
         </a>
-        <a href="/newrecipe" class="send-recipe font-04" ng-show="isAdmin()">
+        <a href="/newrecipe" class="send-recipe font-04" ng-show="isAdmin() && isNotEditRecipe">
           <img ng-src="../../assets/images/mail_send_32x32.png" title="New recipe"/>
         </a>
       </div>

@@ -1,6 +1,8 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
 <div class="container main-panel">
+  <bread-crumb path="recipes"></bread-crumb>
+
   <div class="row">
     <div class="col-md-12">
       <div id="sm-recipe-navbar">
@@ -35,7 +37,7 @@
       <div class="sm-recipe-wrapper">
         <div class="sm-recipe-title">
           <a href="/recipe/{{ rcp._id }}">{{ rcp.name }}</a>
-          <admin-tool class="pull-right" id="rcp._id"ng-show="isAdmin()"></admin-tool>
+          <admin-tool class="pull-right" rid="rcp._id" ng-show="isAdmin()"></admin-tool>
         </div>
         <div class="row sm-recipe-body">
           <div class="col-md-12" >

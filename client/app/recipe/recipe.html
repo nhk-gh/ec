@@ -1,15 +1,17 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
 <div class="container main-panel">
+  <bread-crumb path="recipe" name="{{ recipe.name }}" rcpid="{{ recipe._id }}"></bread-crumb>
+
   <div class="row">
     <div class="col-md-12">
       <div class="recipe-wrapper">
         <div class="recipe-title">
-          <a class= "pull-left go2recipes" href="/recipes" title="Go to Recipes">
+          <!--a class= "pull-left go2recipes" href="/recipes" title="Go to Recipes">
             <span class="glyphicon glyphicon-chevron-left"></span>
-          </a>
+          </a-->
           <span><strong>{{ recipe.name }}</strong></span>
-          <admin-tool class="pull-right" id="recipe._id" ng-show="isAdmin()"></admin-tool>
+          <admin-tool class="pull-right" rid="recipe._id" ng-show="isAdmin()"></admin-tool>
         </div>
         <div class="recipe-body">
           <!-- category, ... , rating -->

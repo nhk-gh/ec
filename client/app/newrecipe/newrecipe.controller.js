@@ -66,13 +66,12 @@ angular.module('ecApp').controller('NewrecipeCtrl',
       initRecipeObj();
     } else if ($routeParams.type && $routeParams.type === 'edit'){
       $scope.action = 'Edit';
-
+      //console.log($routeParams);
       recipe.getRecipe($routeParams.id)
         .then(function(recipe) {
-//          console.log(recipe);
+          //console.log(recipe);
           recipe.rating = recipe.rating.toFixed(1);
           initRecipeObj(recipe);
-
         },
         function(){
 
@@ -82,7 +81,6 @@ angular.module('ecApp').controller('NewrecipeCtrl',
       approved = true;
       initRecipeObj();
     }
-
     $scope.instrEditImage = function(ind){
       if($scope.newRecipe.instructions[ind].image === '') {
         return 'assets/images/drop-here-1.png';
@@ -147,7 +145,6 @@ angular.module('ecApp').controller('NewrecipeCtrl',
       angular.forEach(r.instructions,function(itm){
         empty += itm.step;
       });
-      //console.log(empty);
 
       return (empty.trim() === '') || (r.duration <= 0) || (!r.duration);
     };
@@ -165,7 +162,6 @@ angular.module('ecApp').controller('NewrecipeCtrl',
           });
       } else {
         $scope.newRecipe.date.date = Date.now();
-//        console.log($scope.newRecipe.instructions);
         recipe.addRecipe($scope.newRecipe).then(
           function(data){
             uploadImageFile(data._id);
@@ -191,7 +187,6 @@ angular.module('ecApp').controller('NewrecipeCtrl',
     });
 
     var uploadImageFile = function(id) {
-      console.log(imageFiles.length);
       if (imageFiles.length > 0){
         var fd = new FormData();
 

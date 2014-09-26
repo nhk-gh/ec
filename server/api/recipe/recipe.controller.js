@@ -13,10 +13,11 @@ var fs = require("fs");
 //var _ = require('lodash');
 var Recipe = require('./recipe.model');
 var mongoose = require('mongoose');
+var rimraf = require('rimraf');
 
 // Get list of recipes
 exports.index = function(req, res) {
-  //console.log(req.query.search);
+ console.log('index');
   var options = {};
   if ( req.query.newOnly === 'true') {
     options = { 'approved': false };
@@ -44,17 +45,21 @@ exports.index = function(req, res) {
 // Get a single recipe
 exports.show = function(req, res) {
   var idd = mongoose.Types.ObjectId (req.params.id);
-    Recipe.findById(idd, function (err, rcp) {
-      if(err) { return handleError(res, err); }
-      if(!rcp) { return res.send(404); }
-      //return res.json(rcp);
-      rcp.viewed += 1;
+  //console.log(req.params);
 
-      rcp.save(function (err) {
-        if (err) { return handleError(res, err); }
-        return res.json(200, rcp);
-      });
+  Recipe.findById(req.params.id, function (err, rcp) {
+    if(err) { return handleError(res, err); }
+    if(!rcp) { return res.send(404); }
+    //return res.json(rcp);
+    rcp.viewed += 1;
+    //console.log(rcp)
+
+    rcp.save(function (err) {
+      if (err) { return handleError(res, err); }
+      return res.json(200, rcp);
+      //console.log(rcp)
     });
+  });
 
 };
 
@@ -77,7 +82,8 @@ var async = require('async');
 var zeroPad = function(num){
 // add leading zero - up to 20 instructions
   return  (num < 10) ? ("0" + num) : num;
-}
+};
+
 exports.uploadImages = function(req, res){
   var arrPhotos = [];
 
@@ -95,9 +101,8 @@ exports.uploadImages = function(req, res){
     else{
       arrPhotos.push(req.files.files);
     }
-     console.log(arrPhotos[0]);
 
-     if (arrPhotos.length > 0){
+    if (arrPhotos.length > 0){
       var num = 0;
       async.each(arrPhotos, function(photo, eachIteratorCallback){
         var tmp_path = photo.path; //the temporary location of the photo
@@ -186,7 +191,7 @@ exports.uploadImages = function(req, res){
 
 
   
-}
+};
 
 function extend(target) {
   var sources = [].slice.call(arguments, 1);
@@ -221,8 +226,15 @@ exports.destroy = function(req, res) {
   Recipe.findById(req.params.id, function (err, thing) {
     if(err) { return handleError(res, err); }
     if(!thing) { return res.send(404); }
+
+    var del_dir = '/home/ubuntu/ec-imgs/' + req.params.id;
+    console.log(del_dir);
+
     thing.remove(function(err) {
       if(err) { return handleError(res, err); }
+      rimraf(del_dir, function(err){
+        console.log(err);
+      });
       return res.send(204);
     });
   });
