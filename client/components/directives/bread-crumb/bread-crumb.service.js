@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('ecApp')
-  .factory('breadCrumb', function () {
+  .factory('breadCrumbSrv', function () {
     var bcrumb = [];
 
     return {

@@ -1,49 +1,52 @@
 'use strict';
 
 angular.module('ecApp')
-  .directive('breadCrumb', function ($timeout, breadCrumb) {
+  .directive('breadCrumb', function ($rootScope, breadCrumbSrv) {
     return {
       templateUrl: 'components/directives/bread-crumb/bread-crumb.html',
       restrict: 'EA',
       replace: true,
       link: function (scope, element, attrs) {
 
-        $timeout( function(){
+        //$timeout( function(){
+        attrs.$observe('name', function(value){
           if (attrs.path !== 'newrecipe'){
-            breadCrumb.initCrumb();
+            breadCrumbSrv.initCrumb();
           }
 
           switch(attrs.path){
             case 'recipes':
-              breadCrumb.addCrumb({
+              breadCrumbSrv.addCrumb({
                 title: 'Recipes',
                 link: '/recipes'
               });
               break;
 
             case 'recipe':
-              breadCrumb.addCrumb({
+              breadCrumbSrv.addCrumb({
                 title: 'Recipes',
                 link: '/recipes'
               });
-              breadCrumb.addCrumb({
+              breadCrumbSrv.addCrumb({
                 title: attrs.name,
                 link: '/recipe/' + attrs.rcpid
               });
               break;
 
             case 'newrecipe':
-              breadCrumb.addCrumb({
-                title: attrs.action + ' recipe',
-                link: ''
-              });
+              if (breadCrumbSrv.currentCrumb() !== attrs.action + ' recipe') {
+                breadCrumbSrv.addCrumb({
+                  title: attrs.action + ' recipe',
+                  link: ''
+                });
+              }
               break;
           }
 
-          scope.bc = breadCrumb.getCrumb();
-          scope.$broadcast('bread-crumb');
-
-        },500);
+          scope.bc = breadCrumbSrv.getCrumb();
+          $rootScope.$broadcast('bread-crumb');
+        });
+        //},800);
 
       }
     };

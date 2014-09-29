@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('ecApp').controller('NewrecipeCtrl',
-  function ($scope, $routeParams, $window, $timeout, newrecipe, recipe, LIMITS, Auth) {
+  function ($scope, $routeParams, $window, $timeout, newrecipe, recipe, LIMITS, Auth, $route) {
 
     var imageFiles = [];
     $scope.showSuccess = false;
@@ -42,16 +42,23 @@ angular.module('ecApp').controller('NewrecipeCtrl',
             $scope.newRecipe.category = $scope.categories[0];
             $scope.newRecipe.cousine = '';
             $scope.newRecipe.description = '';// left:};
-            $scope.newRecipe.duration = 0;
+            $scope.newRecipe.duration = 10;
             $scope.newRecipe.ingredients = [{name: '', qtty: '', note: ''}];
-            $scope.newRecipe.instructions =[{step: '', image: ''}];
+            $scope.newRecipe.instructions =[{step: '', image: 'assets/images/drop-here-1.png'}];
+
             $scope.newRecipe.grant = {name:'', image:''};
             $scope.newRecipe.date = {type:Date, date:null};
-            $scope.newRecipe.notes = [''];
+            $scope.newRecipe.notes = [];
             $scope.newRecipe.rating = 0;
             $scope.newRecipe.voted = [];
             $scope.newRecipe.viewed = 0;
             $scope.newRecipe.approved = approved;
+
+            $scope.leftSymbols = {
+              description:LIMITS.DESCRIPTION_LEN,
+              instruction: [LIMITS.INSTRUCTION_LEN],
+              notes: [LIMITS.NOTE_LEN]
+            };
           }
         },
         function(){
@@ -138,19 +145,32 @@ angular.module('ecApp').controller('NewrecipeCtrl',
 
     $scope.hasEmptyFields = function(){
       var r = $scope.newRecipe;
-      var empty = r.grant.name + r.name;
-      angular.forEach(r.ingredients, function(itm){
-        empty += (itm.name+itm.qtty);
-      });
-      angular.forEach(r.instructions,function(itm){
-        empty += itm.step;
-      });
+      var empty = false;
 
-      return (empty.trim() === '') || (r.duration <= 0) || (!r.duration);
+      if ((r.grant.name.trim() === '') || (r.name.trim() ==='') ||
+          (r.duration <= 0) || !r.duration) {
+        empty = true;
+      } else {
+        var i;
+        for(i=0; i<r.ingredients.length; i++){
+          if (r.ingredients[i].name.trim() === '' || r.ingredients[i].qtty.trim() === ''){
+            empty = true;
+            break;
+          }
+        }
+        if (!empty) {
+          for(i=0; i<r.instructions.length; i++){
+            if (r.instructions[i].step.trim() === ''){
+              empty = true;
+              break;
+            }
+          }
+        }
+      }
+      return (empty);
     };
 
     $scope.addRecipe = function() {
-
       if ($scope.action === 'Edit') {
         recipe.updateRecipe($scope.newRecipe)
           .then(function(data) {
@@ -168,8 +188,11 @@ angular.module('ecApp').controller('NewrecipeCtrl',
             $scope.$broadcast('splash-panel');
 
             initRecipeObj();
+
+
             $scope.showSuccess = true;
             $timeout(function(){
+              $route.reload();
               $scope.showSuccess = false;
             },2000);
           },
@@ -183,7 +206,7 @@ angular.module('ecApp').controller('NewrecipeCtrl',
       imageFiles[data.ind] = data.file;
 
       var num = (data.ind < 10) ? ("0" + data.ind) : data.ind; // 20 max
-      $scope.newRecipe.instructions[data.ind].image = num + "-" + data.name;
+      //$scope.newRecipe.instructions[data.ind].image = num + "-" + data.name;
     });
 
     var uploadImageFile = function(id) {

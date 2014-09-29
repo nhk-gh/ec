@@ -10,22 +10,28 @@ angular.module('ecApp')
 
         var inp = element.find('.review-search');
 
-        element.on('click', function() {
-         // console.log(element.find('.review-search'))
-          element.css('width', '60%');
-          inp.css('width', '75%');
-        })
-        .on('mouseleave', function() {
-          if (inp.val().trim() === ''){
-            element.css('width', '30%');
-            inp.css('width', '60%');
-          }
-        });
+        element
+          .on('click', function() {
+           // console.log(element.find('.review-search'))
+            element.css('width', '60%');
+            inp.css('width', '75%');
+          })
+          .on('mouseleave', function() {
+            if (scope.searchCriteria.trim() === ''){
+              element.css('width', '30%');
+              inp.css('width', '60%');
+            }
+          });
 
         scope.search = function(){
           element.css('width', '30%');
           inp.css('width', '60%');
           $location.path('/recipes/' + scope.searchCriteria);
+        };
+
+        scope.keyPressed = function(evt){
+          if (evt.which === 13)
+            scope.search();
         };
       }
     };

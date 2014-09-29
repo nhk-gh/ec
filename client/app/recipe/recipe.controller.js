@@ -1,15 +1,29 @@
 'use strict';
 
 angular.module('ecApp')
-  .controller('RecipeCtrl', function ($scope, $window, $routeParams, recipe, Auth) {
+  .controller('RecipeCtrl', function ($scope, $window, $routeParams, recipe, Auth, LIMITS) {
     $scope.recipe = {};
     $scope.ingredients = [];
     $scope.isAdmin = Auth.isAdmin;
+
+    var userRating= function(voted){
+      if (!Auth.isLoggedIn()){
+        return LIMITS.MAX_RATING;
+      } else {
+        var cu = Auth.getCurrentUser().name;
+        var didRate = voted.filter(function(val, ind){
+          return val.name === cu;
+        });
+        return didRate[0].rating;
+      }
+    };
 
     recipe.getRecipe($routeParams.id)
       .then(function(recipe) {
         recipe.rating = recipe.rating.toFixed(1);
         $scope.recipe = recipe;
+        $scope.currentUserRating = userRating($scope.recipe.voted);
+
         arrangeIngredients();
         //console.log($scope.recipe)
       },

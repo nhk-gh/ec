@@ -32,8 +32,19 @@ div.show-recipe-rating {
       margin: 0px;
     }
     .rate-it {
-      font-weight: bold;
-      font-size: 1.1em;
+      font-weight: normal;
+      font-size: 1.0em;
+
+      span {margin-top: 15px; }
+
+      .rate-btn {
+        font-weight: bold;
+        margin-left: 5px;
+        font-size: 1.2em;
+        background-color: rgba(186, 166, 142, 0.31);
+        border: 1px solid transparent;
+        @include border-radius(5px);
+      }
     }
   }
 }

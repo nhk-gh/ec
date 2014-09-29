@@ -1,7 +1,7 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
 <div class="container main-panel">
-  <bread-crumb path="recipe" name="{{ recipe.name }}" rcpid="{{ recipe._id }}"></bread-crumb>
+  <bread-crumb rcpid="{{ recipe._id }}" path="recipe" name="{{ recipe.name }}"></bread-crumb>
 
   <div class="row">
     <div class="col-md-12">
@@ -28,7 +28,7 @@
               </div>
             </div>
             <div class="col-md-4 col-sm-4 col-xs-5">
-              <gradient-rating overall="recipe.rating" ratings="recipe.ratings"
+              <gradient-rating overall="recipe.rating" ratings="recipe.ratings" current="currentUserRating"
                                viewed="recipe.viewed" ratable="true" ></gradient-rating>
             </div>
           </div>
@@ -45,6 +45,7 @@
                     <col id="ingredient-col-1">
                     <col id="ingredient-col-2">
                     <col id="ingredient-col-3">
+                    <col id="ingredient-col-4">
                   </colgroup>
 
                   <tbody>
@@ -55,7 +56,6 @@
                       <td>
                         <span>{{ ing.name }} <span ng-show="ing.note !==''">({{ ing.note }})</span></span>
                       </td>
-
                       <td>
                         <span> - {{ ing.qtty }} </span>
                       </td>
@@ -72,7 +72,7 @@
               <div class="col-md-12">
                 <strong>Instructions:</strong>
                 <br/>
-                <div class="row" ng-repeat="inst in recipe.instructions">
+                <div class="row instr-row" ng-repeat="inst in recipe.instructions">
                   <div class="col-md-9 col-sm-9 col-xs-9">
                     <span>{{ $index + 1 }}.</span>
                     <span>{{ inst.step }}</span>
@@ -87,12 +87,12 @@
           </div>
 
           <!-- notes -->
-          <div class="row">
+          <div class="row" ng-show="recipe.notes.length > 0">
             <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="col-md-12">
                 <strong>Notes:</strong>
                 <br/>
-                <div class="row" ng-repeat="note in recipe.notes">
+                <div class="row note-row" ng-repeat="note in recipe.notes">
                   <div class="col-md-1 col-sm-1 col-xs-1">
                     {{ $index + 1 }}.
                   </div>

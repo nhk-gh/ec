@@ -144,8 +144,6 @@
                 <tbody>
                   <tr ng-repeat="inst in newRecipe.instructions track by $index">
                     <td>
-                      <!--input type="text" class="form-control table-input"
-                             ng-model="newRecipe.instructions[$index].step"/-->
                       <textarea class="form-control table-input" rows="3" ng-change="instructionLeftSymbols($index)"
                                 ng-model="newRecipe.instructions[$index].step">
                       </textarea>
@@ -161,7 +159,7 @@
                              ng-show="action === 'Edit'"/-->
                         <img id='{{ $index }}e' ng-src="{{ instrEditImage($index) }}" title="Drag and drop or click here"
                              ng-show="action === 'Edit'"/>
-                        <img id='{{ $index }}' ng-src="assets/images/drop-here-1.png" title="Drag and drop or click here"
+                        <img id='{{ $index }}' ng-src="{{ inst.image }}" title="Drag and drop or click here"
                              ng-show="action !== 'Edit'"/>
 
                         <input type="file" class="{{ $index }}" name="book" ng-show="false"
@@ -240,15 +238,15 @@
                     </span>
                   </div>
                   <div class="col-sm-2 col-xs-2">
-                    <!--button type="submit" class="btn btn-default pull-right" id="addrecipe-btn"
+                    <button type="submit" class="btn btn-default pull-right" id="addrecipe-btn"
                             ng-click="addRecipe()"
                             ng-disabled="addrecipeform.$invalid || hasEmptyFields()">
                       {{ action }} recipe
-                    </button-->
-                    <button type="submit" class="btn btn-default pull-right" id="addrecipe-btn"
+                    </button>
+                    <!--button type="submit" class="btn btn-default pull-right" id="addrecipe-btn"
                             ng-click="addRecipe()"   >
                       {{ action }} recipe
-                    </button>
+                    </button-->
                   </div>
                 </div>
               </div>

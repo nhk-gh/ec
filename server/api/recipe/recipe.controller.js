@@ -14,10 +14,13 @@ var fs = require("fs");
 var Recipe = require('./recipe.model');
 var mongoose = require('mongoose');
 var rimraf = require('rimraf');
+var im = require('imagemagick');
+
+im.identify.path = '/usr/bin/identify';
+im.convert.path = '/usr/bin/convert';
 
 // Get list of recipes
 exports.index = function(req, res) {
- console.log('index');
   var options = {};
   if ( req.query.newOnly === 'true') {
     options = { 'approved': false };
@@ -156,6 +159,13 @@ exports.uploadImages = function(req, res){
               else
                 callback(null);
             });
+          },
+          //create small img
+          function(callback){
+            im.convert([target_path, '-resize', '800x800', target_path],
+              function(err){
+                callback(err);
+              });
           }],
 
           function(err){
@@ -228,7 +238,6 @@ exports.destroy = function(req, res) {
     if(!thing) { return res.send(404); }
 
     var del_dir = '/home/ubuntu/ec-imgs/' + req.params.id;
-    console.log(del_dir);
 
     thing.remove(function(err) {
       if(err) { return handleError(res, err); }

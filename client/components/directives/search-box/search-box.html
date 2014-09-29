@@ -1,6 +1,6 @@
 <div class="search-box">
   <input type="text"  placeholder="Search ..." class="review-search"
-         ng-model="searchCriteria"/>
+         ng-model="searchCriteria" ng-keypress="keyPressed($event)"/>
   <div class="pull-right">
     <button class="btn btn-link btn-sm" ng-click="search(searchCriteria)">
       <span class="glyphicon glyphicon-search"></span>

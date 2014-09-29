@@ -41,7 +41,8 @@
             </button>
             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
               <li ng-class="{active: isActive('/settings')}">
-                <a class="font-1" href="/settings"><span class="glyphicon glyphicon-cog"></span></a>
+                <!--a class="font-1" href="/settings" ><span class="glyphicon glyphicon-cog"></span></a-->
+                <span class="font-1" style="color: gray; position:relative;margin-left: 16px"><span class="glyphicon glyphicon-cog"></span></span>
               </li>
               <li ng-class="{active: isActive('/logout')}" >
                 <a class="font-1" href="" ng-click="logout()">Logout</a>

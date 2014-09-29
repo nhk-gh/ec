@@ -1,12 +1,13 @@
 'use strict';
 
-angular.module('ecApp').directive('gradientRating', function (LIMITS, $timeout, Auth) {
+angular.module('ecApp').directive('gradientRating', function (LIMITS, Auth, $timeout) {
   return {
     templateUrl: 'components/directives/gradient-rating/gradient-rating.html',
     restrict: 'E',
 
     scope: {
       overall:'=',
+      current: '=',
       voted: '=',
       viewed: '='
     },
@@ -24,30 +25,43 @@ angular.module('ecApp').directive('gradientRating', function (LIMITS, $timeout, 
         if (gradient.mono === true) {
           color = '#e6f207';
         } else {
-          pos = 100*(gradient.pos/elW);
-          color = 'linear-gradient(to right,  #f28b7e 0%, #f28b7e ' + (pos-0) +
-            '%, black ' + pos + '% ,#07ef1e ' + (pos+0) +
+          //pos = 100*(gradient.pos/elW);
+          pos =  100*(gradient.pos/LIMITS.MAX_RATING);
+          color = 'linear-gradient(to right,  #f28b7e 0%, #f28b7e ' + (pos-1) +
+            '%, blue ' + (pos+0) + '% ,#07ef1e ' + (pos+0) +
             '% ,#07ef1e 100%)';
         }
 
-        scope.$apply(function(){
-          var r = LIMITS.MAX_RATING - pos/(100/LIMITS.MAX_RATING);
-          if (r<1){ r=1;}
+        //var r = LIMITS.MAX_RATING - pos/(100/LIMITS.MAX_RATING);
+        var r = LIMITS.MAX_RATING - LIMITS.MAX_RATING*pos/100;
+        if (r<1){ r=1;}
+
+        var phase = scope.$$phase;
+        if (phase === '$apply' || phase === '$digest') {
           scope.userrating = r.toFixed(1);
-        });
+        } else {
+          scope.$apply(function(){
+            scope.userrating = r.toFixed(1);
+          });
+        }
 
         el.css('background', color);
       };
 
-      $timeout(function(){
-        elW = parseInt(el.css('width'));
-        if (scope.overall === '0.0') {
-          drawRatingBar({pos:0, mono:true});
-        } else {
-          var rating = elW - elW * (scope.overall / LIMITS.MAX_RATING);
-          drawRatingBar({pos:rating, mono:false});
+      scope.$watch('overall', function(value){
+        if (value !== undefined) {
+          $timeout(function(){
+            elW = parseInt(el.css('width'));
+
+            if (value === '0.0') {
+              drawRatingBar({pos:0, mono:true});
+            } else {
+              //var rating = elW - elW * (value / LIMITS.MAX_RATING);
+              drawRatingBar({pos:LIMITS.MAX_RATING - scope.current, mono:false});
+            }
+          }, 1000);
         }
-      }, 700);
+      });
 
       scope.ratable = attrs.ratable === 'true';
 
@@ -57,18 +71,19 @@ angular.module('ecApp').directive('gradientRating', function (LIMITS, $timeout, 
         el.css('cursor','col-resize');
 
         el.on('mousedown', function(){
-          rateOn = true;
-        })
+            rateOn = true;
+          })
           .on('mouseup', function(){
             rateOn = false;
           })
           .on('mousemove', function(e){
             if (rateOn){
-              drawRatingBar({pos:e.offsetX, mono:false});
+              drawRatingBar({pos:LIMITS.MAX_RATING*(e.clientX-$(this).offset().left)/elW, mono:false});
             }
           })
           .on('click', function(e){
-            drawRatingBar({pos:e.offsetX, mono:false});
+            //drawRatingBar({pos:e.offsetX, mono:false});
+            drawRatingBar({pos:LIMITS.MAX_RATING*(e.clientX-$(this).offset().left)/elW, mono:false});
           });
 
       } else {
