@@ -4,7 +4,7 @@ $main-color:      #928263;
 $hero-color:      #916D42;
 $main-back-color: #f5ede3;
 $main-box-shadow: rgba(186, 166, 142, 1);
-
+$btn-back-color:  rgba(186, 166, 142, 0.31);
 
 /* mixins */
 
@@ -18,6 +18,11 @@ $main-box-shadow: rgba(186, 166, 142, 1);
   -webkit-box-shadow: inset $x $y $blur $spread $color;
   -moz-box-shadow:    inset $x $y $blur $spread $color;
   box-shadow:         inset $x $y $blur $spread $color;
+}
+@mixin box-shadow($x, $y, $blur, $spread, $color) {
+  -webkit-box-shadow: $x $y $blur $spread $color;
+  -moz-box-shadow:    $x $y $blur $spread $color;
+  box-shadow:         $x $y $blur $spread $color;
 }
 
 @mixin border-radius($radius) {

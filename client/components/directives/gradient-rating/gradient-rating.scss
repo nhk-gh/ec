@@ -41,9 +41,13 @@ div.show-recipe-rating {
         font-weight: bold;
         margin-left: 5px;
         font-size: 1.2em;
-        background-color: rgba(186, 166, 142, 0.31);
+        background-color: $btn-back-color;
         border: 1px solid transparent;
         @include border-radius(5px);
+      }
+      .rate-btn:hover {
+        color: $main-color;
+        @include box-shadow-insert(0, 0, 15px, 0px, #ba7a5a);
       }
     }
   }

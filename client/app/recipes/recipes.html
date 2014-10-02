@@ -10,21 +10,22 @@
           <div class="col-md-4 col-sm-4 col-xs-12">
             <span class="search-result-info">
               <strong>
-                <span ng-show="searchCriteria ==='' ">All</span>
+                <span ng-show="searchCriteria ==='' ">{{ glossary.all }}</span>
                 <span ng-show="searchCriteria !=='' " class="search-result-info"> {{ searchCriteria }}</span>
-                recipes
+                {{ glossary.recipes }}
               </strong>
-              - {{ allRecipes.length }} found
+              - {{ allRecipes.length }} {{ glossary.found }}
             </span>
           </div>
           <div class="col-md-4 col-sm-4 col-xs-12">
             <span ng-show="isAdmin()">
-              <input type="checkbox" ng-model="newOnly" ng-change="getRecipes(searchCriteria, newOnly)"/>  {{ chkboxTitle }}
+              <input type="checkbox" ng-model="newOnly" ng-change="getRecipes(searchCriteria, newOnly)"
+                      style="margin-top: 2px"/>  {{ chkboxTitle }}
             </span>
           </div>
           <div class="col-md-4 col-sm-4 col-xs-12">
             <span ng-show="searchCriteria !==''">
-              <a href="#" ng-click="getRecipes('', newOnly)">View all recipes</a>
+              <a href="#" ng-click="getRecipes('', newOnly)">{{ glossary.viewall }}</a>
             </span>
           </div>
         </div>
@@ -43,8 +44,10 @@
           <div class="col-md-12" >
             <div class="row">
               <div class="col-md-2 col-sm-2 col-xs-2">
-                <!-- from  http://www.iconka.com -->
-                <img class="img-thumbnail" ng-src='{{ rcp.recipeImage }}'/>
+                <a href="/recipe/{{ rcp._id }}" class="recipe-photo-link">
+                  <!-- from  http://www.iconka.com -->
+                  <img class="img-thumbnail" ng-src='{{ rcp.recipeImage }}'/>
+                </a>
               </div>
               <div class="col-md-7 col-sm-7 col-xs-7">
                 <div class="sm-recipe-description">
@@ -56,17 +59,17 @@
 
                   <div class="row" style="margin-top: 3px">
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      Category: <a href="#" ng-click="getRecipes(rcp.category.name, newOnly)">{{ rcp.category.name }}</a> &nbsp;
+                      {{ glossary.category }}: <a href="#" ng-click="getRecipes(rcp.category.name, newOnly)">{{ rcp.category.name }}</a> &nbsp;
                     </div>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      Cousine: <a href="#" ng-click="getRecipes(rcp.cousine, newOnly)">{{ rcp.cousine }}</a>
+                      {{ glossary.cousine }}: <a href="#" ng-click="getRecipes(rcp.cousine, newOnly)">{{ rcp.cousine }}</a>
                     </div>
                   </div>
-                  <p><span class="glyphicon glyphicon-time"></span> {{ rcp.duration }} min</p>
+                  <p><span class="glyphicon glyphicon-time"></span> {{ rcp.duration }} {{ glossary.minutesshort }}</p>
                 </div>
               </div>
               <div class="col-md-3 col-sm-3 col-xs-3">
-                <div id="sm-recipe-rating">
+                <div class="sm-recipe-rating">
                   <gradient-rating overall="rcp.rating" voted="rcp.voted.length" current="rcp.rating"
                           viewed="rcp.viewed" ratable="false"></gradient-rating>
                 </div>

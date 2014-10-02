@@ -1,7 +1,20 @@
 'use strict';
 
 angular.module('ecApp').controller('NewrecipeCtrl',
-  function ($scope, $routeParams, $window, $timeout, newrecipe, recipe, LIMITS, Auth, $route) {
+  function ($scope, $routeParams, $window, $timeout, newrecipe, recipe, LIMITS, Auth, glossary, $route) {
+    $scope.glossary = glossary.getGlossary();
+
+    $scope.$on('language-changed', function(){
+      $scope.glossary = glossary.getGlossary();
+
+      if ($routeParams.type && $routeParams.type === 'user'){
+        $scope.action = $scope.glossary.send;
+      } else if ($routeParams.type && $routeParams.type === 'edit'){
+        $scope.action = $scope.glossary.edit;
+      } else {
+        $scope.action = $scope.glossary.add;
+      }
+    });
 
     var imageFiles = [];
     $scope.showSuccess = false;
@@ -13,7 +26,7 @@ angular.module('ecApp').controller('NewrecipeCtrl',
       newrecipe.getCategories().then(
         function(data) {
           $scope.categories = data;
-          $scope.categories.unshift({name:'-- Select category --',_id: 0});
+          $scope.categories.unshift({name:$scope.glossary.selectcategory,_id: 0});
           //$scope.newRecipe.category = $scope.categories[0];
 
           if (obj){
@@ -68,11 +81,11 @@ angular.module('ecApp').controller('NewrecipeCtrl',
     };
 
     if ($routeParams.type && $routeParams.type === 'user'){
-      $scope.action = 'Send';
+      $scope.action = $scope.glossary.send;
       approved = false;
       initRecipeObj();
     } else if ($routeParams.type && $routeParams.type === 'edit'){
-      $scope.action = 'Edit';
+      $scope.action = $scope.glossary.edit;
       //console.log($routeParams);
       recipe.getRecipe($routeParams.id)
         .then(function(recipe) {
@@ -84,7 +97,7 @@ angular.module('ecApp').controller('NewrecipeCtrl',
 
         });
     } else {
-      $scope.action = 'Add';
+      $scope.action = $scope.glossary.add;
       approved = true;
       initRecipeObj();
     }
@@ -171,7 +184,7 @@ angular.module('ecApp').controller('NewrecipeCtrl',
     };
 
     $scope.addRecipe = function() {
-      if ($scope.action === 'Edit') {
+      if ($scope.action === $scope.glossary.edit) {
         recipe.updateRecipe($scope.newRecipe)
           .then(function(data) {
             uploadImageFile(data._id);

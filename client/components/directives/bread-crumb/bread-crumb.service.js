@@ -1,14 +1,14 @@
 'use strict';
 
 angular.module('ecApp')
-  .factory('breadCrumbSrv', function () {
+  .factory('breadCrumbSrv', function (glossary) {
     var bcrumb = [];
 
     return {
       initCrumb: function(){
         bcrumb = [];
         bcrumb.push({
-          title:'Home',
+          title:glossary.getGlossary().home,
           link: '/'
         });
       },

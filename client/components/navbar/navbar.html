@@ -1,5 +1,5 @@
 <login-dialog></login-dialog>
-<logout-dialog></logout-dialog>
+<!--logout-dialog></logout-dialog-->
 <signup-dialog></signup-dialog>
 
 <div class="navbar navbar-default navbar-static-top" id="navbar-wrapper" ng-controller="NavbarCtrl">
@@ -13,8 +13,8 @@
       </button>
       <div class="row" >
         <div class="col-md-12">
-          <a href="/" id="brand-name" class="navbar-brand">Easy Cooking</a>
-          <span id="brand-subtitle"> <em>quick recipes for lazy people</em> </span>
+          <a href="/" id="brand-name" class="navbar-brand">{{ glossary.sitename }}</a>
+          <span id="brand-subtitle"> <em>{{ glossary.sitesubname }}</em> </span>
         </div>
       </div>
     </div>
@@ -22,10 +22,10 @@
     <div collapse="isCollapsed" class="navbar-collapse collapse" id="navbar-main">
       <ul class="nav navbar-nav navbar-right">
         <li ng-hide="isLoggedIn()">
-          <a class="font-04" href="#" ng-click="openSignupDlg()">Sign up</a>
+          <a class="font-04" href="#" ng-click="openSignupDlg()">{{ glossary.signup }}</a>
         </li>
         <li ng-hide="isLoggedIn()"  class="most-right">
-          <a class="font-04" href="#" ng-click="openLoginDlg()">Login</a>
+          <a class="font-04" href="#" ng-click="openLoginDlg()">{{ glossary.login }}</a>
         </li>
 
         <li class="most-right" ng-show="isLoggedIn()">
@@ -36,7 +36,7 @@
                 it works fine
             -->
             <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenu1">
-              <span class="font-1"><strong>Hello {{ getCurrentUser().name }}</strong></span>
+              <span class="font-1"><strong>{{ glossary.hello }} {{ getCurrentUser().name }}</strong></span>
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
@@ -45,30 +45,30 @@
                 <span class="font-1" style="color: gray; position:relative;margin-left: 16px"><span class="glyphicon glyphicon-cog"></span></span>
               </li>
               <li ng-class="{active: isActive('/logout')}" >
-                <a class="font-1" href="" ng-click="logout()">Logout</a>
+                <a class="font-1" href="" ng-click="logout()">{{ glossary.logout }}</a>
               </li>
             </ul>
           </div>
         </li>
         <li>
           <span>
-            <a href="">
-              <img ng-src="../../assets/images/Israel-icon.png" title="Hebrew"/>
+            <a href="" ng-click="changeLanguage('hebrew')" style="display:none">
+              <img ng-src="../../assets/images/Israel-icon.png" title="{{ glossary.hebrew }}"/>
             </a>
 
-            <a href="">
-              <img ng-src="../../assets/images/Russia-icon.png" title="Russian"/>
+            <a href="" ng-click="changeLanguage('english')">
+              <img ng-src="../../assets/images/United-States-icon.png" title="{{ glossary.english}}"/>
             </a>
+             <a href="" ng-click="changeLanguage('russian')">
+               <img ng-src="../../assets/images/Russia-icon.png" title="{{ glossary.russian }}"/>
+             </a>
 
-            <a href="">
-              <img ng-src="../../assets/images/United-States-icon.png" title="English (USA)"/>
-            </a>
-          </span>
+         </span>
         </li>
 
         <li class="hidden-sm hidden-md hidden-lg">
           <a href="/newrecipe?type=user" class="send-recipe">
-            <span class="font-04">Send your recipe</span>
+            <span class="font-04">{{ glossary.sendrecipe }}</span>
           </a>
         </li>
 
@@ -81,10 +81,10 @@
     <div class="row hidden-xs" id="navbar-sub">
       <div class="col-md-6 col-sm-6 col-xs-12">
         <a href="/newrecipe?type=user" class="send-recipe font-04" ng-show="!isAdmin() && isNotEditRecipe">
-          <img ng-src="../../assets/images/mail_send_32x32.png" title="Send your recipe"/>
+          <img ng-src="../../assets/images/mail_send_32x32.png" title="{{ glossary.sendrecipe }}"/>
         </a>
         <a href="/newrecipe" class="send-recipe font-04" ng-show="isAdmin() && isNotEditRecipe">
-          <img ng-src="../../assets/images/mail_send_32x32.png" title="New recipe"/>
+          <img ng-src="../../assets/images/mail_send_32x32.png" title="{{ glossary.newrecipe }}"/>
         </a>
       </div>
       <div class="col-md-6 col-sm-6 col-xs-12">

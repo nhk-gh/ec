@@ -22,11 +22,11 @@ body {
 // injector
 @import 'admin/admin.scss';
 @import 'common.scss';
+@import 'fridge/fridge.scss';
 @import 'main/main.scss';
 @import 'newrecipe/newrecipe.scss';
 @import 'recipe/recipe.scss';
 @import 'recipes/recipes.scss';
-@import 'translator/translator.scss';
 @import '../components/directives/admin-tool/admin-tool.scss';
 @import '../components/directives/bread-crumb/bread-crumb.scss';
 @import '../components/directives/enlarge-image/enlarge-image.scss';

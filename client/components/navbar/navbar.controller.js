@@ -1,7 +1,14 @@
 'use strict';
 
 angular.module('ecApp')
-  .controller('NavbarCtrl', function ($scope, $location, Auth, translator, breadCrumbSrv) {
+  .controller('NavbarCtrl', function ($scope, $location, $rootScope, Auth, glossary) {
+    $scope.glossary = glossary.getGlossary();
+
+    $scope.changeLanguage = function(lang){
+      $scope.glossary = glossary.changeLanguage(lang)
+      $rootScope.$broadcast('language-changed');
+    };
+
 
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;
@@ -25,8 +32,6 @@ angular.module('ecApp')
     $scope.isActive = function(route) {
       return route === $location.path();
     };
-
-    //$scope.language = translator.currentLanguage;
 
     /////////////////////////////////////
     //

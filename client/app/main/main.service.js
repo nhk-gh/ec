@@ -4,7 +4,7 @@ angular.module('ecApp')
   .factory('main', function ($q, $http, $log) {
     return {
       getFeatures: function(){
-        var deferred = $q.defer();
+        /*var deferred = $q.defer();
 
         $http({method:'GET', url:'api/feature', cache: false})
           .success(function(data){
@@ -15,7 +15,7 @@ angular.module('ecApp')
             deferred.reject(status);
           });
 
-        return deferred.promise;
+        return deferred.promise;  */
       }
     };
   });

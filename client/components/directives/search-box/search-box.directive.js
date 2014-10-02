@@ -1,12 +1,13 @@
 'use strict';
 
 angular.module('ecApp')
-  .directive('searchBox', function ($location) {
+  .directive('searchBox', function ($location, glossary) {
     return {
       templateUrl: 'components/directives/search-box/search-box.html',
       restrict: 'EA',
       replace: true,
       link: function (scope, element) {
+        scope.placeholder = glossary.getGlossary().search;
 
         var inp = element.find('.review-search');
 

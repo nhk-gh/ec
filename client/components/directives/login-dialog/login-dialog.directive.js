@@ -1,12 +1,16 @@
 'use strict';
 
 angular.module('ecApp')
-  .directive('loginDialog', function (Auth, $window) {
+  .directive('loginDialog', function (Auth, $window, glossary) {
     return {
       templateUrl: 'components/directives/login-dialog/login-dialog.html',
       restrict: 'EA',
       scope:{},
       link: function (scope, element) {
+        scope.glossary = glossary.getGlossary();
+        scope.$on('language-changed', function(){
+          scope.glossary = glossary.getGlossary();
+        });
         scope.user = {};
         scope.errors = {};
 

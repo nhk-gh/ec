@@ -1,22 +1,4 @@
 $border-radius: 5px;
-/*
-#recipe-navbar {
-  background-color: inherit;
-  border: none;
-  margin: 0px;
-
-  button[class="navbar-toggle"]{
-    border:none;
-  }
-  ul li span {
-    padding: 10px;
-  }
-  ul li span * {
-    margin: 0px;
-    padding: 0px;
-  }
-} */
-
 
 #sm-recipe-navbar {
   position: relative;
@@ -72,6 +54,10 @@ $border-radius: 5px;
     height: auto;
    // border: 1px solid #008000;
   }
+  .img-thumbnail:hover{
+    @include box-shadow-insert(0, 0, 10px, 4px, $hero-color);
+  }
+
   .sm-recipe-description {
     display: inline-block;
     position: relative;
@@ -82,7 +68,7 @@ $border-radius: 5px;
     float:left;
   }
 
-  #sm-recipe-rating {
+  .sm-recipe-rating {
     display: inline-block;
     position: relative;
     width: 100%;

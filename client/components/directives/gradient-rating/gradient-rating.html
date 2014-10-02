@@ -1,15 +1,15 @@
 <div class="show-recipe-rating">
   <div class="rating-gradient"></div>
   <div class="rating-text">
-    <p ng-show="!ratable">{{ viewed }} people read recipe</p>
-    <p ng-show="!ratable">{{ voted }} people vote</p>
+    <p ng-show="!ratable">{{ viewed }} {{ glossary.peopleread }}</p>
+    <p ng-show="!ratable">{{ voted }} {{ glossary.peoplevote }}</p>
 
-    <p>Overall rating: <strong>{{ overall }}</strong></p>
+    <p>{{ glossary.overallrating }} <strong>{{ overall }}</strong></p>
 
     <div class="rate-it" ng-show="ratable">
-      <p>Your rating: <strong>{{ userrating }}</strong></p>
+      <p>{{ glossary.yourrating }} <strong>{{ userrating }}</strong></p>
       <span href="" ng-click="rateRecipe()">Drag or click on bar and</span>
-      <a ng-click="rateRecipe()" class="btn btn-xs rate-btn">Rate it!</a>
+      <button ng-click="rateRecipe()" class="btn btn-xs rate-btn">Rate it!</button>
     </div>
 
   </div>

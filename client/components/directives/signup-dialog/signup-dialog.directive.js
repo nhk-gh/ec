@@ -1,13 +1,15 @@
 'use strict';
 
 angular.module('ecApp')
-  .directive('signupDialog', function (Auth, $window, LIMITS) {
+  .directive('signupDialog', function (Auth, $window, LIMITS, glossary) {
     return {
       templateUrl: 'components/directives/signup-dialog/signup-dialog.html',
       restrict: 'EA',
       scope:{},
 
       link: function (scope, element, attrs) {
+        scope.glossary = glossary.getGlossary();
+
         scope.user = {};
         scope.errors = {};
         scope.minPassLen = LIMITS.MIN_PASSWORD_LEN;

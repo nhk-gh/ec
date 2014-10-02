@@ -1,7 +1,9 @@
 'use strict';
 
 angular.module('ecApp')
-  .controller('RecipeCtrl', function ($scope, $window, $routeParams, recipe, Auth, LIMITS) {
+  .controller('RecipeCtrl', function ($scope, $window, $routeParams, recipe, Auth, LIMITS, glossary) {
+    $scope.glossary = glossary.getGlossary();
+
     $scope.recipe = {};
     $scope.ingredients = [];
     $scope.isAdmin = Auth.isAdmin;

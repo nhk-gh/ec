@@ -1,20 +1,42 @@
 'use strict';
 
 angular.module('ecApp')
-  .controller('MainCtrl', function ($scope, $location, main) {
+  .controller('MainCtrl', function ($scope, $location, main, glossary) {
+
+    $scope.glossary = glossary.getGlossary();
+    $scope.$on('language-changed', function(){
+      $scope.glossary = glossary.getGlossary();
+
+      $scope.features = [{
+        name: $scope.glossary.recipes,
+        info: $scope.glossary.recipesdescription,
+        link: '/recipes'
+      },
+        {
+          name: $scope.glossary.myfridge,
+          info: $scope.glossary.myfridgedescription,
+          link: '/fridge'
+        },
+        {
+          name: $scope.glossary.party,
+          info: $scope.glossary.partydescription,
+          link: '/dinnerparty'
+        }];
+    });
+
     $scope.features = [{
-      name: 'Recipes',
-      info: 'A huge number of recipes - easy to cook, affordable ingredients and absolutely delicious!.',
+      name: $scope.glossary.recipes,
+      info: $scope.glossary.recipesdescription,
       link: '/recipes'
     },
     {
-      name: 'In my Fridge',
-      info: 'Stayed late at the office, didn’t have the chance to drop by the store ... Tell us what products you\'ve found in the kitchen and we will help you cook the best meal for dinner.',
+      name: $scope.glossary.myfridge,
+      info: $scope.glossary.myfridgedescription,
       link: '/fridge'
     },
     {
-      name: 'Dinner Party',
-      info: 'Waiting for guests? Not a problem. Easy Cooking offers menu options for party: guests will be amazed and you will be proud.',
+      name: $scope.glossary.party,
+      info: $scope.glossary.partydescription,
       link: '/dinnerparty'
     }];
     /*

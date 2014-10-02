@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('ecApp')
-  .directive('adminTool', function ($window, recipe) {
+  .directive('adminTool', function ($window, recipe, glossary) {
     return {
       templateUrl: 'components/directives/admin-tool/admin-tool.html',
       restrict: 'EA',
@@ -10,6 +10,8 @@ angular.module('ecApp')
       },
 
       link: function (scope, element, attrs) {
+        scope.glossary = glossary.getGlossary();
+
         scope.comfirmDelete = false;
 
         scope.deleteRecipe = function(){

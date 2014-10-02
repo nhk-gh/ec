@@ -26,12 +26,24 @@
     font-weight: bold;
     font-size: larger;
     display: inline-block;
+
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+
+    .feature-info {
+      font-weight: normal;
+    }
   }
   li a:hover {
     text-shadow: 0px 0px 10px $hero-color;
-    background-color: $main-back-color;
     border: 1px solid transparent;
     border-radius: 10px;
+    background-color: floralwhite;
+
+    @include box-shadow-insert(0, 0, 20px, 4px, #ba7a5a);//$hero-color);
   }
 }
 .page-header {

@@ -18,10 +18,10 @@
           <div class="row">
             <div class="col-md-8 col-sm-8 col-xs-7">
               <div class="col-md-4 col-sm-4 col-xs-12">
-                <strong>Category:</strong> {{ recipe.category.name }}
+                <strong>{{ glossary.category }}:</strong> {{ recipe.category.name }}
               </div>
               <div class="col-md-4 col-sm-4 col-xs-12">
-                <strong>Cousine:</strong> {{ recipe.cousine }}
+                <strong>{{ glossary.cousine }}:</strong> {{ recipe.cousine }}
               </div>
               <div class="col-md-4 col-sm-4 col-xs-12">
                 <span class="glyphicon glyphicon-time"> {{ recipe.duration }} min</span>
@@ -37,7 +37,7 @@
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="col-md-12">
-                <strong>Ingredients:</strong>
+                <strong>{{ glossary.ingredients }}:</strong>
                 <br/>
 
                 <table id="recipe-ingredients-tbl">
@@ -70,7 +70,7 @@
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="col-md-12">
-                <strong>Instructions:</strong>
+                <strong>{{ glossary.instructions }}:</strong>
                 <br/>
                 <div class="row instr-row" ng-repeat="inst in recipe.instructions">
                   <div class="col-md-9 col-sm-9 col-xs-9">
@@ -90,7 +90,7 @@
           <div class="row" ng-show="recipe.notes.length > 0">
             <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="col-md-12">
-                <strong>Notes:</strong>
+                <strong>{{ glossary.notes }}:</strong>
                 <br/>
                 <div class="row note-row" ng-repeat="note in recipe.notes">
                   <div class="col-md-1 col-sm-1 col-xs-1">

@@ -2,8 +2,8 @@
 
 <!--header class="hero-unit" id="banner"-->
 <div class="container hero-unit ">
-  <h1>Anyone can cook!</h1>
-  <p class="lead">Quick recipes for people who have no time for cooking or too lazy.</p>
+  <h1>{{ glossary.anyone }}</h1>
+  <p class="lead">{{ glossary.quickrecipes }}</p>
   <!-- from http://www.aha-soft.com -->
   <img src="assets/images/Boiler-icon.png" alt="Welcome!"/>
 </div>
@@ -12,11 +12,13 @@
 <div class="container" id="main">
   <div class="row">
     <div class="col-lg-12">
-      <h2 class="page-header">Features:</h2>
-      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="ft in features">
+      <h2 class="page-header">{{ glossary.features }}</h2>
+      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="ft in features" >
         <li>
-          <a href="{{ ft.link }}">{{ ft.name }}</a>
-          <p class="feature-info">{{ ft.info }}</p>
+          <a href="{{ ft.link }}">
+            <p>{{ ft.name }}</p>
+            <p class="feature-info">{{ ft.info }}</p>
+          </a>
         </li>
       </ul>
     </div>

@@ -7,21 +7,21 @@
       <div class="recipe-wrapper">
 
       <alert type="success" close="showSuccess=false" id="alert-success" ng-show="showSuccess" splash-panel>
-        Recipe added and will appear in a shot time. You may continue adding recipes.
+        {{ glossary.recipeadded }}
       </alert>
 
       <div class="recipe-title">
-          <span><strong>{{ action }} recipe</strong></span>
+          <span><strong>{{ action }} {{ glossary.recipe }}</strong></span>
         </div>
         <div class="recipe-body">
           <form class="form-horizontal" role="form" name="addrecipeform"
                 id="add-recipe-form" novalidate>
             <fieldset>
-              <legend>Grantor</legend>
+              <legend>{{ glossary.grantor }}</legend>
               <div class="form-group">
-                <label for="grantor-name" class="col-sm-2 control-label" required-fld>Name</label>
+                <label for="grantor-name" class="col-sm-2 control-label" required-fld>{{ glossary.name }}</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" id="grantor-name" placeholder="Full name"
+                  <input type="text" class="form-control" id="grantor-name" placeholder="{{ glossary.fullname }}"
                          ng-model="newRecipe.grant.name">
                 </div>
               </div>
@@ -34,16 +34,16 @@
             </fieldset>
 
             <fieldset>
-              <legend>Recipe</legend>
+              <legend>{{ glossary.recipe }}</legend>
               <div class="form-group">
-                <label for="new-recipe-name" class="col-sm-2 control-label" required-fld>Recipe name</label>
+                <label for="new-recipe-name" class="col-sm-2 control-label" required-fld>{{ glossary.recipename }}</label>
                 <div class="col-sm-10">
                   <input type="text" class="form-control" id="new-recipe-name"
                          required ng-model="newRecipe.name">
                 </div>
               </div>
               <div class="form-group">
-                <label for="select-recipe-category" class="col-sm-2 control-label">Category</label>
+                <label for="select-recipe-category" class="col-sm-2 control-label">{{ glossary.category }}</label>
                 <div class="col-sm-10">
                   <select class="form-control" id="select-recipe-category" ng-model="newRecipe.category"
                           ng-options="cat.name for cat in categories">
@@ -55,35 +55,35 @@
                 </div>
               </div>
               <div class="form-group">
-                <label for="new-recipe-cousine" class="col-sm-2 control-label">Cousine</label>
+                <label for="new-recipe-cousine" class="col-sm-2 control-label">{{ glossary.cousine }}</label>
                 <div class="col-sm-10">
                   <input type="text" class="form-control" id="new-recipe-cousine"
                          ng-model="newRecipe.cousine">
                 </div>
               </div>
               <div class="form-group">
-                <label for="new-recipe-time" class="col-sm-2 control-label" required-fld>Cooking time</label>
+                <label for="new-recipe-time" class="col-sm-2 control-label" required-fld>{{ glossary.cookingtime }}</label>
                 <div class="col-sm-10">
                   <div class="input-group">
                     <input type="text" class="form-control" id="new-recipe-time" int-only
                            required ng-model="newRecipe.duration">
-                    <div class="input-group-addon">min.</div>
+                    <div class="input-group-addon">{{ glossary.minutesshort }}.</div>
                   </div>
                 </div>
               </div>
               <div class="form-group">
-                <label for="new-recipe-description" class="col-sm-2 control-label" required-fld>Description</label>
+                <label for="new-recipe-description" class="col-sm-2 control-label" required-fld>{{ glossary.description }}</label>
                 <div class="col-sm-10">
                   <textarea class="form-control" rows="3" id="new-recipe-description" required
                             ng-model="newRecipe.description" ng-change="descriptionLeftSymbols()">
                   </textarea>
-                  <span class="left-symbols">Left <span >{{ leftSymbols.description }}</span> symbols</span>
+                  <span class="left-symbols">{{ glossary.left }} <span >{{ leftSymbols.description }}</span> {{ glossary.symbols }}</span>
                 </div>
               </div>
             </fieldset>
 
             <fieldset>
-              <legend>Ingredients</legend>
+              <legend>{{ glossary.ingredients }}</legend>
               <table id="new-recipe-ingredients-tbl">
                 <colgroup>
                   <col id="ingredient-column-1">
@@ -93,8 +93,8 @@
                 </colgroup>
                 <thead>
                   <tr>
-                    <th required-fld>Name</th>
-                    <th required-fld>Quantity</th>
+                    <th required-fld>{{ glossary.nametitle }}</th>
+                    <th required-fld>{{ glossary.quantity }}</th>
                     <th>Note</th>
                     <th></th>
                   </tr>
@@ -127,7 +127,7 @@
             </fieldset>
 
             <fieldset>
-              <legend>Instructions</legend>
+              <legend>{{ glossary.instructions }}</legend>
               <table id="new-recipe-instructions-tbl">
                 <colgroup>
                   <col id="instructions-column-1">
@@ -136,8 +136,8 @@
                 </colgroup>
                 <thead>
                   <tr>
-                    <th required-fld>Instruction</th>
-                    <th>Image</th>
+                    <th required-fld>{{ glossary.nstruction }}</th>
+                    <th>{{ glossary.image }}</th>
                     <th></th>
                   </tr>
                 </thead>
@@ -147,7 +147,7 @@
                       <textarea class="form-control table-input" rows="3" ng-change="instructionLeftSymbols($index)"
                                 ng-model="newRecipe.instructions[$index].step">
                       </textarea>
-                      <span class="left-symbols">&nbsp;Left <span >{{ leftSymbols.instruction[$index] }}</span> symbols</span>
+                      <span class="left-symbols">&nbsp;{{ glossary.left }} <span >{{ leftSymbols.instruction[$index] }}</span> {{ glossary.symbols }}</span>
                     </td>
                     <td>
                       <span class="glyphicon glyphicon-asterisk last-instr-img pull-left" ng-show="$last"></span>
@@ -158,41 +158,40 @@
                         <!--img id='{{ $index }}e' ng-src="{{ inst.image }}" title="Drag and drop or click here"
                              ng-show="action === 'Edit'"/-->
                         <img id='{{ $index }}e' ng-src="{{ instrEditImage($index) }}" title="Drag and drop or click here"
-                             ng-show="action === 'Edit'"/>
-                        <img id='{{ $index }}' ng-src="{{ inst.image }}" title="Drag and drop or click here"
-                             ng-show="action !== 'Edit'"/>
+                             ng-show="action === {{ glossary.edit }}"/>
+                        <img id='{{ $index }}' ng-src="{{ inst.image }}" title="{{ glossary.dropimage }}"
+                             ng-show="action !== {{ glossary.edit }}"/>
 
                         <input type="file" class="{{ $index }}" name="book" ng-show="false"
                                accept="image/jpeg, image/png, image/gif"/>
                       </div>
                     </td>
                     <td class="remove-table-row">
-                      <span class="glyphicon glyphicon-remove" title="Remove instruction"
+                      <span class="glyphicon glyphicon-remove" title="{{ glossary.removeinstruction }}"
                               ng-click="removeInstruction($index)"></span>
                     </td>
                   </tr>
                 </tbody>
               </table>
               <div class="glyphicon glyphicon-asterisk last-instr-img">
-                Recipe main image
+                {{ glossay.mainimage }}
               </div>
               <div class="add-table-row">
-                <span  class="glyphicon glyphicon-plus pull-right" title="Add instruction"
+                <span  class="glyphicon glyphicon-plus pull-right" title="{{ glossary.addinstruction }}"
                         ng-click="addInstruction()"></span>
               </div>
             </fieldset>
 
             <fieldset>
-              <legend>Notes</legend>
+              <legend>{{ glossary.notes }}</legend>
               <table id="new-recipe-notes-tbl">
                 <colgroup>
                   <col id="note-column-1">
                   <col id="note-column-2">
-
                 </colgroup>
                 <thead>
                   <tr>
-                    <th>Note</th>
+                    <th>{{ glossary.note }}</th>
                     <th></th>
                   </tr>
                 </thead>
@@ -202,25 +201,25 @@
                       <textarea class="form-control table-input" rows="3" ng-model="newRecipe.notes[$index]"
                                 ng-change="noteLeftSymbols($index)">
                       </textarea>
-                      <span class="left-symbols">&nbsp;Left <span >{{ leftSymbols.notes[$index] }}</span> symbols</span>
+                      <span class="left-symbols">&nbsp;{{ glossary.left }} <span >{{ leftSymbols.notes[$index] }}</span> {{ glossary.symbols }}</span>
                     </td>
                     <td class="remove-table-row">
-                      <span class="glyphicon glyphicon-remove" title="Remove note"
+                      <span class="glyphicon glyphicon-remove" title="{{ glossary.removenote }}"
                               ng-click="removeNote($index)"></span>
                     </td>
                   </tr>
                 </tbody>
               </table>
               <div class="add-table-row">
-                <span class="glyphicon glyphicon-plus pull-right" title="Add note"
+                <span class="glyphicon glyphicon-plus pull-right" title="{{ glossary.addnote }}"
                         ng-click="addNote()"></span>
               </div>
             </fieldset>
 
-            <fieldset ng-show="action === 'Edit'">
-              <legend>Approve for public view</legend>
+            <fieldset ng-show="action === {{ glossary.edit }}">
+              <legend>{{ glossary.approveforview }}</legend>
               <div class="form-group">
-                <label for="approved" class="col-sm-2 control-label">Approve</label>
+                <label for="approved" class="col-sm-2 control-label">{{ glossary.approve }}</label>
                 <div class="col-sm-10" style="margin-top: 5px;">
                   <input type="checkbox" id="approved" ng-model="newRecipe.approved"/>
                 </div>
@@ -233,8 +232,8 @@
               <div class="form-group">
                 <div class-row>
                   <div class="col-sm-10 col-xs-10" id="user-recipe-warning">
-                    <span ng-show="action === 'Send'" >
-                      Be patient! Your recipe should appear in a short time.
+                    <span ng-show="action === {{ glossary.send }}" >
+                      {{ glossary.bepatient }}.
                     </span>
                   </div>
                   <div class="col-sm-2 col-xs-2">

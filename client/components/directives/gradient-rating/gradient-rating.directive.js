@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('ecApp').directive('gradientRating', function (LIMITS, Auth, $timeout) {
+angular.module('ecApp').directive('gradientRating', function (LIMITS, Auth, $timeout, glossary) {
   return {
     templateUrl: 'components/directives/gradient-rating/gradient-rating.html',
     restrict: 'E',
@@ -13,6 +13,8 @@ angular.module('ecApp').directive('gradientRating', function (LIMITS, Auth, $tim
     },
 
     link: function(scope, element, attrs) {
+      scope.glossary = glossary.getGlossary();
+
       var el = element.find('.rating-gradient');
       var elW;// = parseInt(el.css('width'));
 

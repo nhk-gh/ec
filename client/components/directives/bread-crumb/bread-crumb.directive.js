@@ -1,12 +1,13 @@
 'use strict';
 
 angular.module('ecApp')
-  .directive('breadCrumb', function ($rootScope, breadCrumbSrv) {
+  .directive('breadCrumb', function ($rootScope, breadCrumbSrv, glossary) {
     return {
       templateUrl: 'components/directives/bread-crumb/bread-crumb.html',
       restrict: 'EA',
       replace: true,
       link: function (scope, element, attrs) {
+        scope.glossary = glossary.getGlossary();
 
         //$timeout( function(){
         attrs.$observe('name', function(value){
@@ -17,14 +18,14 @@ angular.module('ecApp')
           switch(attrs.path){
             case 'recipes':
               breadCrumbSrv.addCrumb({
-                title: 'Recipes',
+                title: scope.glossary.recipes,//'Recipes',
                 link: '/recipes'
               });
               break;
 
             case 'recipe':
               breadCrumbSrv.addCrumb({
-                title: 'Recipes',
+                title:  scope.glossary.recipes,//'Recipes',
                 link: '/recipes'
               });
               breadCrumbSrv.addCrumb({
@@ -40,6 +41,13 @@ angular.module('ecApp')
                   link: ''
                 });
               }
+              break;
+
+            case 'fridge':
+              breadCrumbSrv.addCrumb({
+                title:  scope.glossary.myfridge,//'Recipes',
+                link: '/recipes'
+              });
               break;
           }
 

@@ -1,12 +1,20 @@
 'use strict';
 
 angular.module('ecApp')
-  .controller('RecipesCtrl', function ($scope, $routeParams, recipes, Auth) {
+  .controller('RecipesCtrl', function ($scope, $routeParams, recipes, Auth, glossary) {
+
+    $scope.glossary = glossary.getGlossary();
+    $scope.$on('language-changed', function(){
+      $scope.glossary = glossary.getGlossary();
+      $scope.chkboxTitle = $scope.glossary.newonly;
+      //$scope.$apply();
+    });
+
     $scope.recipes = [];
     //$scope.isCollapsed = true;
     $scope.isAdmin = Auth.isAdmin;
     $scope.newOnly = false;  // if true: get only new recipes that is not approved yet
-    $scope.chkboxTitle = 'New recipes only';
+    $scope.chkboxTitle = $scope.glossary.newonly;
     var searchCriteria = $routeParams.search ? $routeParams.search : '';
 
     $scope.page = {};
