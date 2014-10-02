@@ -1,0 +1,30 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container main-panel">
+  <bread-crumb path="fridge" ></bread-crumb>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div id="ask-fridge">
+        <div id="ask-fridge-prompt">
+          Please enter comma separated list of products you found in
+          the fridge:
+        </div>
+        <input type="text" placeholder="Type here ..." id="products-input"
+               ng-model="productsFound" ng-keypress="keyPressed($event)"/>
+        <hr/>
+        <footer>
+          <button class="btn btn-default" id="ask-fridge-btn" ng-click="lookFor(productsFound)">
+            Feed me!
+          </button>
+        </footer>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <div class="fridge-img">
+        <img ng-src="../../assets/images/004.jpg"/>
+      </div>
+    </div>
+  </div>
+</div>

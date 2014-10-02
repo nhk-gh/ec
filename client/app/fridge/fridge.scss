@@ -1,0 +1,33 @@
+#ask-fridge {
+  text-align: center;
+
+  #ask-fridge-prompt {
+    font-size: 120%;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  #products-input {
+    width: 90%;
+    height: 35px;
+    border: 1px solid;
+    text-indent: 10px;
+    @include border-radius(4px);
+  }
+
+  #ask-fridge-btn {
+    background-color: $btn-back-color;
+  }
+  #ask-fridge-btn:hover {
+    @include box-shadow-insert(0, 0, 20px, 0px, #ba7a5a);
+    border-color: transparent;
+  }
+
+
+}
+
+.fridge-img {
+  width: 50%;
+  margin: 20px auto;
+
+}
