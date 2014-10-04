@@ -9,8 +9,8 @@ angular.module('ecApp')
     $scope.isAdmin = Auth.isAdmin;
 
     var userRating= function(voted){
-      if (!Auth.isLoggedIn()){
-        return LIMITS.MAX_RATING;
+      if (!Auth.isLoggedIn() || voted.length <= 0){
+        return 100*LIMITS.MIN_RATING;
       } else {
         var cu = Auth.getCurrentUser().name;
         var didRate = voted.filter(function(val, ind){

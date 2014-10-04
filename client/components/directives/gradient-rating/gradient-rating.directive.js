@@ -18,7 +18,7 @@ angular.module('ecApp').directive('gradientRating', function (LIMITS, Auth, $tim
       var el = element.find('.rating-gradient');
       var elW;// = parseInt(el.css('width'));
 
-      scope.userrating = 1;
+      scope.userrating = null;
 
       var drawRatingBar = function(gradient) {
         var color;
@@ -26,27 +26,28 @@ angular.module('ecApp').directive('gradientRating', function (LIMITS, Auth, $tim
 
         if (gradient.mono === true) {
           color = '#e6f207';
+          scope.userrating = null;
         } else {
           //pos = 100*(gradient.pos/elW);
           pos =  100*(gradient.pos/LIMITS.MAX_RATING);
           color = 'linear-gradient(to right,  #f28b7e 0%, #f28b7e ' + (pos-1) +
             '%, blue ' + (pos+0) + '% ,#07ef1e ' + (pos+0) +
             '% ,#07ef1e 100%)';
-        }
 
-        //var r = LIMITS.MAX_RATING - pos/(100/LIMITS.MAX_RATING);
-        var r = LIMITS.MAX_RATING - LIMITS.MAX_RATING*pos/100;
-        if (r<1){ r=1;}
 
-        var phase = scope.$$phase;
-        if (phase === '$apply' || phase === '$digest') {
-          scope.userrating = r.toFixed(1);
-        } else {
-          scope.$apply(function(){
+          //var r = LIMITS.MAX_RATING - pos/(100/LIMITS.MAX_RATING);
+          var r = LIMITS.MAX_RATING - LIMITS.MAX_RATING*pos/100;
+          if (r<1){ r=1;}
+
+          var phase = scope.$$phase;
+          if (phase === '$apply' || phase === '$digest') {
             scope.userrating = r.toFixed(1);
-          });
+          } else {
+            scope.$apply(function(){
+              scope.userrating = r.toFixed(1);
+            });
+          }
         }
-
         el.css('background', color);
       };
 

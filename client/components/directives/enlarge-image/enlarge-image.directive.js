@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('ecApp')
-  .directive('enlargeImage', function () {
+  .directive('enlargeImage', function ($window) {
     return {
       restrict: 'EA',
       scope:{
@@ -13,8 +13,8 @@ angular.module('ecApp')
         element.on("mouseover", function(evt){
             var imgWidth = 256;
             var src = attrs.src;
-            var lft = (evt.clientX - imgWidth) + 'px';
-            var top = (evt.clientY - imgWidth/2) + 'px';
+            var lft = (evt.pageX - imgWidth) + 'px';
+            var top = (evt.pageY - imgWidth/2) + 'px';
 
             var el = angular.element('<div class="larger-image"></div>');
             el.css({
