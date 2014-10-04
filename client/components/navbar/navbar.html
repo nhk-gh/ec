@@ -52,14 +52,14 @@
         </li>
         <li>
           <span>
-            <a href="" ng-click="changeLanguage('hebrew')" style="display:none">
+            <a href="" ng-click="changeLanguage('hebrew')" ng-hide="currentLanguage==='hebrew'">
               <img ng-src="../../assets/images/Israel-icon.png" title="{{ glossary.hebrew }}"/>
             </a>
 
-            <a href="" ng-click="changeLanguage('english')">
+            <a href="" ng-click="changeLanguage('english')" ng-hide="currentLanguage==='english'">
               <img ng-src="../../assets/images/United-States-icon.png" title="{{ glossary.english}}"/>
             </a>
-             <a href="" ng-click="changeLanguage('russian')">
+             <a href="" ng-click="changeLanguage('russian')" ng-hide="currentLanguage==='russian'">
                <img ng-src="../../assets/images/Russia-icon.png" title="{{ glossary.russian }}"/>
              </a>
 

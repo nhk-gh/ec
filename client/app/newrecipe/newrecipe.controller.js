@@ -100,7 +100,8 @@ angular.module('ecApp').controller('NewrecipeCtrl',
       $scope.action = $scope.glossary.add;
       approved = true;
       initRecipeObj();
-    }
+    };
+
     $scope.instrEditImage = function(ind){
       if($scope.newRecipe.instructions[ind].image === '') {
         return 'assets/images/drop-here-1.png';
@@ -188,7 +189,6 @@ angular.module('ecApp').controller('NewrecipeCtrl',
         recipe.updateRecipe($scope.newRecipe)
           .then(function(data) {
             uploadImageFile(data._id);
-            $window.history.back();
           },
           function() {
 
@@ -198,16 +198,6 @@ angular.module('ecApp').controller('NewrecipeCtrl',
         recipe.addRecipe($scope.newRecipe).then(
           function(data){
             uploadImageFile(data._id);
-            $scope.$broadcast('splash-panel');
-
-            initRecipeObj();
-
-
-            $scope.showSuccess = true;
-            $timeout(function(){
-              $route.reload();
-              $scope.showSuccess = false;
-            },2000);
           },
           function(){
 
@@ -217,18 +207,22 @@ angular.module('ecApp').controller('NewrecipeCtrl',
 
     $scope.$on('file-dropzone-drop-event', function(evt, data){
       imageFiles[data.ind] = data.file;
-
-      var num = (data.ind < 10) ? ("0" + data.ind) : data.ind; // 20 max
+      //var num = (data.ind < 10) ? ("0" + data.ind) : data.ind; // 20 max
       //$scope.newRecipe.instructions[data.ind].image = num + "-" + data.name;
     });
 
     var uploadImageFile = function(id) {
       if (imageFiles.length > 0){
         var fd = new FormData();
+        var imageInd = [];
 
-        for (var i in imageFiles) {
+        for (var i=0; i<imageFiles.length; i++) {
+          if (imageFiles[i] !== undefined){
+            imageInd.push(i);
+          }
           fd.append('files', imageFiles[i]);
         }
+        fd.append('imageInd', imageInd);
 
         var xhr = new XMLHttpRequest();
         xhr.upload.addEventListener("progress", uploadProgress, false);
@@ -257,7 +251,23 @@ angular.module('ecApp').controller('NewrecipeCtrl',
           $scope.info = JSON.parse(evt.target.responseText).info;
 
           imageFiles = [];
-        })
+
+          if ($scope.action === $scope.glossary.edit) {
+            //$window.history.back();
+            $window.location.href = '/recipe/' + $scope.newRecipe._id;
+          } else {
+            $scope.$broadcast('splash-panel');
+
+            initRecipeObj();
+
+            $scope.showSuccess = true;
+            $timeout(function(){
+              $route.reload();
+              $scope.showSuccess = false;
+            },2000);
+          }
+
+        });
       }
 
       function uploadFailed(evt) {

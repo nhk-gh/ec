@@ -94,7 +94,6 @@ exports.uploadImages = function(req, res){
     if (err) { return handleError(res, err); }
     if(!rcp) { return res.send(404); }
     /*******************************************************/
-
     // fill photo array
     if (klbLib.klbIsArray(req.files.files)){
       arrPhotos = req.files.files.map(function(ph){
@@ -104,17 +103,15 @@ exports.uploadImages = function(req, res){
     else{
       arrPhotos.push(req.files.files);
     }
-
     if (arrPhotos.length > 0){
+      var imgInd = req.body.imageInd.split(',');
       var num = 0;
       async.each(arrPhotos, function(photo, eachIteratorCallback){
         var tmp_path = photo.path; //the temporary location of the photo
         var target_dir = '/home/ubuntu/ec-imgs/' + req.params.id;  // id is recipe id
-        var target_path = target_dir + "/" + zeroPad(num) + "-" + photo.originalname;
-        //var target_path_small = klbLib.klbThumbPath(target_path);
-        //var link_path = '/images/photo_heap/' + photo.name;
-        //var link_path = photo.originalname;
-        rcp.instructions[num].image = req.params.id + "/" + zeroPad(num) +
+        //var target_path = target_dir + "/" + zeroPad(num) + "-" + photo.originalname;
+        var target_path = target_dir + "/" + zeroPad(imgInd[num]) + "-" + photo.originalname;
+        rcp.instructions[imgInd[num]].image = req.params.id + "/" + zeroPad(imgInd[num]) +
                                       "-" + photo.originalname;
         //var p = photo;
 
@@ -127,8 +124,6 @@ exports.uploadImages = function(req, res){
           //check for target folder and create it if not exists
           function (callback) {
             fs.stat (target_dir, function (err, st) {
-              console.log(err);
-
               if (err || !st.isDirectory()) {
                 //folder do not exists, create it
                 fs.mkdir(target_dir, function (err) {
@@ -166,6 +161,15 @@ exports.uploadImages = function(req, res){
               function(err){
                 callback(err);
               });
+          },
+          //delete temp image from disk
+          function(callback){
+            fs.unlink(tmp_path, function(err) {
+              if (err) {
+                console.log("Delete temp image error (1): " + err);
+              }
+              callback(null);
+            })
           }],
 
           function(err){
@@ -192,15 +196,8 @@ exports.uploadImages = function(req, res){
         }
       });
     }
-
     /******************************************************/
-
   });
-
-
-
-
-  
 };
 
 function extend(target) {

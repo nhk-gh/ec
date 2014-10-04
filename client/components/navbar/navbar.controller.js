@@ -3,10 +3,11 @@
 angular.module('ecApp')
   .controller('NavbarCtrl', function ($scope, $location, $rootScope, Auth, glossary) {
     $scope.glossary = glossary.getGlossary();
+    $scope.currentLanguage = glossary.getCurrentLanguage();
 
     $scope.changeLanguage = function(lang){
-      $scope.glossary = glossary.changeLanguage(lang)
-      $rootScope.$broadcast('language-changed');
+      //$scope.glossary = glossary.changeLanguage(lang)
+      //$rootScope.$broadcast('language-changed');
     };
 
 

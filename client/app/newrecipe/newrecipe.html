@@ -136,7 +136,7 @@
                 </colgroup>
                 <thead>
                   <tr>
-                    <th required-fld>{{ glossary.nstruction }}</th>
+                    <th required-fld>{{ glossary.nametitle }}</th>
                     <th>{{ glossary.image }}</th>
                     <th></th>
                   </tr>
@@ -158,9 +158,9 @@
                         <!--img id='{{ $index }}e' ng-src="{{ inst.image }}" title="Drag and drop or click here"
                              ng-show="action === 'Edit'"/-->
                         <img id='{{ $index }}e' ng-src="{{ instrEditImage($index) }}" title="Drag and drop or click here"
-                             ng-show="action === {{ glossary.edit }}"/>
+                             ng-show="action === '{{ glossary.edit }}'"/>
                         <img id='{{ $index }}' ng-src="{{ inst.image }}" title="{{ glossary.dropimage }}"
-                             ng-show="action !== {{ glossary.edit }}"/>
+                             ng-show="action !== '{{ glossary.edit }}'"/>
 
                         <input type="file" class="{{ $index }}" name="book" ng-show="false"
                                accept="image/jpeg, image/png, image/gif"/>
