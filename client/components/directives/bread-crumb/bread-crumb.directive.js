@@ -46,7 +46,7 @@ angular.module('ecApp')
             case 'fridge':
               breadCrumbSrv.addCrumb({
                 title:  scope.glossary.myfridge,//'Recipes',
-                link: '/recipes'
+                link: '/fridge'
               });
               break;
           }

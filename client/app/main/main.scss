@@ -43,7 +43,7 @@
     border-radius: 10px;
     background-color: floralwhite;
 
-    @include box-shadow-insert(0, 0, 20px, 4px, #ba7a5a);//$hero-color);
+    @include box-shadow-insert(0, 0, 20px, 4px, rgba(255, 166, 0, 0.70));//#ba7a5a);//
   }
 }
 .page-header {

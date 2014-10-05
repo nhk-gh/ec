@@ -25,6 +25,12 @@
 }
 
 .fridge-img {
-  width: 50%;
+  width: 80%;
+  height: auto;
   margin: 20px auto;
+
+  img {
+    width: 100%;
+    margin: 0px auto;
+  }
 }

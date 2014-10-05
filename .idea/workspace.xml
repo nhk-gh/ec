@@ -2,41 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ec7a602-554a-4822-85d7-e68386285bd3" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/01269988ce15391ea6bd6f6e606f292c.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/1174ca1569c97eb5bc41e480e0a78da3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/2a5d363d8a06ecb643538d5b0df873a8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/2e53ce2e10c014291d8567d3009b5829.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/3a32ee9f31d92b65bc02067f4ce4c96a.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/3c56bec49889dd0bad7dd897746f634e.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/3ee570514a583373c371755179014b7c.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/4063202cb7de4f74fca1a71ee0cc52e7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/4330fd0dd7136eb7251059dc8d08aba8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/44fe806a6c99ed9e6aa981b433d9801f.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/5497db9f8f839b2911648e538cb046e5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/58b22d248ebdf7ce660f27cc71a7c117.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/59c55951bb9facc546852577c3ffb281.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/602c0fa1b07022040e61e59a17df582f.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/68add05c2811bbc7339181507217648d.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/77f6744bd2798a2f0ee2f474aae3166c.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/79222895856a30db364b7d1bf59275eb.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/7e9ba1c84d7b6e9f25bbdbe733364478.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/8fb13b14c792c045444ec3cefc9572bf.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/9a578557e260bb948fd1c4fe3a8cc4e9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/9e56a01f0580d40ac63b886a2385b4c3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/b734e0b912ac049a9d874c779137b2bd.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/bef2aafe080b1f025d5c451517ada43f.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/c76efc3e46e6d2aa35f8cebaed14a262.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/e0b9811f1275e7aeb271fbc84c2c3276.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/e8afa286d10f764973f026c78456fb97.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/f3ac5f92245b2e808e0e970870b102cb.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/f606954ae35f56b0b217f01b17539a7e.lll" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/fridge/fridge.html" afterPath="$PROJECT_DIR$/client/app/fridge/fridge.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/components/directives/bread-crumb/bread-crumb.directive.js" afterPath="$PROJECT_DIR$/client/components/directives/bread-crumb/bread-crumb.directive.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/common.scss" afterPath="$PROJECT_DIR$/client/app/common.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/fridge/fridge.scss" afterPath="$PROJECT_DIR$/client/app/fridge/fridge.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/components/navbar/navbar.controller.js" afterPath="$PROJECT_DIR$/client/components/navbar/navbar.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/components/navbar/navbar.html" afterPath="$PROJECT_DIR$/client/components/navbar/navbar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/newrecipe/newrecipe.controller.js" afterPath="$PROJECT_DIR$/client/app/newrecipe/newrecipe.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/newrecipe/newrecipe.html" afterPath="$PROJECT_DIR$/client/app/newrecipe/newrecipe.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/api/recipe/recipe.controller.js" afterPath="$PROJECT_DIR$/server/api/recipe/recipe.controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/main/main.scss" afterPath="$PROJECT_DIR$/client/app/main/main.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ec.iws" />
@@ -63,7 +32,25 @@
       <file leaf-file-name="fridge.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/app/fridge/fridge.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="11" selection-start="170" selection-end="170" vertical-scroll-proportion="-3.75" vertical-offset="0" max-vertical-offset="525">
+            <state line="21" column="17" selection-start="718" selection-end="718" vertical-scroll-proportion="-13.125" vertical-offset="0" max-vertical-offset="525">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.scss" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/app/main/main.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="45" column="71" selection-start="972" selection-end="995" vertical-scroll-proportion="-23.0" vertical-offset="123" max-vertical-offset="945">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="common.scss" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/app/common.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="66" column="18" selection-start="1692" selection-end="1692" vertical-scroll-proportion="-24.375" vertical-offset="405" max-vertical-offset="1080">
               <folding />
             </state>
           </provider>
@@ -72,16 +59,16 @@
       <file leaf-file-name="fridge.scss" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/app/fridge/fridge.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="7" selection-start="507" selection-end="507" vertical-scroll-proportion="-18.125" vertical-offset="0" max-vertical-offset="525">
+            <state line="12" column="64" selection-start="210" selection-end="210" vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="615">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="navbar.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/components/navbar/navbar.html">
+      <file leaf-file-name="bread-crumb.directive.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/components/directives/bread-crumb/bread-crumb.directive.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="66" selection-start="2701" selection-end="2705" vertical-scroll-proportion="0.78084415" vertical-offset="329" max-vertical-offset="1545">
+            <state line="48" column="30" selection-start="1526" selection-end="1526" vertical-scroll-proportion="0.7165605" vertical-offset="270" max-vertical-offset="990">
               <folding />
             </state>
           </provider>
@@ -90,19 +77,7 @@
       <file leaf-file-name="glossary.service.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/components/glossary/glossary.service.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="206" column="24" selection-start="7848" selection-end="7866" vertical-scroll-proportion="0.0" vertical-offset="2" max-vertical-offset="945">
-              <folding>
-                <element signature="e#141#3731#0" expanded="false" />
-                <element signature="e#3751#7477#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="navbar.controller.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/components/navbar/navbar.controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="0" selection-start="233" selection-end="233" vertical-scroll-proportion="-4.0384617" vertical-offset="0" max-vertical-offset="990">
+            <state line="206" column="24" selection-start="7848" selection-end="7866" vertical-scroll-proportion="0.0" vertical-offset="3090" max-vertical-offset="3615">
               <folding />
             </state>
           </provider>
@@ -127,10 +102,7 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/client/app/main/main.scss" />
         <option value="$PROJECT_DIR$/client/components/directives/bread-crumb/bread-crumb.service.js" />
-        <option value="$PROJECT_DIR$/client/components/directives/bread-crumb/bread-crumb.directive.js" />
-        <option value="$PROJECT_DIR$/client/app/common.scss" />
         <option value="$PROJECT_DIR$/client/components/directives/gradient-rating/gradient-rating.html" />
         <option value="$PROJECT_DIR$/client/components/directives/gradient-rating/gradient-rating.scss" />
         <option value="$PROJECT_DIR$/client/components/directives/enlarge-image/enlarge-image.directive.js" />
@@ -139,15 +111,18 @@
         <option value="$PROJECT_DIR$/client/app/newrecipe/newrecipe.html" />
         <option value="$PROJECT_DIR$/client/app/newrecipe/newrecipe.controller.js" />
         <option value="$PROJECT_DIR$/server/api/recipe/recipe.controller.js" />
-        <option value="$PROJECT_DIR$/client/app/fridge/fridge.html" />
-        <option value="$PROJECT_DIR$/client/app/fridge/fridge.scss" />
         <option value="$PROJECT_DIR$/client/components/navbar/navbar.controller.js" />
         <option value="$PROJECT_DIR$/client/components/navbar/navbar.html" />
+        <option value="$PROJECT_DIR$/client/app/main/main.scss" />
+        <option value="$PROJECT_DIR$/client/app/fridge/fridge.html" />
+        <option value="$PROJECT_DIR$/client/app/common.scss" />
+        <option value="$PROJECT_DIR$/client/app/fridge/fridge.scss" />
+        <option value="$PROJECT_DIR$/client/components/directives/bread-crumb/bread-crumb.directive.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="70" />
+    <option name="x" value="69" />
     <option name="y" value="52" />
     <option name="width" value="1203" />
     <option name="height" value="997" />
@@ -265,7 +240,99 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="directives" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ec" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ec" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="directives" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bread-crumb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ec" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ec" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ec" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ec" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="newrecipe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ec" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ec" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -274,10 +341,26 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="69" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="87" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="69" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../ReadingRoom" />
-    <property name="FullScreen" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="92" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="900" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="900" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="92" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="87" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="FullScreen" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -293,14 +376,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
-      <method />
-    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -311,15 +386,23 @@
       <option name="showConsoleOnStdOut" value="false" />
       <method />
     </configuration>
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
       <setting name="configLocationType" value="CONFIG_FILE" />
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="CHROME" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
@@ -363,14 +446,17 @@
       <created>1412418500223</created>
       <updated>1412418500223</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="another bugs repaired">
+      <created>1412455616756</created>
+      <updated>1412455616756</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="70" y="52" width="1203" height="997" extended-state="0" />
+    <frame x="69" y="52" width="1203" height="997" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.7477169" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22031963" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -380,11 +466,12 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23287672" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32990867" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.50570774" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32990867" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -399,7 +486,8 @@
     </option>
     <MESSAGE value="fridge added; shadows on buttons hoover" />
     <MESSAGE value="several bugs repaired" />
-    <option name="LAST_COMMIT_MESSAGE" value="several bugs repaired" />
+    <MESSAGE value="another bugs repaired" />
+    <option name="LAST_COMMIT_MESSAGE" value="another bugs repaired" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -424,44 +512,14 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/assets/images/004.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/components/directives/enlarge-image/enlarge-image.directive.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="3" selection-start="341" selection-end="341" vertical-scroll-proportion="0.34456354" vertical-offset="0" max-vertical-offset="690">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/components/directives/gradient-rating/gradient-rating.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="7" selection-start="613" selection-end="613" vertical-scroll-proportion="-4.5" vertical-offset="0" max-vertical-offset="315">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/recipe/recipe.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="4" selection-start="771" selection-end="771" vertical-scroll-proportion="-15.0" vertical-offset="0" max-vertical-offset="1050">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/components/directives/gradient-rating/gradient-rating.directive.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="10" selection-start="1977" selection-end="1977" vertical-scroll-proportion="0.56661564" vertical-offset="620" max-vertical-offset="1650">
-          <folding />
-        </state>
+        <state line="66" column="10" selection-start="1977" selection-end="1977" vertical-scroll-proportion="0.56661564" vertical-offset="620" max-vertical-offset="1650" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/app/newrecipe/newrecipe.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="151" column="13" selection-start="7361" selection-end="7361" vertical-scroll-proportion="-5.7" vertical-offset="1980" max-vertical-offset="3960">
-          <folding />
-        </state>
+        <state line="151" column="13" selection-start="7361" selection-end="7361" vertical-scroll-proportion="-5.7" vertical-offset="1980" max-vertical-offset="3960" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/app/newrecipe/newrecipe.controller.js">
@@ -476,66 +534,83 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/api/recipe/recipe.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="157" column="7" selection-start="4768" selection-end="4768" vertical-scroll-proportion="0.2834395" vertical-offset="2177" max-vertical-offset="3840">
-          <folding />
-        </state>
+        <state line="157" column="7" selection-start="4768" selection-end="4768" vertical-scroll-proportion="0.2834395" vertical-offset="2177" max-vertical-offset="3840" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/api/recipe/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="653">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="653" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/components/directives/file-dropzone/file-dropzone.directive.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="103" column="29" selection-start="3309" selection-end="3317" vertical-scroll-proportion="2.5162866" vertical-offset="0" max-vertical-offset="1830">
-          <folding />
-        </state>
+        <state line="103" column="29" selection-start="3309" selection-end="3317" vertical-scroll-proportion="2.5162866" vertical-offset="0" max-vertical-offset="1830" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/app/recipe/recipe.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="81" column="45" selection-start="3398" selection-end="3418" vertical-scroll-proportion="-4.02" vertical-offset="1014" max-vertical-offset="1740">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/fridge/fridge.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="11" selection-start="170" selection-end="170" vertical-scroll-proportion="-3.75" vertical-offset="0" max-vertical-offset="525">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/fridge/fridge.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="7" selection-start="507" selection-end="507" vertical-scroll-proportion="-18.125" vertical-offset="0" max-vertical-offset="525">
-          <folding />
-        </state>
+        <state line="81" column="45" selection-start="3398" selection-end="3418" vertical-scroll-proportion="-4.02" vertical-offset="1014" max-vertical-offset="1740" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/components/glossary/glossary.service.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="206" column="24" selection-start="7848" selection-end="7866" vertical-scroll-proportion="0.0" vertical-offset="2" max-vertical-offset="945">
-          <folding>
-            <element signature="e#141#3731#0" expanded="false" />
-            <element signature="e#3751#7477#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/components/navbar/navbar.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="233" selection-end="233" vertical-scroll-proportion="-4.0384617" vertical-offset="0" max-vertical-offset="990">
+        <state line="7" column="0" selection-start="233" selection-end="233" vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="990">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/newrecipe/newrecipe.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="30" selection-start="891" selection-end="897" vertical-scroll-proportion="0.794702" vertical-offset="270" max-vertical-offset="2190">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/components/navbar/navbar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="66" selection-start="2701" selection-end="2705" vertical-scroll-proportion="0.78084415" vertical-offset="329" max-vertical-offset="1545">
+        <state line="54" column="66" selection-start="2701" selection-end="2705" vertical-scroll-proportion="-20.041666" vertical-offset="329" max-vertical-offset="1545">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/fridge/fridge.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="17" selection-start="718" selection-end="718" vertical-scroll-proportion="-13.125" vertical-offset="0" max-vertical-offset="525">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/main/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="71" selection-start="972" selection-end="995" vertical-scroll-proportion="-23.0" vertical-offset="123" max-vertical-offset="945">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/common.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="18" selection-start="1692" selection-end="1692" vertical-scroll-proportion="-24.375" vertical-offset="405" max-vertical-offset="1080">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/fridge/fridge.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="64" selection-start="210" selection-end="210" vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="615">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/components/directives/bread-crumb/bread-crumb.directive.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="30" selection-start="1526" selection-end="1526" vertical-scroll-proportion="0.7165605" vertical-offset="270" max-vertical-offset="990">
           <folding />
         </state>
       </provider>
