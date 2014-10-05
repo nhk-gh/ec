@@ -92,7 +92,13 @@ angular.module('ecApp')
       'overallrating': 'Overall rating:',
       'yourrating': 'Your rating:',
       'dragrating': 'Drag or click on bar and',
-      'rateit': 'Rate it!'
+      'rateit': 'Rate it!',
+      'inmyfridge': 'In my Fridge',
+      'myfridgeprompt':'Please enter comma separated list of products you found in the fridge:',
+      'typehere': 'Type here ...',
+      'feedme': 'Feed me!',
+      'myfridgerecipes': 'In my Fridge Recipes',
+      'for': 'for:'
     };
     var russian = {
       'sitename': 'Быстрая кухня',

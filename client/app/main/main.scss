@@ -39,11 +39,11 @@
   }
   li a:hover {
     text-shadow: 0px 0px 10px $hero-color;
-    border: 1px solid transparent;
+    border: 1px solid inherit;
     border-radius: 10px;
     background-color: floralwhite;
 
-    @include box-shadow-insert(0, 0, 20px, 4px, rgba(255, 166, 0, 0.70));//#ba7a5a);//
+    @include box-shadow-insert(0, 0, 20px, 4px, rgba(178, 34, 34, 0.63));//rgba(255, 166, 0, 0.70) #ba7a5a);//
   }
 }
 .page-header {

@@ -8,9 +8,11 @@ angular.module('ecApp')
       replace: true,
       link: function (scope, element, attrs) {
         scope.glossary = glossary.getGlossary();
+        var currCrumb = breadCrumbSrv.currentCrumb();
 
         //$timeout( function(){
         attrs.$observe('name', function(value){
+
           if (attrs.path !== 'newrecipe'){
             breadCrumbSrv.initCrumb();
           }
@@ -24,14 +26,31 @@ angular.module('ecApp')
               break;
 
             case 'recipe':
+              console.log(currCrumb);
+              console.log(scope.glossary.myfridgerecipes);
+              console.log(currCrumb == scope.glossary.myfridgerecipes);
+              if (currCrumb == scope.glossary.myfridgerecipes) {
+                breadCrumbSrv.addCrumb({
+                  title:  scope.glossary.inmyfridge,
+                  link: '/fridge'
+                });
+                breadCrumbSrv.addCrumb({
+                  title:  scope.glossary.myfridgerecipes,
+                  link: ''
+                });
+              } else {
+                breadCrumbSrv.addCrumb({
+                  title:  scope.glossary.recipes,//'Recipes',
+                  link: '/recipes'
+                });
+              }
+
               breadCrumbSrv.addCrumb({
-                title:  scope.glossary.recipes,//'Recipes',
-                link: '/recipes'
-              });
-              breadCrumbSrv.addCrumb({
-                title: attrs.name,
-                link: '/recipe/' + attrs.rcpid
-              });
+                  title: attrs.name,
+                  link: '/recipe/' + attrs.rcpid
+                });
+
+
               break;
 
             case 'newrecipe':
@@ -45,8 +64,19 @@ angular.module('ecApp')
 
             case 'fridge':
               breadCrumbSrv.addCrumb({
-                title:  scope.glossary.myfridge,//'Recipes',
+                title:  scope.glossary.inmyfridge,
                 link: '/fridge'
+              });
+              break;
+
+            case 'fridge-recipe':
+              breadCrumbSrv.addCrumb({
+                title:  scope.glossary.inmyfridge,
+                link: '/fridge'
+              });
+              breadCrumbSrv.addCrumb({
+                title:  scope.glossary.myfridgerecipes,
+                link: ''
               });
               break;
           }

@@ -10,7 +10,7 @@ angular.module('ecApp')
 
     var userRating= function(voted){
       if (!Auth.isLoggedIn() || voted.length <= 0){
-        return 100*LIMITS.MIN_RATING;
+        return LIMITS.MIN_RATING;
       } else {
         var cu = Auth.getCurrentUser().name;
         var didRate = voted.filter(function(val, ind){
@@ -27,7 +27,6 @@ angular.module('ecApp')
         $scope.currentUserRating = userRating($scope.recipe.voted);
 
         arrangeIngredients();
-        //console.log($scope.recipe)
       },
       function(){
 
