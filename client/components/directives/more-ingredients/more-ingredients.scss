@@ -1,0 +1,57 @@
+$checkbos-scale: 1.3;
+
+#ecMoreIngredients {
+  .modal-content {
+    background-color: $main-back-color;
+    color: $main-color;
+  }
+  *, hr {
+    border-color: $main-color;
+  }
+  .modal-ingr-subtitle {
+    font-weight: bold;
+  }
+  button {
+    background-color: $main-back-color;
+    border-color: $main-color;
+    color: $main-color;
+    @include border-radius(5px);
+  }
+
+  button:hover, button:focus {
+    box-shadow: inset 0 1px 1px rgba(178, 34, 34, 0.63), 0 0 8px rgba(178, 34, 34, 0.63);
+    border-color: rgba(255, 166, 0, 0.70);
+    outline: none;
+  }
+}
+
+.possible-ingredients, .chosen-ingredients {
+  display: inline-block;
+  margin: 3px 5px;
+}
+
+.possible-ingredients {
+  padding: 3px 5px;
+
+  label {
+    font-weight: normal;
+  }
+  input[type=checkbox]
+  {
+    position: relative;
+    top: 1px;
+    border-color: red;
+    outline-color: transparent;
+    -ms-transform: scale($checkbos-scale);
+    -moz-transform: scale($checkbos-scale);
+    -webkit-transform: scale($checkbos-scale);
+    -o-transform: scale($checkbos-scale);
+  }
+}
+
+.possible-ingredients:hover {
+  //background-color: floralwhite;
+  text-shadow: 0 0px 1px rgba(178, 34, 34, 0.63);
+  //box-shadow: inset 0 1px 1px rgba(178, 34, 34, 0.63), 0 0 8px rgba(178, 34, 34, 0.63);
+  //border-color: rgba(255, 166, 0, 0.70);
+}

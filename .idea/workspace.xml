@@ -396,7 +396,11 @@
       <created>1413193573191</created>
       <updated>1413193573191</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="new breadcrumb; more ingredients in myfridge mode">
+      <created>1413193581457</created>
+      <updated>1413193581457</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">

@@ -1,0 +1,40 @@
+<div class="modal fade" id="ecMoreIngredients" tabindex="-1" role="dialog" aria-labelledby="myIngrLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span>
+          <span class="sr-only">{{ glossary.close }}</span>
+        </button>
+        <h4 class="modal-title" id="myIngrLabel">More ingredients</h4>
+      </div>
+      <div class="modal-body" >
+        <div class="row">
+          <div class="col-sm-12">
+            <p class="modal-ingr-subtitle">You have selected following ingredients:</p>
+            <div class="chosen-ingredients" ng-repeat="chosen in chosenIngr">
+              <span>{{ chosen }}</span>
+            </div>
+          </div>
+        </div>
+
+        <hr/>
+
+        <div class="row">
+          <div class="col-sm-12">
+            <p class="modal-ingr-subtitle">Please check, maybe you can find these ingredients - it can help to specify the search: </p>
+            <div class="possible-ingredients" ng-repeat="poss in moreIngr">
+              <input type="checkbox" id="{{ poss }}" ng-model="newIngredients[$index]"/>
+              <label for="{{ poss }}">{{ poss }}</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary btn-sm" ng-click="searchWithNewIngr()"
+                ng-disabled="form.$invalid || hasEmptyFields()">{{ glossary.search }}</button>
+        <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">{{ glossary.cancel }}</button>
+      </div>
+    </div>
+  </div>
+</div>
