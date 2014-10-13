@@ -1,8 +1,7 @@
 'use strict';
 
 angular.module('ecApp')
-  .controller('RecipesCtrl', function ($scope, $routeParams, recipes, Auth, glossary) {
-
+  .controller('RecipesCtrl', function ($scope, $routeParams, $location, recipes, Auth, glossary, breadCrumbSrv) {
     $scope.glossary = glossary.getGlossary();
     $scope.$on('language-changed', function(){
       $scope.glossary = glossary.getGlossary();
@@ -10,33 +9,42 @@ angular.module('ecApp')
       //$scope.$apply();
     });
 
-    $scope.recipes = [];
-    //$scope.isCollapsed = true;
-    $scope.isAdmin = Auth.isAdmin;
-    $scope.newOnly = false;  // if true: get only new recipes that is not approved yet
-    $scope.chkboxTitle = $scope.glossary.newonly;
     var searchCriteria = $routeParams.search ? $routeParams.search : '';
+    var srchMode = '';
+    if ($routeParams.searchmode && $routeParams.searchmode === 'myfridge') {
+      srchMode ='myfridge';
+    }
 
-    $scope.page = {};
-    /*
-    recipes.getRecipes(searchCriteria, $scope.newOnly)
-      .then(function(recipes) {
-        $scope.searchCriteria = searchCriteria === '' ? 'All' : searchCriteria;
-
-        recipes.forEach(function(itm){
-          itm.rating = itm.rating.toFixed(1);
-        });
-
-        $scope.allRecipes = recipes;
-        $scope.page.current = 1;
-        $scope.page.itemsPerPage = 10;
-        
-        $scope.pageChanged();
-      },
-      function(){
-
-      });
-    */
+    switch (srchMode){
+      case 'myfridge':
+        $scope.bc = [
+          {
+            title: $scope.glossary.home,
+            link: '/'
+          },
+          {
+            title: $scope.glossary.inmyfridge,
+            link: '/fridge'
+          },
+          {
+            title: $scope.glossary.inmyfridgerecipes,
+            link: null
+          }
+        ]
+        break;
+      case '':
+        $scope.bc = [
+          {
+            title: $scope.glossary.home,
+            link: '/'
+          },
+          {
+            title: $scope.glossary.recipes,
+            link: null
+          }
+        ]
+        break;
+    }
 
     var setRecipeImage = function(ind){
       var imgStr = $scope.page.recipes[ind].instructions[$scope.page.recipes[ind].instructions.length-1].image;
@@ -47,8 +55,40 @@ angular.module('ecApp')
       return 'assets/images/cat-food-hearts-icon-128x128.png';
     };
 
+    $scope.recipes = [];
+    $scope.isAdmin = Auth.isAdmin;
+    $scope.newOnly = false;  // if true: get only new recipes that is not approved yet
+    $scope.chkboxTitle = $scope.glossary.newonly;
+    $scope.page = {};
+    $scope.ingredients = [];
+/*
+    $scope.selectRecipe = function(rcp){
+      if (srchMode === 'myfridge'){
+        breadCrumbSrv.setBreadCrumb({
+          name: $scope.glossary.recipe,
+          title: rcp.name,
+          param: '/myfridge/search/' + searchCriteria,
+          link: '/recipe/' + rcp._id,
+          parent: '/fridge'
+        });
+      } else {
+        breadCrumbSrv.setBreadCrumb({
+          name: $scope.glossary.recipe,
+          title: rcp.name,
+          param: null,
+          link: '/recipe/' + rcp._id,
+          parent: '/recipes'
+        });
+      }
+      $location.path('/recipe/' + rcp._id);
+    };
+*/
+
+    $scope.moreIngredients = function () {
+      angular.element('#ecMoreIngredients').modal({backdrop:'static'});
+    };
+
     $scope.pageChanged = function(){
-      //console.log($scope.recipes);
       var begin = $scope.page.current - 1;
       var end = begin + $scope.page.itemsPerPage;
       $scope.page.recipes = $scope.allRecipes.slice(begin, end);
@@ -58,18 +98,64 @@ angular.module('ecApp')
       }
     };
 
-    $scope.getRecipes = function(searchCriteria, newOnly){
-      recipes.getRecipes(searchCriteria, newOnly)
+    var possibleIngredients = function(rcp){
+      if (rcp.length === 0) {
+        return [];
+      } else {
+        var moreIngredients = ''
+        var moreLowCase = '';
+        var chosenIngredients = $scope.searchCriteria.split(',');
+        var chosenLowCase = chosenIngredients.map(function(val){
+          return val.toLowerCase();
+        });
+
+        for (var i=0; i<rcp.length; i++) {
+          for (var j=0; j<rcp[i].ingredients.length; j++){
+            var ingredient = rcp[i].ingredients[j].name.trim().toLowerCase();
+
+            if ($.inArray(ingredient, chosenLowCase) === -1){
+              if ($.inArray(ingredient, moreLowCase) === -1){
+                moreIngredients += rcp[i].ingredients[j].name.trim();
+                moreLowCase += rcp[i].ingredients[j].name.trim().toLowerCase();
+
+                moreIngredients += ',';
+                moreLowCase += ',';
+              }
+            }
+          }
+        }
+
+        var lastChar = moreIngredients[moreIngredients.length-1];
+        if (lastChar === ','){
+          moreIngredients= moreIngredients.substr(0,moreIngredients.length - 1);
+        }
+
+        return moreIngredients;
+      }
+    };
+
+    $scope.getRecipes = function(searchCriteria, newOnly, mode){
+      recipes.getRecipes(searchCriteria, newOnly, mode)
         .then(function(recipes) {
           $scope.searchCriteria = searchCriteria;// === '' ? 'All' : searchCriteria;
 
-          recipes.forEach(function(itm){
-            itm.rating = itm.rating.toFixed(1);
-          });
+          if (mode === 'myfridge'){
+            recipes[0].forEach(function(itm){
+              itm.rating = itm.rating.toFixed(1);
+            });
 
-          $scope.allRecipes = recipes;
+            $scope.allRecipes = recipes[0];
+            $scope.ingredients = possibleIngredients(recipes[1]);
+          } else {
+            recipes.forEach(function(itm){
+              itm.rating = itm.rating.toFixed(1);
+            });
+
+            $scope.allRecipes = recipes;
+          }
           $scope.page.current = 1;
           $scope.page.itemsPerPage = 10;
+          $scope.searchMode = mode;
 
           $scope.pageChanged();
         },
@@ -78,7 +164,7 @@ angular.module('ecApp')
         });
     };
 
-    $scope.getRecipes(searchCriteria, $scope.newOnly);
+    $scope.getRecipes(searchCriteria, $scope.newOnly, srchMode);
 
     $scope.$on('recipe-deleted', function(){
       $scope.getRecipes($scope.searchCriteria, $scope.newOnly)

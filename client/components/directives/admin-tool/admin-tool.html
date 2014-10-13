@@ -1,6 +1,6 @@
 <span class="admin-tool">
   <!--a href='/newrecipe?type=edit&id={{ id }}' title="Edit recipe" ng-click="editRecipe()"><span class="glyphicon glyphicon-edit edit-recipe-icon"></span></a-->
-  <a href='/newrecipe?type=edit&id={{ rid }}' title="{{ glossary.editrecipe }}" >
+  <a href='' ng-click="newRecipe('edit', rid)" title="{{ glossary.editrecipe }}" >
     <span class="glyphicon glyphicon-edit edit-recipe-icon"></span>
   </a>
 
@@ -11,12 +11,12 @@
   <div class="alert alert-warning confirm-delete" role="alert" ng-show="comfirmDelete == true">
     <div>{{ glossary.confirmdelete }} </div>
     <br/>
-    <a class="btn active btn-sm" ng-click="deleteRecipe()">
+    <button class="btn btn-sm" ng-click="deleteRecipe()">
       {{ glossary.deleterecipe }}
-    </a>
-    <a class="btn active btn-sm" ng-click="comfirmDelete = false">
+    </button>
+    <button class="btn active btn-sm" ng-click="comfirmDelete = false">
       {{ glossary.cancel }}
-    </a>
+    </button>
   </div>
 
 </span>

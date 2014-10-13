@@ -1,17 +1,19 @@
 'use strict';
 
 angular.module('ecApp')
-  .directive('breadCrumb', function ($rootScope, breadCrumbSrv, glossary) {
+  .directive('breadCrumb', function ($rootScope, $timeout/*, breadCrumbSrv, glossary*/) {
     return {
       templateUrl: 'components/directives/bread-crumb/bread-crumb.html',
       restrict: 'EA',
       replace: true,
-      link: function (scope, element, attrs) {
-        scope.glossary = glossary.getGlossary();
-        var currCrumb = breadCrumbSrv.currentCrumb();
+      scope:{ bc:'=' },
+      link: function (scope/*, element, attrs*/) {
+        //scope.glossary = glossary.getGlossary();
+        //var currCrumb = breadCrumbSrv.currentCrumb();
 
         //$timeout( function(){
-        attrs.$observe('name', function(value){
+        /*
+        attrs.$observe('path', function(value){
 
           if (attrs.path !== 'newrecipe'){
             breadCrumbSrv.initCrumb();
@@ -19,17 +21,8 @@ angular.module('ecApp')
 
           switch(attrs.path){
             case 'recipes':
-              breadCrumbSrv.addCrumb({
-                title: scope.glossary.recipes,//'Recipes',
-                link: '/recipes'
-              });
-              break;
-
-            case 'recipe':
-              console.log(currCrumb);
-              console.log(scope.glossary.myfridgerecipes);
-              console.log(currCrumb == scope.glossary.myfridgerecipes);
-              if (currCrumb == scope.glossary.myfridgerecipes) {
+              console.log(attrs);
+              if (attrs.mode === 'myfridge'){
                 breadCrumbSrv.addCrumb({
                   title:  scope.glossary.inmyfridge,
                   link: '/fridge'
@@ -37,14 +30,19 @@ angular.module('ecApp')
                 breadCrumbSrv.addCrumb({
                   title:  scope.glossary.myfridgerecipes,
                   link: ''
-                });
-              } else {
+                });              } else {
                 breadCrumbSrv.addCrumb({
-                  title:  scope.glossary.recipes,//'Recipes',
+                  title: scope.glossary.recipes,//'Recipes',
                   link: '/recipes'
                 });
               }
+              break;
 
+            case 'recipe':
+              breadCrumbSrv.addCrumb({
+                title:  scope.glossary.recipes,//'Recipes',
+                link: '/recipes'
+              });
               breadCrumbSrv.addCrumb({
                   title: attrs.name,
                   link: '/recipe/' + attrs.rcpid
@@ -68,24 +66,24 @@ angular.module('ecApp')
                 link: '/fridge'
               });
               break;
-
-            case 'fridge-recipe':
-              breadCrumbSrv.addCrumb({
-                title:  scope.glossary.inmyfridge,
-                link: '/fridge'
-              });
-              breadCrumbSrv.addCrumb({
-                title:  scope.glossary.myfridgerecipes,
-                link: ''
-              });
-              break;
           }
 
           scope.bc = breadCrumbSrv.getCrumb();
-          $rootScope.$broadcast('bread-crumb');
+         // $rootScope.$broadcast('bread-crumb');
         });
+        */
         //},800);
 
+        /*
+        scope.crumbClick = function(ind){
+          console.log(ind)
+          breadCrumbSrv.removeCrumbs(ind);
+          scope.bc = breadCrumbSrv.getBreadCrumb();
+        };
+
+        $timeout( function(){
+          scope.bc = breadCrumbSrv.getBreadCrumb();
+        },0);  */
       }
     };
   });

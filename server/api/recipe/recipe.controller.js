@@ -34,14 +34,54 @@ exports.index = function(req, res) {
       return res.json(200, rcps);
     });
   } else {
-    var regx = new RegExp(req.query.search,'i');
-    Recipe.find(options)
-      .or([{'name': { $regex: regx }}, {'cousine': { $regex: regx }},
-           {'category.name': { $regex: regx }}, {'ingredients.name': { $regex: regx }}])
-      .exec(function (err, rcps) {
-        if(err) { return handleError(res, err); }
-        return res.json(200, rcps);
-    });
+    if (req.query.mode === 'myfridge') {
+      var products = req.query.search.split(',');
+      var search = [];
+
+      for (var i=0; i<products.length; i++) {
+        var regx = new RegExp(products[i].trim(),'i');
+        //var regx = new RegExp('^' + products[i].trim() + '$','i');
+        search.push({'ingredients.name': {$regex: regx}});
+      }
+
+      async.series([
+        function(callback){
+          Recipe.find()
+            .and(search)
+            .exec(function (err, rcps) {
+              if(err) { return handleError(res, err); }
+              callback(null, rcps);
+            });
+        },
+
+        function(callback){
+          Recipe.find()
+            .or(search)
+            .exec(function (err, rcps_ingr) {
+              if(err) { return handleError(res, err); }
+              callback(null, rcps_ingr);
+            });
+        }],
+        function(err, recipes){
+          //console.log(recipes);
+          if (!err){
+            return res.json(200, recipes);
+          }
+          else{
+            console.log(err);
+            return res.json(500, err);
+          }
+        });
+    } else {
+      var regx = new RegExp(req.query.search,'i');
+      Recipe.find(options)
+        .or([{'name': { $regex: regx }}, {'cousine': { $regex: regx }},
+             {'category.name': { $regex: regx }}, {'ingredients.name': { $regex: regx }}])
+        .exec(function (err, rcps) {
+          if(err) { return handleError(res, err); }
+          return res.json(200, rcps);
+      });
+    }
   }
 };
 

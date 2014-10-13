@@ -80,16 +80,16 @@ angular.module('ecApp').controller('NewrecipeCtrl',
       );
     };
 
+console.log($routeParams)
+
     if ($routeParams.type && $routeParams.type === 'user'){
       $scope.action = $scope.glossary.send;
       approved = false;
       initRecipeObj();
     } else if ($routeParams.type && $routeParams.type === 'edit'){
       $scope.action = $scope.glossary.edit;
-      //console.log($routeParams);
       recipe.getRecipe($routeParams.id)
         .then(function(recipe) {
-          //console.log(recipe);
           recipe.rating = recipe.rating.toFixed(1);
           initRecipeObj(recipe);
         },
@@ -203,6 +203,10 @@ angular.module('ecApp').controller('NewrecipeCtrl',
 
           });
       }
+    };
+
+    $scope.back = function(){
+      $window.history.back();
     };
 
     $scope.$on('file-dropzone-drop-event', function(evt, data){

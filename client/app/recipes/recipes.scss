@@ -11,11 +11,16 @@ $border-radius: 5px;
     padding: 0px;
   }
   .search-result-info{
-    width: 250px;
+    position: relative;
+    max-width: 250px;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis
+    text-overflow: ellipsis;
   }
+}
+
+#more-ingredients {
+  margin-left: 10px;
 }
 
 .sm-recipe-wrapper {

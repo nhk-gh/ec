@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('ecApp')
-  .controller('MainCtrl', function ($scope, $location, main, glossary) {
+  .controller('MainCtrl', function ($scope, $location, main, glossary, breadCrumbSrv) {
 
     $scope.glossary = glossary.getGlossary();
     $scope.$on('language-changed', function(){
@@ -13,8 +13,8 @@ angular.module('ecApp')
         link: '/recipes'
       },
         {
-          name: $scope.glossary.myfridge,
-          info: $scope.glossary.myfridgedescription,
+          name: $scope.glossary.inmyfridge,
+          info: $scope.glossary.inmyfridgedescription,
           link: '/fridge'
         },
         {
@@ -30,8 +30,8 @@ angular.module('ecApp')
       link: '/recipes'
     },
     {
-      name: $scope.glossary.myfridge,
-      info: $scope.glossary.myfridgedescription,
+      name: $scope.glossary.inmyfridge,
+      info: $scope.glossary.inmyfridgedescription,
       link: '/fridge'
     },
     {
@@ -39,13 +39,15 @@ angular.module('ecApp')
       info: $scope.glossary.partydescription,
       link: '/dinnerparty'
     }];
-    /*
-    main.getFeatures()
-      .then(function(fts) {
-        $scope.features = fts;
-
-      },
-      function(){
-
-      }); */
+/*
+    $scope.selectFeature = function(ft){
+      breadCrumbSrv.setBreadCrumb({
+        name:   ft.name,
+        title:  ft.name,
+        param:  null,
+        link:   ft.link,
+        parent: null
+      });
+      $location.path(ft.link);
+    }*/
   });

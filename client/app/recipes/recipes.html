@@ -1,7 +1,9 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
+<more-ingredients chosen="{{ searchCriteria }}" possible="{{ ingredients }}"></more-ingredients>
+
 <div class="container main-panel">
-  <bread-crumb path="recipes"></bread-crumb>
+  <bread-crumb bc="bc"></bread-crumb>
 
   <div class="row">
     <div class="col-md-12">
@@ -14,18 +16,22 @@
                 <span ng-show="searchCriteria !=='' " class="search-result-info"> {{ searchCriteria }}</span>
                 {{ glossary.recipes }}
               </strong>
-              - {{ allRecipes.length }} {{ glossary.found }}
+              - {{ allRecipes.length }} {{ glossary.found }}  &nbsp;
             </span>
+            <a class="btn-link" id="more-ingredients" style="color:inherit" ng-click="moreIngredients()"
+                    ng-show="searchMode==='myfridge'">
+              <span>More ingredients <span class="caret"></span></span>
+            </a>
           </div>
           <div class="col-md-4 col-sm-4 col-xs-12">
             <span ng-show="isAdmin()">
-              <input type="checkbox" ng-model="newOnly" ng-change="getRecipes(searchCriteria, newOnly)"
+              <input type="checkbox" ng-model="newOnly" ng-change="getRecipes(searchCriteria, newOnly, '')"
                       style="margin-top: 2px"/>  {{ chkboxTitle }}
             </span>
           </div>
           <div class="col-md-4 col-sm-4 col-xs-12">
             <span ng-show="searchCriteria !==''">
-              <a href="#" ng-click="getRecipes('', newOnly)">{{ glossary.viewall }}</a>
+              <a href="#" ng-click="getRecipes('', newOnly, '')">{{ glossary.viewall }}</a>
             </span>
           </div>
         </div>
@@ -37,7 +43,7 @@
     <div class="col-md-12" >
       <div class="sm-recipe-wrapper">
         <div class="sm-recipe-title">
-          <a href="/recipe/{{ rcp._id }}">{{ rcp.name }}</a>
+          <a href="/recipe/{{ rcp._id }}?mode={{ searchMode }}&search={{ searchCriteria }}" >{{ rcp.name }}</a>
           <admin-tool class="pull-right" rid="rcp._id" ng-show="isAdmin()"></admin-tool>
         </div>
         <div class="row sm-recipe-body">

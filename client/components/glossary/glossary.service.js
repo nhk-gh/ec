@@ -36,8 +36,8 @@ angular.module('ecApp')
       'passwordnotmatch': 'Passwords do not match',
       'recipes': 'Recipes',
       'recipesdescription': 'A huge number of recipes - easy to cook, affordable ingredients and absolutely delicious!',
-      'myfridge': 'In my Fridge',
-      'myfridgedescription': 'Stayed late at the office, didn’t have the chance to drop by the store ... Tell us what products you\'ve found in the kitchen and we will help you cook the best meal for dinner',
+      'inmyfridge': 'In my Fridge',
+      'inmyfridgedescription': 'Stayed late at the office, didn’t have the chance to drop by the store ... Tell us what products you\'ve found in the kitchen and we will help you cook the best meal for dinner',
       'party': 'Dinner Party',
       'partydescription': 'Waiting for guests? Not a problem. Easy Cooking offers menu options for party: guests will be amazed and you will be proud',
       'anyone': 'Anyone can cook!',
@@ -93,11 +93,10 @@ angular.module('ecApp')
       'yourrating': 'Your rating:',
       'dragrating': 'Drag or click on bar and',
       'rateit': 'Rate it!',
-      'inmyfridge': 'In my Fridge',
-      'myfridgeprompt':'Please enter comma separated list of products you found in the fridge:',
+      'inmyfridgeprompt':'Please enter comma separated list of products you found in the fridge:',
       'typehere': 'Type here ...',
       'feedme': 'Feed me!',
-      'myfridgerecipes': 'In my Fridge Recipes',
+      'inmyfridgerecipes': 'In my Fridge Recipes',
       'for': 'for:'
     };
     var russian = {

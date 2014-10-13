@@ -48,11 +48,12 @@ $btn-back-color:  rgba(186, 166, 142, 0.31);
     color: $main-color;
     font-weight: bold;
     display: inline-block;
+    text-decoration: underline;
   }
   a:hover {
     text-shadow: 0px 0px 10px $hero-color;
-    text-decoration: none;
-    //background-color: $main-back-color;
+    //: none;
+    //background-color: floralwhite;
     //border: 1px solid transparent;
     //border-radius: 10px;
   }

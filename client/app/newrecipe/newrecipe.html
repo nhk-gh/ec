@@ -1,7 +1,8 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
 <div class="container main-panel">
-  <bread-crumb path="newrecipe" action="{{ action }}"></bread-crumb>
+  <!--bread-crumb bc="bc"></bread-crumb-->
+
   <div class="row">
     <div class="col-md-12">
       <div class="recipe-wrapper">
@@ -231,21 +232,21 @@
               <legend></legend>
               <div class="form-group">
                 <div class-row>
-                  <div class="col-sm-10 col-xs-10" id="user-recipe-warning">
+                  <div class="col-sm-8 col-xs-8" id="user-recipe-warning">
                     <span ng-show="action === {{ glossary.send }}" >
                       {{ glossary.bepatient }}.
                     </span>
                   </div>
-                  <div class="col-sm-2 col-xs-2">
-                    <button type="submit" class="btn btn-default pull-right" id="addrecipe-btn"
+                  <div class="col-sm-4 col-xs-4">
+                    <button type="submit" class="btn btn-default pull-right" id="back-btn"
+                            ng-click="back()">
+                      Cancel
+                    </button>
+                    <button type="submit" class="btn pull-right" id="addrecipe-btn"
                             ng-click="addRecipe()"
                             ng-disabled="addrecipeform.$invalid || hasEmptyFields()">
                       {{ action }} recipe
                     </button>
-                    <!--button type="submit" class="btn btn-default pull-right" id="addrecipe-btn"
-                            ng-click="addRecipe()"   >
-                      {{ action }} recipe
-                    </button-->
                   </div>
                 </div>
               </div>

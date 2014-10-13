@@ -22,5 +22,18 @@
     border: 1px solid $main-color;
 
     @include border-radius(5px);
+
+    button {
+      background-color: $btn-back-color;
+      border-color: rgba(178, 34, 34, 0.33);
+      @include border-radius(5px);
+    }
+
+    button:hover {
+      //@include box-shadow-insert(0, 0, 20px, 0px, #ba7a5a);
+      //@include box-shadow-insert(0, 0, 10px, 2px, rgba(255, 166, 0, 0.70)) ;
+      box-shadow: inset 0 1px 1px rgba(178, 34, 34, 0.63), 0 0 8px rgba(178, 34, 34, 0.63);
+      border-color: rgba(255, 166, 0, 0.70);
+    }
   }
 }

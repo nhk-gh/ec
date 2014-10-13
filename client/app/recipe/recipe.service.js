@@ -66,8 +66,6 @@ angular.module('ecApp')
             delete recipe.instructions[i].file;
           }
         }
-        //console.log(files);
-        //console.log(recipe);
 
         $http({method:'POST', url:'api/recipe', data:{recipe:recipe}, cache: false})
           .success(function(data){

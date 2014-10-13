@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('ecApp')
-  .directive('adminTool', function ($window, recipe, glossary) {
+  .directive('adminTool', function ($window, $location, recipe, glossary, breadCrumbSrv) {
     return {
       templateUrl: 'components/directives/admin-tool/admin-tool.html',
       restrict: 'EA',
@@ -13,6 +13,17 @@ angular.module('ecApp')
         scope.glossary = glossary.getGlossary();
 
         scope.comfirmDelete = false;
+
+        scope.newRecipe = function(type, rid){
+         /* breadCrumbSrv.setBreadCrumb({
+            name: 'newrecipe',
+            title: scope.glossary.editrecipe,
+            param: null,
+            link: null,
+            parent: null
+          });*/
+          $location.path('/newrecipe/edit/id/' + rid);
+        };
 
         scope.deleteRecipe = function(){
           //console.log($window.location);

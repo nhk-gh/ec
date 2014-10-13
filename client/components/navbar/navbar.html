@@ -67,7 +67,7 @@
         </li>
 
         <li class="hidden-sm hidden-md hidden-lg">
-          <a href="/newrecipe?type=user" class="send-recipe">
+          <a href="" ng-click="newRecipe('user')" class="send-recipe">
             <span class="font-04">{{ glossary.sendrecipe }}</span>
           </a>
         </li>
@@ -80,10 +80,10 @@
 
     <div class="row hidden-xs" id="navbar-sub">
       <div class="col-md-6 col-sm-6 col-xs-12">
-        <a href="/newrecipe?type=user" class="send-recipe font-04" ng-show="!isAdmin() && isNotEditRecipe">
+        <a href="" ng-click="newRecipe('user')" class="send-recipe font-04" ng-show="!isAdmin() && isNotEditRecipe">
           <img ng-src="../../assets/images/mail_send_32x32.png" title="{{ glossary.sendrecipe }}"/>
         </a>
-        <a href="/newrecipe" class="send-recipe font-04" ng-show="isAdmin() && isNotEditRecipe">
+        <a href="" ng-click="newRecipe('admin')" class="send-recipe font-04" ng-show="isAdmin() && isNotEditRecipe">
           <img ng-src="../../assets/images/mail_send_32x32.png" title="{{ glossary.newrecipe }}"/>
         </a>
       </div>

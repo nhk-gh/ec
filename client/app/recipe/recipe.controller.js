@@ -26,6 +26,44 @@ angular.module('ecApp')
         $scope.recipe = recipe;
         $scope.currentUserRating = userRating($scope.recipe.voted);
 
+        switch ($routeParams.mode){
+          case 'myfridge':
+            $scope.bc = [
+              {
+                title: $scope.glossary.home,
+                link: '/'
+              },
+              {
+                title: $scope.glossary.inmyfridge,
+                link: '/fridge'
+              },
+              {
+                title: $scope.glossary.inmyfridgerecipes,
+                link: '/recipes/myfridge/search/' + $routeParams.search
+              },
+              {
+                title: $scope.recipe.name,
+                link: null
+              }
+            ]
+            break;
+          case '':
+            $scope.bc = [
+              {
+                title: $scope.glossary.home,
+                link: '/'
+              },
+              {
+                title: $scope.glossary.recipes,
+                link: '/recipes'
+              },
+              {
+                title: $scope.recipe.name,
+                link: null
+              }
+            ]
+            break;
+        }
         arrangeIngredients();
       },
       function(){
@@ -35,7 +73,6 @@ angular.module('ecApp')
     var arrangeIngredients = function(){
       var middle = Math.ceil($scope.recipe.ingredients.length / 2);
       var mod = $scope.recipe.ingredients.length % 2;
-      //console.log(mod)
       for (var i=0; i<middle; i++){
         $scope.ingredients.push($scope.recipe.ingredients[i]);
 
@@ -43,8 +80,6 @@ angular.module('ecApp')
           $scope.ingredients.push($scope.recipe.ingredients[i+middle]);
         }
       }
-
-      //console.log($scope.recipe)
     };
 
     $scope.$on('rate-it', function(evt, args){

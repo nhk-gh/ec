@@ -12,7 +12,7 @@ angular.module('ecApp')
         var inp = element.find('.review-search');
 
         element
-          .on('click', function() {
+          .on('click keypress', function() {
            // console.log(element.find('.review-search'))
             element.css('width', '60%');
             inp.css('width', '75%');

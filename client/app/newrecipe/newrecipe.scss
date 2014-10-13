@@ -48,9 +48,10 @@
       @include border-radius(0);
     }
     .table-input:focus {
-      border: 1px solid orange;
-      box-shadow: inset 0 1px 1px $main-back-color,
-      0 0 8px $hero-color;
+      //border: 1px solid orange;
+      //box-shadow: inset 0 1px 1px $main-back-color,  0 0 8px $hero-color;
+      box-shadow: inset 0 1px 1px rgba(178, 34, 34, 0.63), 0 0 8px rgba(178, 34, 34, 0.63);
+      border:1px solid rgba(255, 166, 0, 0.70);
     }
   }
 
@@ -136,5 +137,11 @@
 
 #addrecipe-btn{
   background-color: $main-back-color;
+  margin-right: 5px;
 }
-
+#addrecipe-btn:hover{
+  //border: 1px solid orange;
+  //@include box-shadow-insert(0, 0, 10px, 4px, rgba(255, 166, 0, 0.70)) ;
+  box-shadow: inset 0 1px 1px rgba(178, 34, 34, 0.63), 0 0 8px rgba(178, 34, 34, 0.63);
+  border-color: rgba(255, 166, 0, 0.70);
+}
