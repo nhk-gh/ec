@@ -15,6 +15,10 @@ angular.module('ecApp')
         link: null
       }];
 
+    $scope.fridgeKeyPressed = function(evt){
+      if (evt.which === 13)
+        $scope.lookFor($scope.productsFound);
+    };
     $scope.lookFor = function(products) {
      /* breadCrumbSrv.setBreadCrumb({
         name: $scope.glosssary.inmyfridgerecipes,

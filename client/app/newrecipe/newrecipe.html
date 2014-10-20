@@ -217,7 +217,7 @@
               </div>
             </fieldset>
 
-            <fieldset ng-show="action === {{ glossary.edit }}">
+            <fieldset ng-show="action === '{{ glossary.edit }}'">
               <legend>{{ glossary.approveforview }}</legend>
               <div class="form-group">
                 <label for="approved" class="col-sm-2 control-label">{{ glossary.approve }}</label>
@@ -233,7 +233,7 @@
               <div class="form-group">
                 <div class-row>
                   <div class="col-sm-8 col-xs-8" id="user-recipe-warning">
-                    <span ng-show="action === {{ glossary.send }}" >
+                    <span ng-show="action === '{{ glossary.send }}'" >
                       {{ glossary.bepatient }}.
                     </span>
                   </div>

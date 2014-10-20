@@ -1,5 +1,25 @@
+#myfridge-background {
+  background-image: url('../../assets/images/004.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center center;
+  opacity: 0.9;
+  position: relative;
+  width:100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 0;
+}
+#myfridge-content {
+  position: relative;
+}
+
 #ask-fridge {
   text-align: center;
+  position: relative;
+  z-index: 100;
+  min-height: 600px;
 
   #ask-fridge-prompt {
     font-size: 120%;
@@ -37,6 +57,8 @@
   width: 80%;
   height: auto;
   margin: 20px auto;
+
+  //visibility: hidden;
 
   img {
     width: 100%;

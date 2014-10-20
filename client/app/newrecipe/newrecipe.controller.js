@@ -80,7 +80,7 @@ angular.module('ecApp').controller('NewrecipeCtrl',
       );
     };
 
-console.log($routeParams)
+//console.log($routeParams)
 
     if ($routeParams.type && $routeParams.type === 'user'){
       $scope.action = $scope.glossary.send;
@@ -101,6 +101,7 @@ console.log($routeParams)
       approved = true;
       initRecipeObj();
     };
+//console.log($scope.action)
 
     $scope.instrEditImage = function(ind){
       if($scope.newRecipe.instructions[ind].image === '') {
