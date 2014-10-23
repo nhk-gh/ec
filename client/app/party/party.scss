@@ -1,0 +1,15 @@
+.party-link {
+   text-decoration: none !important;
+
+  .party-img {
+    position: relative;
+    max-width: 100% !important;
+    max-height: 100%;
+
+  }
+}
+.party-link:hover {
+  box-shadow: inset 0 0px 1px rgba(178, 34, 34, 0.63), 0 0 8px rgba(178, 34, 34, 0.63);
+  border: 1px solid rgba(255, 166, 0, 0.70);
+  background-color: floralwhite  !important;
+}
