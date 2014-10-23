@@ -1,10 +1,10 @@
 #myfridge-background {
   background-image: url('../../assets/images/004.jpg');
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: 97% 100%;
   background-position: center center;
-  opacity: 0.9;
-  position: relative;
+  opacity: 0.6;
+  position: absolute;
   width:100%;
   height: 100%;
   left: 0;
@@ -20,6 +20,7 @@
   position: relative;
   z-index: 100;
   min-height: 600px;
+  margin-top: 30px;
 
   #ask-fridge-prompt {
     font-size: 120%;

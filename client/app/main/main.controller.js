@@ -20,7 +20,7 @@ angular.module('ecApp')
         {
           name: $scope.glossary.party,
           info: $scope.glossary.partydescription,
-          link: '/dinnerparty'
+          link: '/party'
         }];
     });
 
@@ -37,7 +37,7 @@ angular.module('ecApp')
     {
       name: $scope.glossary.party,
       info: $scope.glossary.partydescription,
-      link: '/dinnerparty'
+      link: '/party'
     }];
 /*
     $scope.selectFeature = function(ft){

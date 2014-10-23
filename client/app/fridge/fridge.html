@@ -5,22 +5,24 @@
 
   <div class="row">
     <div class="col-md-12" id="myfridge-content">
+
       <div id="myfridge-background">
-        <div id="ask-fridge">
-          <div id="ask-fridge-prompt"> {{ glossary.inmyfridgeprompt }} </div>
-
-          <input type="text" placeholder="{{ glosssary.typehere }}" id="products-input"
-                 ng-model="productsFound" autofocus ng-keypress="fridgeKeyPressed($event)"/>
-          <hr/>
-          <footer>
-            <button class="btn btn-default" id="ask-fridge-btn" ng-click="lookFor(productsFound)"
-                    ng-disabled="productsFound === ''">
-              {{ glossary.feedme }}
-            </button>
-          </footer>
-        </div>
-
       </div>
+
+      <div id="ask-fridge">
+        <div id="ask-fridge-prompt"> {{ glossary.inmyfridgeprompt }} </div>
+
+        <input type="text" placeholder="{{ glosssary.typehere }}" id="products-input"
+               ng-model="productsFound" autofocus ng-keypress="fridgeKeyPressed($event)"/>
+        <br/><br/>
+        <footer>
+          <button class="btn btn-default" id="ask-fridge-btn" ng-click="lookFor(productsFound)"
+                  ng-disabled="productsFound === ''">
+            {{ glossary.feedme }}
+          </button>
+        </footer>
+      </div>
+
 
       <!--div class="col-md-12">
         <div class="fridge-img">
@@ -28,9 +30,5 @@
         </div>
       </div-->
     </div>
-
-
   </div>
-
-
 </div>
